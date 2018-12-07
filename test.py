@@ -1,2 +1,1 @@
-print('Hello World')
-print('Helooooooooo')`
+print('mr lee best teacher')
