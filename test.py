@@ -1,3 +1,1 @@
-print('Hello World')
-print('Helooooooooo')
-print('ur mum gay')
+print('mr lee best teacher')
