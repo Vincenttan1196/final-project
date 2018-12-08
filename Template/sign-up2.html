@@ -1,0 +1,277 @@
+  <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Continue</title>
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="../Static/sign-up2.css">
+
+    </head>
+    <body>
+
+
+
+      <form id='sign-up2' action="" "method="post">
+
+        <h1>Let's know more about you...</h1>
+
+        <fieldset>
+          <legend><span class="number">1</span>Info</legend>
+          <label id="namee">Username:</label>  <input type="text" id="username" name="user_name" required />
+
+			<label>Birthday:</label> <input type="date" id="birthday" name="bday" min='1895-01-01' max='2005-01-01'  required>
+
+			<!---- set the max date to "today"---->
+<script>
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0!
+var yyyy = today.getFullYear();
+ if(dd<10){
+        dd='0'+dd
+    }
+    if(mm<10){
+        mm='0'+mm
+    }
+
+today = yyyy+'-'+mm+'-'+dd;
+document.getElementById("birthday").setAttribute("max", today);
+</script>
+
+		 <label>Region:</label>
+
+		 <select id="location" name="location" onchange="getSelectValue()"  placeholder="Which region are you located at?"  />
+    <option value="central">Central</option>
+    <option value="north">North</option>
+    <option value="north_east">North-East</option>
+    <option value="east">East</option>
+	<option value="west">West</option>
+  </select>
+        </fieldset>
+
+        <fieldset>
+          <legend><span class="number">2</span>Your profile</legend>
+          <label for="bio">Biography:</label>
+          <textarea id="bio" name="user_bio"></textarea>
+        </fieldset>
+        <fieldset>
+        <label for="role">Role:</label>
+        <select id="role" name="user_role">
+			<option value="user">User</option>
+			<option value="student">Student</option>
+			<option value="teacher">Teacher</option>
+            <option value="developer">Developer</option>
+            <option value="Other">Others</option>
+          </optgroup>
+        </select>
+
+          <label id='interest'>Interests:</label>
+		  <input type="checkbox" id="education" value="Education" name="user_interest"><label class="light" for="Education">Educational purpose</label><br>
+		            <input type="checkbox" id="CCA" value="CCA" name="user_interest"><label class="light" for="CCA">CCA Points</label><br>
+          <input type="checkbox" id="development" value="Development" name="user_interest"><label class="light" for="development">Development</label><br>
+            <input type="checkbox" id="community" value="Community" name="user_interest"><label class="light" for="community_service">Community services</label><br>
+			            <input type="checkbox" id="others" value="Others" name="user_interest"><label class="light" for="others">Others</label><br>
+
+
+        </fieldset>
+
+
+
+    <button type="submit" onClick="return signup()" id="sign_up">Sign Up</button>
+
+	<script>
+
+
+function signup()
+{	<!--- refer code bonus points --->
+
+var name = document.getElementById('username').value;
+var birthday = document.getElementById('birthday').value;
+var info = false
+
+	localStorage.setItem("users_refer_" + emailid, document.getElementById("refer").value);
+	var givePointsToHim= document.getElementById("refer").value; // person who is being referred
+	var points=localStorage.getItem("users_points_"+givePointsToHim);	// get the points balance of the referrer
+
+	//var givePointsToMyself = emailid.value;
+	//var points1 = localstorage.getItem("users_points_"+givePointsToMyself);
+
+
+	if (birthday == "")
+	{
+			info = false
+			return;
+	}
+
+		else if (name == "")
+
+		{info = false
+			return;}
+
+
+	else if (givePointsToHim == emailid)
+	{
+	console.log("referrer is same as signup guy, no points given");
+	//	points1= parseInt(points) + 0;
+		//localStorage.setItem("users_points_"+emailid , points1);
+
+				}
+	else  if (points == null)
+	{
+
+		}
+
+
+
+	else
+	{
+		points= parseInt(points) + 100;
+		localStorage.setItem("users_points_"+givePointsToHim,points);
+
+		//points1 =  parseInt(points1) + 100
+		//localStorage.setItem("users_points_"+givePointsToMyself,points1);
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var input = document.getElementById("username").value;
+	var info = false
+	var count = parseInt(localStorage.getItem("users_count"));
+
+		 if (count !=0)
+		 {
+			 for(var i=1; i<= count; i++)
+			 { if (input != username) {
+				var email=localStorage.getItem("users_list_"+i);
+				var username = localStorage.getItem("users_username_" + email);
+				}
+			if (input == username) {
+
+			break
+			}
+			if (input != username) {
+			continue}
+
+			else {
+			return;
+				}
+
+
+				}
+				}
+
+	if (birthday == "")
+		{ return;
+		}
+	else if (input == username) {
+	alert("Username already exist,please choose another name");
+	return;}
+
+
+
+if (info = false) {
+	return;
+
+	}
+
+else {
+	alert("Sign up done");
+	window.open("login.html");
+
+    }
+
+
+
+
+
+
+
+	var ucount = localStorage.getItem("users_count");
+	if (ucount == null)
+	{
+		localStorage.setItem("users_count","1");
+	}
+	else
+	{
+		ucount = parseInt(ucount)+0;
+		localStorage.setItem("users_count",ucount.toString());
+
+	}
+	var emailid = localStorage.getItem("users_list_"+ucount);
+	localStorage.setItem("users_username_" + emailid, document.getElementById("username").value);
+
+	localStorage.setItem("users_birthday_"+ emailid, document.getElementById("birthday").value);
+
+
+
+	<!--- getting location via dropdown list ---->
+	var f = document.getElementById("location");
+	var strLocation = f.options[f.selectedIndex].text;
+	localStorage.setItem("users_location_" + emailid, strLocation)
+
+
+
+	localStorage.setItem("users_biography_"+ emailid, document.getElementById("bio").value);
+
+
+	<!--- This is to get role checkbox --->
+
+	var e = document.getElementById("role");
+	var strUser = e.options[e.selectedIndex].text;
+	localStorage.setItem("users_role_" + emailid , strUser)
+
+
+
+
+
+	var users_interests =[];
+	var els = document.getElementsByName("user_interest");
+	Array.prototype.forEach.call(els, function(el) {
+	if (el.type == "checkbox" && el.checked) {
+         users_interests.push(el.value);
+      }
+    // Do stuff here
+});
+
+localStorage.setItem("users_interests_" + emailid,JSON.stringify(users_interests));
+  console.log(JSON.parse(localStorage.getItem("users_interests")));
+
+
+
+	}
+
+
+</script>
+<script>
+
+function getSelectValue()
+        {
+            var selectedValue = document.getElementById("location").value;
+            console.log(selectedValue);
+        }
+        getSelectValue();
+    </script>
+      </form>
+
+    </body>
+</html>

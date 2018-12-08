@@ -1,1 +1,0 @@
-print('mr lee best teacher')

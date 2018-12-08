@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Sign-up</title>
+	<link rel="stylesheet" type="text/css" href="../Static/sign-up.css">
+
+
+	<main id="form">
+
+		<form id="signup-form" action="" method="post">
+			<h1>Sign up</h1>
+			<label for="email" required>Email</label>
+			<input type="email" name="email" id="email" placeholder="Enter an email" required>
+
+			<label for="password" required>Password</label>
+
+			<input type="password" name="password" id="password" placeholder="Enter a password" required>
+			<input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm password" required>
+			<br>
+	<script> var password = document.getElementById("password")
+   var confirm_password = document.getElementById("confirm_password");
+
+   var passwordMatched = false;
+
+function validatePassword(){
+  if(password.value != confirm_password.value) {
+	passwordMatched = false;
+
+    confirm_password.setCustomValidity("Passwords do not match,please try again");
+  } else {
+	passwordMatched = true;
+    confirm_password.setCustomValidity('');
+  }
+}
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
+</script>
+
+
+
+    <button type="submit" onClick="signup()" id="sign_up">Sign Up</button>
+
+</form>
+
+			    <p>By creating an account you agree to our <a href="privacypolicy.html" id="privacy" target="_blank" style="color:blue">Terms & Privacy</a></p>
+		</form>
+	</main>
+
+	<section class="registered">
+		<p>Already have an account? <a href="login.html" class="login">Log in</a></p>
+	</section>
+
+
+
+
+
+<script>
+
+
+// Email and Password from the register-form
+var email = document.getElementById('email');
+var password = document.getElementById('password');
+
+// storing input from register-form
+function store() {
+    localStorage.setItem('email', email.value);
+    localStorage.setItem('password', password.value);
+}
+
+// check if stored data from register-form is equal to entered data in the   login-form
+
+function check()
+{
+var input = document.getElementById("email").value;
+var info = false
+var count = parseInt(localStorage.getItem("users_count"));
+
+		 if (count !=0)
+		 {
+			 for(var i=1; i<= count; i++)
+			 { if (input != email) {
+				var email=localStorage.getItem("users_list_"+i);
+				}
+			if (input == email) {
+
+			break
+			}
+			if (input != email) {
+			continue}
+
+			else {
+			return;
+				}
+
+
+				}
+				}
+
+				}
+
+
+function signup()
+{
+var input = document.getElementById("email").value;
+var info = false
+var count = parseInt(localStorage.getItem("users_count"));
+
+		 if (count !=0)
+		 {
+			 for(var i=1; i<= count; i++)
+			 { if (input != email) {
+				var email=localStorage.getItem("users_list_"+i);
+				}
+			if (input == email) {
+
+			break
+			}
+			if (input != email) {
+			continue}
+
+			else {
+			return;
+				}
+
+
+				}
+				}
+	if (input == email) {
+	alert("Email already exists!");
+	return;}
+
+	if (passwordMatched==false )
+	{
+		return;
+	}
+
+
+	var ucount = localStorage.getItem("users_count");
+
+	if (ucount == null)
+	{
+		localStorage.setItem("users_count","1");
+		ucount = 1;
+
+	}
+	else
+	{
+		ucount = parseInt(ucount)+1;
+		localStorage.setItem("users_count",ucount.toString());
+		window.open("sign-up2.html");
+
+
+	}
+
+	localStorage.setItem("users_list_"+ucount, document.getElementById("email").value);
+
+	localStorage.setItem("users_password_"+document.getElementById("email").value, document.getElementById("password").value);
+	localStorage.setItem("users_points_"+document.getElementById("email").value, "0");
+		window.open("sign-up2.html");
+
+}
+
+
+
+
+</script>
+
+
+
+
+
+</body>
+</html>
