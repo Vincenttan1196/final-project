@@ -1,0 +1,146 @@
+body {
+    background-image: url(https://i.imgur.com/hl8kIo3.png) ;
+}
+body {
+	background-repeat: repeat-y;
+	overflow-x: hidden;
+}
+body {
+	background-size: cover;
+}
+
+
+.logo {
+	height: 55px;
+	width: 15%
+}
+#form {
+	background-color: rgba(227, 236, 243);
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 3px;
+	box-sizing: border-box;
+	padding-left: 40px;
+	padding-right: 40px;
+	width: 400px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-top:50px;
+
+}
+h1 {
+	text-align: center;
+	font-weight: 100;
+	font-size: 35px;
+	color: #383838;
+	margin-bottom: 40px;
+}
+#signup-form label {
+	display: block;
+	margin-bottom: 10px;
+}
+#signup-form input {
+	display: block;
+	margin-bottom: 20px;
+	box-sizing: border-box;
+	width: 320px;
+	height: 55px;
+	border: 2px lightgrey solid;
+	padding: 15px;
+	font-size: 17px;
+	border-radius: 3px;
+}
+#signup-form button {
+	display: block;
+	margin-bottom: 10px;
+	box-sizing: border-box;
+	width: 320px;
+	height: 55px;
+	border: 2px lightgrey solid;
+	padding: 15px;
+	font-size: 20px;
+	border-radius: 3px;
+	background-color: #3Cb371;
+		color: white;
+	border: none;
+}
+label	{
+	display: block;
+	margin-bottom: 20px;
+}
+.signup:hover {
+	background-color: #006400;
+}
+.forgot {
+	display: block;
+	text-align: center;
+	color: grey;
+}
+.registered {
+	display: block;
+	text-align: center;
+	color: white;
+}
+.login	{
+	color: white;
+
+
+}
+
+.login:hover{
+    background-color:rrgb(204, 235, 255);
+	opacity:0.7;
+	}
+
+
+#email {
+	font-weight:bold;
+}
+#email:focus
+{
+    background-color: yellow;
+}
+#password {
+	font-weight:bold;
+}
+
+#password:focus
+{
+    background-color: yellow;
+}
+
+#confirm_password {
+	font-weight:bold;
+}
+#confirm_password:focus
+{
+    background-color: yellow;
+}
+
+#privacy:hover{
+    background-color:rrgb(212, 209, 255);
+	opacity:0.3;
+	}
+
+#email:hover {
+    background-color:rrgb(204, 235, 255);
+	opacity:0.7;
+	}
+#password:hover {
+	background-color:rrgb(204, 235, 255);
+	opacity:0.7;
+}
+
+#confirm_password:hover {
+	background-color:rrgb(204, 235, 255);
+	opacity:0.7;
+}
+
+#sign_up:hover {
+	background-color:rgb(102, 255, 102);
+	opacity:0.9;
+}
+
+#logoImage {
+	text-align:center;
+}
