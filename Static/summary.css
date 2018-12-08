@@ -1,3 +1,8 @@
 .mainHeader {
     text-align: center;
 }
+
+.output {
+    margin-left: 100px;
+    margin-right: 100px;
+}
