@@ -13,9 +13,9 @@ ul {list-style-type: none;}
 body {font-family: Verdana, sans-serif;}
 
 .month {
-    padding: 70px 25px;
+    padding: 75px 30px;
     width: 100%;
-    background: #1abc9c;
+    background: #43FF33;
     text-align: center;
 }
 
@@ -26,7 +26,7 @@ body {font-family: Verdana, sans-serif;}
 
 .month ul li {
     color: white;
-    font-size: 20px;
+    font-size: 50px;
     text-transform: uppercase;
     letter-spacing: 3px;
 }
@@ -43,7 +43,7 @@ body {font-family: Verdana, sans-serif;}
 
 .weekdays {
     margin: 0;
-    padding: 10px 0;
+    padding: 40px 0;
     background-color: #ddd;
 }
 
@@ -66,17 +66,13 @@ body {font-family: Verdana, sans-serif;}
     width: 13.6%;
     text-align: center;
     margin-bottom: 5px;
-    font-size:12px;
+    font-size:25px;
     color: #777;
 }
-
-.days li .active {
-    padding: 5px;
-    background: #1abc9c;
-    color: white !important
+li:hover {
+    background-color: yellow;
 }
 
-/* Add media queries for smaller screens */
 @media screen and (max-width:720px) {
     .weekdays li, .days li {width: 13.1%;}
 }
@@ -93,30 +89,29 @@ body {font-family: Verdana, sans-serif;}
 </head>
 <body>
 
-<h1>CSS Calendar</h1>
-
 <div class="month">
   <ul>
     <li class="prev">&#10094;</li>
     <li class="next">&#10095;</li>
     <li>
       August<br>
-      <span style="font-size:18px">2017</span>
+      <span style="font-size:40px">2017</span>
     </li>
   </ul>
 </div>
 
 <ul class="weekdays">
-  <li>Mo</li>
-  <li>Tu</li>
-  <li>We</li>
-  <li>Th</li>
-  <li>Fr</li>
-  <li>Sa</li>
-  <li>Su</li>
+    <li><font size = '6'>Mon</font></li>
+    <li><font size = '6'>Tues</font></li>
+    <li><font size = '6'>Wed</font></li>
+    <li><font size = '6'>Thur</font></li>
+    <li><font size = '6'>Fri</font></li>
+    <li><font size = '6'>Sat</font></li>
+    <li><font size = '6'>Sun</font></li>
 </ul>
 
 <ul class="days">
+
   <li>1</li>
   <li>2</li>
   <li>3</li>
@@ -150,5 +145,14 @@ body {font-family: Verdana, sans-serif;}
   <li>31</li>
 </ul>
 
+<script>
+function mouseOver() {
+    document.getElementById("demo").style.color = "red";
+}
+
+function mouseOut() {
+    document.getElementById("demo").style.color = "black";
+}
+</script>
 </body>
 </html>
