@@ -4,15 +4,11 @@
 
 
 body{
+    background-image: url('image/login.jpg');
 	background-size:cover;
     background-repeat: repeat-y;
 	overflow-x: hidden;
-	background-color:black;
-	}
-
-body {
 	margin: 0;
-	background-color: #6799ff;
 	font-family: "roboto", sans-serif;
 	height: 100%;
 	width: 100%;
@@ -22,7 +18,6 @@ body {
 	width: 15%
 }
 .form {
-	background-color: white;
 	margin-left: auto;
 	margin-right: auto;
 	border-radius: 3px;
