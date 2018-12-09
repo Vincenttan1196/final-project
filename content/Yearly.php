@@ -9,7 +9,7 @@
     <title>Ranking</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../Bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="../bootstrap/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="../Static/ranking.css" rel="stylesheet">
@@ -143,11 +143,11 @@ function closeNav() {
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../Bootstrap/jquery-3.3.1.slim.min.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    <script src="../bootstrap/jquery-3.3.1.slim.min.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
   crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../Bootstrap/jquery-slim.min.js"><\/script>')</script>
-    <script src="../Bootstrap/popper.min.js"></script>
-    <script src="../Bootstrap/bootstrap.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../bootstrap/jquery-slim.min.js"><\/script>')</script>
+    <script src="../bootstrap/popper.min.js"></script>
+    <script src="../bootstrap/bootstrap.min.js"></script>
 
     <!-- Icons -->
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
@@ -200,9 +200,6 @@ function closeNav() {
     }
 });
 </script>
- <div id='content'></div>
-                  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-                  <script src='../Bootstrap/general.js'></script>
-              </button>
+
   </body>
 </html>
