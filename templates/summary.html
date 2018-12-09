@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../Static/summary.css">
-    <title>userName Summary</title>
+    <title>{{familyid}}'s Summary</title>
 </head>
 <body>
     <div id="mySidenav" class="sidenav">
@@ -25,12 +25,19 @@
         function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
         }
+
+        function changePeriod() {
+
+        }
     </script>
 
 
     <h1 class = "mainHeader"> (User's Name)'s Summary</h1>
     <div class = "output">
-        <h3 class = "mainHeader"> Your Family's Overview</h3><span class = "period">Daily</span> <span class = "period">Montly</span> <span class = "period">Yearly</span>
+        <h3 class = "mainHeader"> Your Family's Overview</h3>
+        <span class = "period">Daily</span>
+        <span class = "period">Monthly</span>
+        <span class = "period">Yearly</span>
         <p class= "heading">Overall Spending</p>
             <table class = "summaryTable">
                 <tr>

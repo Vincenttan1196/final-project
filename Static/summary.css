@@ -23,7 +23,9 @@ body {
 }
 
 .period {
-    border-style: solid;
+
+    padding: 5px;
+    margin: 5px;
 
 }
 
@@ -31,9 +33,13 @@ body {
     border-bottom: solid;
 }
 
+.summaryTable {
+    text-align: left;
+    border-bottom-style:solid;
+    border-top-style: solid;
+    width: 100%;
 
-
-
+}
 
 
 
