@@ -66,4 +66,12 @@ p#year {
   .sidenav a {font-size: 18px;}
 }
 
+textarea {
+     width: 500px;
+    margin-left: 380px;
+}
 
+div#parent {
+    width: 100px;
+    height:50px;
+}
