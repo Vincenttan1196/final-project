@@ -97,7 +97,7 @@ body {
 /* This is the dropdown for seeing weekly/monthly ranking or spending */
 
 .dropbtn {
-  background-color: #4CAF50;
+  background-color: green;
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -133,7 +133,7 @@ body {
 }
 
 .dropdown:hover .dropbtn {
-  background-color: #3e8e41;
+  background-color: green;
 }
 
 
@@ -176,5 +176,9 @@ tbody td, thead th {
 tbody td:last-child, thead th:last-child {
     border-right: none;
 }
+
+
+
+
 
 
