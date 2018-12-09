@@ -19,5 +19,14 @@ body {
 
 .Category {
     list-style-type: none;
+    border-style: double;
 }
 
+.period {
+    border-style: solid;
+
+}
+
+.Category li {
+    border-bottom: solid;
+}
