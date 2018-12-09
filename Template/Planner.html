@@ -1,67 +1,28 @@
+<!doctype html>
 <html>
+
 <head>
-<link rel = 'stylesheet' href = '../Static/Planner.css'>
+
+    <title>Daily Expense Tracker</title>
+ <link rel="stylesheet" type="text/css" href="../Static/Planner.css">
 </head>
+
 <body>
-<!DOCTYPE html>
-<div class="month">
-  <ul>
-    <li class="prev">&#10094;</li>
-    <li class="next">&#10095;</li>
-    <li>
-      August<br>
-      <span style="font-size:40px">2017</span>
-    </li>
-  </ul>
+<div class = 'time'>
+    <p style="float: left; width: 40px;" id = 'date'></p>
+    <p style="float: left; width: 65px;" id = 'month'></p>
+    <p style="float: left; width: 40px;" id = 'year'></p>
 </div>
-
-<ul class="weekdays">
-    <li><font size = '6'>Mon</font></li>
-    <li><font size = '6'>Tues</font></li>
-    <li><font size = '6'>Wed</font></li>
-    <li><font size = '6'>Thur</font></li>
-    <li><font size = '6'>Fri</font></li>
-    <li><font size = '6'>Sat</font></li>
-    <li><font size = '6'>Sun</font></li>
-</ul>
-
-<ul class="days">
-    <li><button onclick = 'test()'>1</button></li>
-  <li>2</li>
-  <li>3</li>
-  <li>4</li>
-  <li>5</li>
-  <li>6</li>
-  <li>7</li>
-  <li>8</li>
-  <li>9</li>
-  <li>10</li>
-  <li>11</li>
-  <li>12</li>
-  <li>13</li>
-  <li>14</li>
-  <li>15</li>
-  <li>16</li>
-  <li>17</li>
-  <li>18</li>
-  <li>19</li>
-  <li>20</li>
-  <li>21</li>
-  <li>22</li>
-  <li>23</li>
-  <li>24</li>
-  <li>25</li>
-  <li>26</li>
-  <li>27</li>
-  <li>28</li>
-  <li>29</li>
-  <li>30</li>
-  <li>31</li>
-</ul>
 <script>
-function test() {
-    window.open('Boop.html');
-}
+    var date = new Date();
+    document.getElementById("date").innerHTML = date.getDate() + '/';
+    var month = new Date();
+    document.getElementById("month").innerHTML = month.getMonth() + 1 + '/';
+    var year = new Date();
+    document.getElementById("year").innerHTML = year.getFullYear();
+
 </script>
+
 </body>
+
 </html>
