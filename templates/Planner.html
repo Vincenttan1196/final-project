@@ -55,8 +55,13 @@ function closeNav() {
     var year = new Date();
     document.getElementById("year").innerHTML = year.getFullYear();
 
+    addBox = function(){
+    var textBox = document.createElement("textarea");
+    document.getElementById("parent").appendChild(textBox);
+}
 </script>
-
+<div id='parent'>
+</div>
+<button onClick="addBox()">Add Item</button>
 </body>
-
-</html>
+    </html>
