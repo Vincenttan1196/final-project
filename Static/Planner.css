@@ -68,7 +68,9 @@ p#year {
 
 textarea {
      width: 500px;
+    height: 60px;
     margin-left: 380px;
+    font-size : 30px;
 }
 
 div#parent {
