@@ -25,7 +25,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.3): alert.js
+   * bootstrap (v4.1.3): alert.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -135,7 +135,7 @@
 
       _proto._destroyElement = function _destroyElement(element) {
         $$$1(element).detach().trigger(Event.CLOSED).remove();
-      }; // Static
+      }; // static
 
 
       Alert._jQueryInterface = function _jQueryInterface(config) {

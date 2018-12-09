@@ -59,7 +59,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.3): carousel.js
+   * bootstrap (v4.1.3): carousel.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -448,7 +448,7 @@
         if (isCycling) {
           this.cycle();
         }
-      }; // Static
+      }; // static
 
 
       Carousel._jQueryInterface = function _jQueryInterface(config) {

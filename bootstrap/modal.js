@@ -59,7 +59,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.3): modal.js
+   * bootstrap (v4.1.3): modal.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -533,7 +533,7 @@
         var scrollbarWidth = scrollDiv.getBoundingClientRect().width - scrollDiv.clientWidth;
         document.body.removeChild(scrollDiv);
         return scrollbarWidth;
-      }; // Static
+      }; // static
 
 
       Modal._jQueryInterface = function _jQueryInterface(config, relatedTarget) {

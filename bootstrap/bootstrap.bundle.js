@@ -1,6 +1,6 @@
 /*!
-  * Bootstrap v4.1.3 (https://getbootstrap.com/)
-  * Copyright 2011-2018 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
+  * bootstrap v4.1.3 (https://getbootstrap.com/)
+  * Copyright 2011-2018 The bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   */
 (function (global, factory) {
@@ -69,7 +69,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.3): util.js
+   * bootstrap (v4.1.3): util.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -201,7 +201,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.3): alert.js
+   * bootstrap (v4.1.3): alert.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -311,7 +311,7 @@
 
       _proto._destroyElement = function _destroyElement(element) {
         $$$1(element).detach().trigger(Event.CLOSED).remove();
-      }; // Static
+      }; // static
 
 
       Alert._jQueryInterface = function _jQueryInterface(config) {
@@ -376,7 +376,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.3): button.js
+   * bootstrap (v4.1.3): button.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -474,7 +474,7 @@
       _proto.dispose = function dispose() {
         $$$1.removeData(this._element, DATA_KEY);
         this._element = null;
-      }; // Static
+      }; // static
 
 
       Button._jQueryInterface = function _jQueryInterface(config) {
@@ -540,7 +540,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.3): carousel.js
+   * bootstrap (v4.1.3): carousel.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -929,7 +929,7 @@
         if (isCycling) {
           this.cycle();
         }
-      }; // Static
+      }; // static
 
 
       Carousel._jQueryInterface = function _jQueryInterface(config) {
@@ -1044,7 +1044,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.3): collapse.js
+   * bootstrap (v4.1.3): collapse.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -1321,7 +1321,7 @@
             $$$1(triggerArray).toggleClass(ClassName.COLLAPSED, !isOpen).attr('aria-expanded', isOpen);
           }
         }
-      }; // Static
+      }; // static
 
 
       Collapse._getTargetFromElement = function _getTargetFromElement(element) {
@@ -3930,7 +3930,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.3): dropdown.js
+   * bootstrap (v4.1.3): dropdown.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -4067,7 +4067,7 @@
            * Popper - https://popper.js.org
            */
           if (typeof Popper === 'undefined') {
-            throw new TypeError('Bootstrap dropdown require Popper.js (https://popper.js.org)');
+            throw new TypeError('bootstrap dropdown require Popper.js (https://popper.js.org)');
           }
 
           var referenceElement = this._element;
@@ -4219,7 +4219,7 @@
         }
 
         return popperConfig;
-      }; // Static
+      }; // static
 
 
       Dropdown._jQueryInterface = function _jQueryInterface(config) {
@@ -4418,7 +4418,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.3): modal.js
+   * bootstrap (v4.1.3): modal.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -4892,7 +4892,7 @@
         var scrollbarWidth = scrollDiv.getBoundingClientRect().width - scrollDiv.clientWidth;
         document.body.removeChild(scrollDiv);
         return scrollbarWidth;
-      }; // Static
+      }; // static
 
 
       Modal._jQueryInterface = function _jQueryInterface(config, relatedTarget) {
@@ -4989,7 +4989,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.3): tooltip.js
+   * bootstrap (v4.1.3): tooltip.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -5089,7 +5089,7 @@
          * Popper - https://popper.js.org
          */
         if (typeof Popper === 'undefined') {
-          throw new TypeError('Bootstrap tooltips require Popper.js (https://popper.js.org)');
+          throw new TypeError('bootstrap tooltips require Popper.js (https://popper.js.org)');
         } // private
 
 
@@ -5572,7 +5572,7 @@
         this.hide();
         this.show();
         this.config.animation = initConfigAnimation;
-      }; // Static
+      }; // static
 
 
       Tooltip._jQueryInterface = function _jQueryInterface(config) {
@@ -5659,7 +5659,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.3): popover.js
+   * bootstrap (v4.1.3): popover.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -5768,7 +5768,7 @@
         if (tabClass !== null && tabClass.length > 0) {
           $tip.removeClass(tabClass.join(''));
         }
-      }; // Static
+      }; // static
 
 
       Popover._jQueryInterface = function _jQueryInterface(config) {
@@ -5856,7 +5856,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.3): scrollspy.js
+   * bootstrap (v4.1.3): scrollspy.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -6098,7 +6098,7 @@
       _proto._clear = function _clear() {
         var nodes = [].slice.call(document.querySelectorAll(this._selector));
         $$$1(nodes).filter(Selector.ACTIVE).removeClass(ClassName.ACTIVE);
-      }; // Static
+      }; // static
 
 
       ScrollSpy._jQueryInterface = function _jQueryInterface(config) {
@@ -6172,7 +6172,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.3): tab.js
+   * bootstrap (v4.1.3): tab.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -6358,7 +6358,7 @@
         if (callback) {
           callback();
         }
-      }; // Static
+      }; // static
 
 
       Tab._jQueryInterface = function _jQueryInterface(config) {
@@ -6421,14 +6421,14 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.3): index.js
+   * bootstrap (v4.1.3): index.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
 
   (function ($$$1) {
     if (typeof $$$1 === 'undefined') {
-      throw new TypeError('Bootstrap\'s JavaScript requires jQuery. jQuery must be included before Bootstrap\'s JavaScript.');
+      throw new TypeError('bootstrap\'s JavaScript requires jQuery. jQuery must be included before bootstrap\'s JavaScript.');
     }
 
     var version = $$$1.fn.jquery.split(' ')[0].split('.');
@@ -6439,7 +6439,7 @@
     var maxMajor = 4;
 
     if (version[0] < ltMajor && version[1] < minMinor || version[0] === minMajor && version[1] === minMinor && version[2] < minPatch || version[0] >= maxMajor) {
-      throw new Error('Bootstrap\'s JavaScript requires at least jQuery v1.9.1 but less than v4.0.0');
+      throw new Error('bootstrap\'s JavaScript requires at least jQuery v1.9.1 but less than v4.0.0');
     }
   })($);
 

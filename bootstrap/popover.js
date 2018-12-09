@@ -65,7 +65,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.3): popover.js
+   * bootstrap (v4.1.3): popover.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -174,7 +174,7 @@
         if (tabClass !== null && tabClass.length > 0) {
           $tip.removeClass(tabClass.join(''));
         }
-      }; // Static
+      }; // static
 
 
       Popover._jQueryInterface = function _jQueryInterface(config) {

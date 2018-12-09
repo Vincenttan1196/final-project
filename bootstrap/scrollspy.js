@@ -59,7 +59,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.3): scrollspy.js
+   * bootstrap (v4.1.3): scrollspy.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -301,7 +301,7 @@
       _proto._clear = function _clear() {
         var nodes = [].slice.call(document.querySelectorAll(this._selector));
         $$$1(nodes).filter(Selector.ACTIVE).removeClass(ClassName.ACTIVE);
-      }; // Static
+      }; // static
 
 
       ScrollSpy._jQueryInterface = function _jQueryInterface(config) {
