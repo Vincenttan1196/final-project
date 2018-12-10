@@ -1,9 +1,12 @@
 from flask import Flask, render_template
-from persistence import *
-from user import *
 import functools
+from persistence import *
 
 app = Flask(__name__)
+
+app.config.from_mapping(
+    SECRET_KEY='dev'
+)
 
 
 @app.route("/")
@@ -16,14 +19,25 @@ def summary(familyid):
     return render_template("summary.html", familyid = familyid)
 
 
+@app.route('/login')
+def login():
+    return render_template("login.html")
 
 
+@app.route('/signup')
+def signup():
+    return render_template("signup.html")
+
+@app.route('/forgot_password')
+def forgot_password():
+    return render_template("forgot_password.html")
+
+@app.route('/ranking')
+def ranking():
+    return render_template("ranking.html")
 
 
-app = Flask(__name__)
-app.config.from_mapping(
-    SECRET_KEY='dev'
-)
+''' The challenge begins '''
 
 
 def login_required(view):
@@ -38,14 +52,6 @@ def login_required(view):
 def init():
     init_db()
     return 'db initialised'
-
-@app.route('/')
-def index():
-    if 'id' in session:
-        posts = get_blogs()
-        return render_template('index.html', posts = posts)
-    else:
-        return render_template('login.html')
 
 
 @app.route('/login',  methods=('GET', 'POST'))
@@ -69,7 +75,6 @@ def login():
         flash(error)
     return render_template('login.html')
 
-
 @app.route('/register', methods=('GET', 'POST'))
 def register():
     if request.method == 'POST':
@@ -87,65 +92,11 @@ def register():
     return render_template('register.html')
 
 
-@app.route('/<string:id>/update', methods=('GET', 'POST'))
-def update(id):
-    post = get_blog(id)
-
-    if request.method == 'POST':
-        title = request.form['title']
-        body = request.form['body']
-        error = None
-
-        if not title:
-            error = 'Title is required.'
-
-        if error is not None:
-            flash(error)
-        else:
-            post.title = title
-            post.body = body
-            update_blog(post)
-            return redirect(url_for('index'))
-
-    return render_template('update.html', post=post)
-
-@app.route('/<string:id>/delete', methods=('GET', 'POST'))
-def delete(id):
-    delete_blog(id)
-    posts = get_blogs()
-    return render_template('index.html', posts=posts)
-
-@app.route('/create', methods=('GET', 'POST'))
-def create():
-    if request.method == 'POST':
-        title = request.form['title']
-        body = request.form['body']
-        error = None
-
-        if not title:
-            error = 'Title is required.'
-
-        if error is not None:
-            flash(error)
-        else:
-            create_blog(session['user_name'], title, body)
-            return redirect(url_for('index'))
-
-    return render_template('create.html')
 
 @app.route('/logout')
 def logout():
     session.clear()
     return redirect(url_for('index'))
-
-
-
-
-if __name__ == '__main__':
-    app.run(port=4000)
-
-
-
 
 if __name__ == "__main__":
     app.run()
