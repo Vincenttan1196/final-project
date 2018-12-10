@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -6,9 +6,9 @@ app = Flask(__name__)
 def index():
     return "This is the homepage"
 
-@app.route("/test")
-def test():
-    return "<h1> Hello World this is vincent </h1>"
+@app.route("/summary/<familyid>")
+def summary(familyid):
+    return render_template("summary.html", familyid = familyid)
 
 if __name__ == "__main__":
     app.run()
