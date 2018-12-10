@@ -3,11 +3,11 @@ html {
 }
 
 body {
-    background-color: black;
+    background-color: grey;
 }
 
 .mainHeader {
-    text-align: left;
+    text-align: center;
 }
 
 .output {
@@ -33,9 +33,6 @@ body {
     width:100%;
 
 }
-
-
-
 
 
 /* The side navigation menu */
