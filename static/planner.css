@@ -80,26 +80,26 @@ textarea {
 
 
 .inputbox{
-    background-color: #BEBEBE;
+    background-color: #FCEDED;
     border-style: none;
     border-bottom-style: solid;
     border-bottom-color: black;
 }
-.boop {
+#boop {
     text-align: center;
-    background-color: #BEBEBE;
+    background-color: #FCEDED;
     border-width: 1px;
     border-style: solid;
 }
-.boo {
+#boo {
     text-align: center;
-    background-color: #BEBEBE;
+    background-color: #FCEDED;
     border-width: 1px;
     border-style: solid;
 }
-.bo {
+#bo {
     text-align: center;
-    background-color: #BEBEBE;
+    background-color: #FCEDED;
     border-width: 1px;
     border-style: solid;
 }
