@@ -41,13 +41,39 @@ function closeNav() {
 </script>
 
 
+<div class = 'time'>
+    <span id = 'date'></span>
+    <span id = 'month'></span>
+    <span id = 'year'></span>
+</div>
+<script>
+    var date = new Date();
+    document.getElementById("date").innerHTML = date.getDate() + '/';
+    var month = new Date();
+    document.getElementById("month").innerHTML = month.getMonth() + 1 + '/';
+    var year = new Date();
+    document.getElementById("year").innerHTML = year.getFullYear();
+</script>
+
 <div class="w3-row-padding w3-center w3-margin-top">
 <div class="w3-third">
-  <div class="w3-card w3-container" style="min-height:460px">
+  <div class="w3-card w3-container" style="min-height:430px">
       <p><font id = 'Food' size = '10'>Food</font></p>
   </div>
 </div>
 
+<div class="w3-third">
+  <div class="w3-card w3-container" style="min-height:430px">
+      <p><font id = 'Luxury' size = '10'>Luxury</font></p>
+</div>
+</div>
+
+<div class="w3-third">
+  <div class="w3-card w3-container" style="min-height:430px">
+      <p><font id = 'Appliances' size = '10'>Appliances</font></p>
+</div>
+</div>
+</div>
 
 </body>
 </html>

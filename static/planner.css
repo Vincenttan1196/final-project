@@ -70,11 +70,13 @@ input {
      width: 200px;
     margin-left: 530px;
     margin-bottom: 10px;
+    height: 50px;
+    font-size: 30px;
 }
 
 div#parent {
     width: 200px;
-    height:200px;
+    height: 0px;
 }
 
 textarea {
