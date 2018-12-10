@@ -60,7 +60,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.3): tooltip.js
+   * bootstrap (v4.1.3): tooltip.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -160,7 +160,7 @@
          * Popper - https://popper.js.org
          */
         if (typeof Popper === 'undefined') {
-          throw new TypeError('Bootstrap tooltips require Popper.js (https://popper.js.org)');
+          throw new TypeError('bootstrap tooltips require Popper.js (https://popper.js.org)');
         } // private
 
 
@@ -643,7 +643,7 @@
         this.hide();
         this.show();
         this.config.animation = initConfigAnimation;
-      }; // Static
+      }; // static
 
 
       Tooltip._jQueryInterface = function _jQueryInterface(config) {

@@ -25,7 +25,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.3): tab.js
+   * bootstrap (v4.1.3): tab.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -211,7 +211,7 @@
         if (callback) {
           callback();
         }
-      }; // Static
+      }; // static
 
 
       Tab._jQueryInterface = function _jQueryInterface(config) {

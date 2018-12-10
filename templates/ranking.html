@@ -8,11 +8,11 @@
 
     <title>Ranking</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="../Bootstrap/bootstrap.min.css" rel="stylesheet">
+    <!-- bootstrap core CSS -->
+    <link href="../bootstrap/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../Static/ranking.css" rel="stylesheet">
+    <link href="../static/ranking.css" rel="stylesheet">
   </head>
 
   <body>
@@ -63,16 +63,23 @@ function closeNav() {
             <h1 class="h1">The amount you spent:</h1>
 <div class="dropdown">
 
+
+
+
+
+
+
               <button class="dropbtn">
 
                 <span data-feather="calendar"></span>
 
                   Weekly
                 <div class="dropdown-content">
-  <a href="#">Weekly</a>
-  <a href="#">Monthly</a>
-  <a href="#">Yearly</a>
+                    <li><a href="Weekly">Weekly</a></li>
+                    <li> <a href="Monthly">Monthly</a></li>
+                    <li><a href="Yearly">Yearly</a></li>
   </div>
+
               </button>
 
 
@@ -140,14 +147,15 @@ function closeNav() {
         </main>
 
 
-    <!-- Bootstrap core JavaScript
+    <!-- bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../Bootstrap/jquery-3.3.1.slim.min.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../Bootstrap/jquery-slim.min.js"><\/script>')</script>
-    <script src="../Bootstrap/popper.min.js"></script>
-    <script src="../Bootstrap/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../bootstrap/popper.min.js"></script>
+    <script src="../bootstrap/bootstrap.min.js"></script>
+
+
 
     <!-- Icons -->
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
@@ -155,51 +163,10 @@ function closeNav() {
       feather.replace()
     </script>
 
-    <!-- Graphs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-    <script>
-      var ctx = document.getElementById("myChart");
-      var myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-        datasets: [{
-            label: 'Average spending',
-            data: [100, 300, 200, 214, 125, 500 , 400],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)',
-                'rgba(10, 120, 20, 0.2)',
-
-            ],
-            borderColor: [
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)',
-                'rgba(255, 100, 64, 1)',
-
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:true
-                }
-            }]
-        }
-    }
-});
-</script>
+  <!---- load page----->
+                    <div id='content'></div>
+                  <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+                  <script src='../bootstrap/general.js'></script>
 
   </body>
 </html>

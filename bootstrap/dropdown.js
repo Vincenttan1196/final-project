@@ -60,7 +60,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.3): dropdown.js
+   * bootstrap (v4.1.3): dropdown.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -197,7 +197,7 @@
            * Popper - https://popper.js.org
            */
           if (typeof Popper === 'undefined') {
-            throw new TypeError('Bootstrap dropdown require Popper.js (https://popper.js.org)');
+            throw new TypeError('bootstrap dropdown require Popper.js (https://popper.js.org)');
           }
 
           var referenceElement = this._element;
@@ -349,7 +349,7 @@
         }
 
         return popperConfig;
-      }; // Static
+      }; // static
 
 
       Dropdown._jQueryInterface = function _jQueryInterface(config) {

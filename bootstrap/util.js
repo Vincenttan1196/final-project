@@ -8,7 +8,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.3): util.js
+   * bootstrap (v4.1.3): util.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */

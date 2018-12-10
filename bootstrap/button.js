@@ -24,7 +24,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.3): button.js
+   * bootstrap (v4.1.3): button.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -122,7 +122,7 @@
       _proto.dispose = function dispose() {
         $$$1.removeData(this._element, DATA_KEY);
         this._element = null;
-      }; // Static
+      }; // static
 
 
       Button._jQueryInterface = function _jQueryInterface(config) {
