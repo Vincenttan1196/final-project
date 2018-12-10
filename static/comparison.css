@@ -15,15 +15,22 @@ body {
 }
 
 .search {
-  margin-left: 300px;
+  margin-left: 500px;
 
 }
 
 
+.thumbnail {
+  margin-top: 100px;
+  margin-left: 50px;
+  width: 200px;
+  height: 200px;
+}
 
+td {
+  text-align: center;
 
-
-
+}
 
 
 
