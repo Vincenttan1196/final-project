@@ -17,10 +17,6 @@ body {
     background-color: #f2f2f2;
 }
 
-.Category {
-    list-style-type: none;
-    border-style: double;
-}
 
 .period {
 
@@ -29,18 +25,32 @@ body {
 
 }
 
-.Category li {
-    border-bottom: solid;
-}
 
 .summaryTable {
     text-align: left;
-    border-bottom-style:solid;
     border-top-style: solid;
-    width: 100%;
+    width:100%;
 
 }
 
+.Category {
+    border-bottom-style: solid;
+    width:100%;
+}
+
+.tableHeader {
+    border-bottom-style: solid;
+    width:100%;
+}
+
+#amount {
+    margin-left: 465px;
+}
+
+
+.categoryHeader {
+    font-weight: bold;
+}
 
 
 
