@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 	<title>Login</title>
 
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type='text/css'>
     <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
 
-
 </head>
-<body>
 
+<body>
 	<main class="form">
 
 		<form class="login-form" action="" method="post">
 			<h1>Login</h1>
-			<label for="email" required>Email</label>
+			<label for="email" >Email</label>
 			<input type="email" name="email" id="email" placeholder="Enter your email" required autofocus >
 
-			<label for="password" required>Password</label>
+			<label for="password" >Password</label>
 			<input type="password" name="password" id="password" placeholder="Enter your password" required autofocus>
 			<button type="submit" onClick="log();" class="Login">Login</button>
 			<br>
-			<a href="forgot_password.html" id="forgot">Forgot your Password?</a>
+			<a href="/forgot_password" id="forgot">Forgot your Password?</a>
 		</form>
 	</main>
 	<section class="registered">
-		<p><b>Don't have an account? </b> <a href="signup.html" class="login"><b>Sign Up!<b></a></p>
+		<p><b>Don't have an account? </b> <a href="/signup" class="login"><b>Sign Up!</b></a></p>
 	</section>
 
 </body>
