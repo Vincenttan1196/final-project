@@ -53,3 +53,30 @@ font#Food {
     border-bottom: 1px solid black;
 padding-bottom: 5px;
 }
+
+font#Luxury {
+    border-bottom: 1px solid black;
+padding-bottom: 5px;
+}
+
+font#Appliances {
+    border-bottom: 1px solid black;
+padding-bottom: 5px;
+}
+
+p#date {
+        font-size: 300%;
+}
+
+p#month {
+        font-size: 300%;
+}
+
+p#year {
+        font-size: 300%;
+}
+
+.time {
+    text-align: center;
+      font-size: 300%;
+}

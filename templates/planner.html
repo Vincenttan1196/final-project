@@ -54,19 +54,25 @@ function closeNav() {
     document.getElementById("month").innerHTML = month.getMonth() + 1 + '/';
     var year = new Date();
     document.getElementById("year").innerHTML = year.getFullYear();
-
     function addBox() {
     var textBox = document.createElement("input");
     var box = document.createElement("input");
     document.getElementById("parent").appendChild(textBox);
     document.getElementById("parent").appendChild(box);
-    document.getElementById("parent").placholder = "Test";
-}
+    }
 </script>
-<div id='parent'>
-    <textarea placeholder="Enter Item Name"></textarea>
-    <textarea placeholder="Enter Item Price"></textarea>
+<div id = 'boop' class="bill">
+    <h2 id = 'first'>Bill 1</h2>
+    <textarea class="inputbox" rows="1"></textarea>
 </div>
-<button onClick="addBox()">Add Item</button>
+  <div id = 'boo' class="bill">
+    <h2>Bill 2</h2>
+    <span>Amount: </span><textarea class="inputbox" rows="1"></textarea> <span>Due date</span><textarea class="inputbox" rows="1"></textarea> <input type="checkbox">
+</div>
+<div id = 'bo' class="bill">
+    <h2>Bill 3</h2>
+    <span>Amount: </span><textarea class="inputbox" rows="1"></textarea> <span>Due date</span><textarea class="inputbox" rows="1"></textarea> <input type="checkbox">
+</div>
+<button id = 'butt' onClick="addBox()">Add Item</button>
 </body>
 </html>
