@@ -66,13 +66,6 @@ p#year {
   .sidenav a {font-size: 18px;}
 }
 
-input {
-     width: 150px;
-    margin-left: 530px;
-    margin-bottom: 10px;
-    height: 50px;
-    font-size: 30px;
-}
 
 div#parent {
     width: 200px;
@@ -81,9 +74,8 @@ div#parent {
 
 textarea {
      width: 100px;
-    margin-left: 530px;
-    margin-bottom: 10px;
 }
+
 
 
 
@@ -93,7 +85,19 @@ textarea {
     border-bottom-style: solid;
     border-bottom-color: black;
 }
-div {
+.boop {
+    text-align: center;
+    background-color: #BEBEBE;
+    border-width: 1px;
+    border-style: solid;
+}
+.boo {
+    text-align: center;
+    background-color: #BEBEBE;
+    border-width: 1px;
+    border-style: solid;
+}
+.bo {
     text-align: center;
     background-color: #BEBEBE;
     border-width: 1px;
