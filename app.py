@@ -8,10 +8,6 @@ app.config.from_mapping(
 )
 
 
-@app.route("/")
-def index():
-    return render_template("signup.html")
-
 
 @app.route("/summary/<familyid>")
 def summary(familyid):
@@ -35,6 +31,20 @@ def ranking():
     return render_template("ranking.html")
 
 
+@app.route('/Weekly')
+def Weekly():
+    return render_template("Weekly.php")
+
+@app.route('/Monthly')
+def Monthly():
+    return render_template("Monthly.php")
+
+@app.route('/Yearly')
+def Yearly():
+    return render_template("Yearly.php")
+
+
+
 ''' The challenge begins '''
 
 
@@ -51,6 +61,30 @@ def login_required(view):
 def init():
     init_db()
     return 'db initialised'
+
+
+
+@app.route("/")
+def starter():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        error = None
+        if not username:
+            error = 'Username is required.'
+        elif not password:
+            error = 'Password is required.'
+        else:
+            user = get_user(username, password)
+            if user is None:
+                error = 'Wrong username and password'
+            else:
+                session['id'] = user.get_id()
+                session['user_name'] = user.get_username()
+                return redirect(url_for('ranking'))
+        flash(error)
+    return render_template('login.html')
+
 
 
 @app.route('/login',  methods=('GET', 'POST'))

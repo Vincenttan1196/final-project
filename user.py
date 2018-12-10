@@ -38,4 +38,22 @@ def create_user(username, password):
     users[username] = u
 
 
+##test##
 
+class scores(User):
+    def __init__(self, username, score):
+        super().__init__()
+        self.__username = username
+        self.__score = score
+        super(score, self).__init__()
+
+    def get_username(self):
+        return self.__username
+
+    def get_score(self):
+        return self.__score
+
+    def set_score(self, score):
+        if self.__username == '':
+            return
+        self.__score = score
