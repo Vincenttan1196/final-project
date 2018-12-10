@@ -28,11 +28,31 @@ body {
 
 .summaryTable {
     text-align: left;
-    border-bottom-style:solid;
     border-top-style: solid;
     width:100%;
 
 }
+
+.Category {
+    border-bottom-style: solid;
+    width:100%;
+}
+
+.tableHeader {
+    border-bottom-style: solid;
+    width:100%;
+}
+
+#amount {
+    margin-left: 465px;
+}
+
+
+.categoryHeader {
+    font-weight: bold;
+}
+
+
 
 
 /* The side navigation menu */

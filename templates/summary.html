@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href = "{{ url_for("static", filename="summary.css") }}">
+    <link rel="stylesheet" type="text/css" href = "../static/summary.css">
+    <!---{{ url_for("static", filename="summary.css") this is the link for routing-->
 </head>
 <body>
     <div id="mySidenav" class="sidenav">
@@ -38,79 +39,75 @@
         <span class = "period">Monthly</span>
         <span class = "period">Yearly</span>
         <p class= "heading">Overall Spending</p>
-            <table class = "summaryTable">
+            <span class="tableHeader">Categories</span><span class="tableHeader" id = "amount">Amount</span>
+            <table class = "Category">
                 <tr>
-                    <th>Categories</th><th>Amount</th>
-                </tr>
-
-                    <tr>
-                        <td>Food</td><td></td>
-                    </tr>
-                    <tr>
-                        <td>Spent:</td><td></td>
-                    </tr>
-                    <tr>
-                        <td>Your Average: </td><td></td>
-                    </tr>
-
-                    <tr>
-                        <td >Everyone's Average:</td><td></td>
-                    </tr>
-            </table>
-            <table>
-                <tr>
-                    <td class = "category">Luxury</td><td></td>
+                    <td class = "categoryHeader" width = "50%">Food</td><td></td>
                 </tr>
                 <tr>
-                    <td>Spent:</td><td></td>
+                    <td width = "50%">Spent:</td><td>123123123</td>
                 </tr>
                 <tr>
-                    <td>Your Average: </td><td></td>
+                    <td width = "50%">Your Average: </td><td>123123123123</td>
                 </tr>
                 <tr>
-                    <td>Everyone's Average:</td><td></td>
+                    <td width = "50%">Everyone's Average:</td><td>123</td>
                 </tr>
             </table>
-            <table>
+            <table class = "Category">
                 <tr>
-                    <td class = "category">Groceries</td><td></td>
+                    <td class = "categoryHeader" width = "50%">Luxury</td><td></td>
                 </tr>
                 <tr>
-                    <td>Spent:</td><td></td>
+                    <td width = "50%">Spent:</td><td></td>
                 </tr>
                 <tr>
-                    <td>Your Average: </td><td></td>
+                    <td width = "50%">Your Average: </td><td>151231231235</td>
                 </tr>
                 <tr>
-                    <td>Everyone's Average:</td><td></td>
-                </tr>
-            </table>
-            <table>
-                <tr>
-                    <td class = "category">Water</td><td></td>
-                </tr>
-                <tr>
-                    <td>Spent:</td><td></td>
-                </tr>
-                <tr>
-                    <td>Your Average: </td><td></td>
-                </tr>
-                <tr>
-                    <td>Everyone's Average:</td><td></td>
+                    <td width = "50%">Everyone's Average:</td><td>123123123123123123123123123123</td>
                 </tr>
             </table>
-            <table>
+            <table class = "Category">
                 <tr>
-                    <td class = "category">Electricity</td><td></td>
+                    <td class = "categoryHeader" width = "50%">Groceries</td><td></td>
                 </tr>
                 <tr>
-                    <td>Spent:</td><td></td>
+                    <td width = "50%">Spent:</td><td></td>
                 </tr>
                 <tr>
-                    <td>Your Average: </td><td></td>
+                    <td width = "50%">Your Average: </td><td></td>
                 </tr>
                 <tr>
-                    <td>Everyone's Average:</td><td></td>
+                    <td width = "50%">Everyone's Average:</td><td></td>
+                </tr>
+            </table>
+            <table class = "Category">
+                <tr>
+                    <td class = "categoryHeader" width = "50%">Water</td><td></td>
+                </tr>
+                <tr>
+                    <td width = "50%">Spent:</td><td></td>
+                </tr>
+                <tr>
+                    <td width = "50%">Your Average: </td><td></td>
+                </tr>
+                <tr>
+                    <td width = "50%">Everyone's Average:</td><td>123</td>
+                </tr>
+            </table>
+            <table class = "Category">
+                <tr>
+                    <td class = "categoryHeader" width = "50%">Electricity</td><td></td>
+                </tr>
+                <tr>
+                    <td width = "50%">Spent:</td><td></td>
+                </tr>
+                <tr>
+                    <td width = "50%">Your Average: </td><td></td>
+                </tr>
+                <tr>
+                    <td width = "50%">Everyone's Average:</td><td></td>
                 </tr>
             </table>
     </div>
