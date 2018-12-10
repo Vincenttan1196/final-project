@@ -7,8 +7,17 @@ body {
 
 }
 
+.catalogue {
+  margin-left: 200px;
+  margin-right: 200px;
+  padding: 10px;
+  background-color: #f2f2f2;
+}
 
+.search {
+  margin-left: 300px;
 
+}
 
 
 
