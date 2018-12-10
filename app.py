@@ -91,51 +91,7 @@ def register():
         flash(error)
     return render_template('register.html')
 
-@app.route('/<string:id>/update', methods=('GET', 'POST'))
-def update(id):
-    post = get_blog(id)
 
-    if request.method == 'POST':
-        title = request.form['title']
-        body = request.form['body']
-        error = None
-
-        if not title:
-            error = 'Title is required.'
-
-        if error is not None:
-            flash(error)
-        else:
-            post.title = title
-            post.body = body
-            update_blog(post)
-            return redirect(url_for('index'))
-
-    return render_template('update.html', post=post)
-
-@app.route('/<string:id>/delete', methods=('GET', 'POST'))
-def delete(id):
-    delete_blog(id)
-    posts = get_blogs()
-    return render_template('index.html', posts=posts)
-
-@app.route('/create', methods=('GET', 'POST'))
-def create():
-    if request.method == 'POST':
-        title = request.form['title']
-        body = request.form['body']
-        error = None
-
-        if not title:
-            error = 'Title is required.'
-
-        if error is not None:
-            flash(error)
-        else:
-            create_blog(session['user_name'], title, body)
-            return redirect(url_for('index'))
-
-    return render_template('create.html')
 
 @app.route('/logout')
 def logout():
