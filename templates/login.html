@@ -1,27 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
 	<title>Login</title>
 
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type='text/css'>
-	<link rel="stylesheet" type="text/css" href="../static/login.css">
-
-
-
-	<!------ <link rel="icon"
-     type="image/png"
-     href="save.png"> ----->
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
 
 
 </head>
 <body>
-<span id='span_ucount'></span>
 
-
-			<div id = "logoImage" align = center">
-		</div>
-	<!-- CSS CLASS PROBLEM,LOOK AT CSS FOR LOGO -->
 	<main class="form">
 
 		<form class="login-form" action="" method="post">
@@ -34,68 +22,11 @@
 			<button type="submit" onClick="log();" class="Login">Login</button>
 			<br>
 			<a href="forgot_password.html" id="forgot">Forgot your Password?</a>
-		</	form>
+		</form>
 	</main>
 	<section class="registered">
-		<p><b>Don't have an account? </b> <a href="sign-up.html" class="login"><b>Sign Up!<b></a></p>
+		<p><b>Don't have an account? </b> <a href="signup.html" class="login"><b>Sign Up!<b></a></p>
 	</section>
-
-
-<script>
-
-	var ucount = localStorage.getItem("users_count");
-	if (ucount == null)
-	{
-		document.getElementById('span_ucount').innerHTML = "0";
-	}
-		else
-	{
-		document.getElementById('span_ucount').innerHTML = ucount;
-	}
-
-
-/*
-		this function performs the login operation
-		the login basically retrieve the user email, password and fullname from the localStorage
-		and compares the values with those that the person attempting to login
-		if successful, it stores in the sessionStorage item
-*/
-
-function log()
-
-{
-	var emailid = localStorage.getItem("users_list_"+ucount, document.getElementById("email").value);
-	var password = localStorage.getItem("users_password_"+document.getElementById("email").value);
-	var admin = "admin123@gmail.com"
-	var email = document.getElementById("email").value
-	var epass = document.getElementById("password").innerHTML
-	{
-		if (password == document.getElementById("password").value)
-		{
-			sessionStorage.setItem("currentuser_email_",document.getElementById("email").value);
-			alert("Login sucessful!")
-			 window.open("MainPageIn.html");
-			 return;
-		}
-		if (admin == document.getElementById("email").value)
-		{
-			alert("Welcome Admin!");
-			window.open("Admin_page_gallery.html");
-			}
-		 else if (email == false || epass == false )
-			{
-			alert("Email/Password is invalid,please try again");
-			return;
-			}
-
-		else
-		alert("Email/Password is incorrect,please try again");
-	}
-
-}
-
-</script>
-
 
 </body>
 </html>
