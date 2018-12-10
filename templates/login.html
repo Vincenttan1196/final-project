@@ -11,14 +11,14 @@
 <body>
 	<main class="form">
 
-		<form class="login-form" action="" method="post">
+		<form class="login-form"  method="post" action="/login">
 			<h1>Login</h1>
-			<label for="email" >Email</label>
-			<input type="email" name="email" id="email" placeholder="Enter your email" required autofocus >
+			<label for="username" >Username</label>
+			<input name="username" name="username" id="username" placeholder="Enter your username" required autofocus >
 
 			<label for="password" >Password</label>
-			<input type="password" name="password" id="password" placeholder="Enter your password" required autofocus>
-			<button type="submit" onClick="log();" class="Login">Login</button>
+			<input name="password" name="password" id="password" placeholder="Enter your password" required autofocus>
+			<button type="submit" value="Login">Login</button>
 			<br>
 			<a href="/forgot_password" id="forgot">Forgot your Password?</a>
 		</form>
