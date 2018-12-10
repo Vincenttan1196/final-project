@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('#content').load('content/Weekly.php');
+    $('#content').load('../content/Weekly.php');
 
 
     //handle menu clicks
@@ -8,5 +8,8 @@ $(document).ready(function() {
         var page = $(this).attr('href');
         $('#content').load('../content/'+ page + '.php');
         return false;
+
     });
+
 });
+
