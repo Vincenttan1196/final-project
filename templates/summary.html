@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href = "{{ url_for("static", filename="summary.css")}}">
-    <!---{{ url_for("static", filename="summary.css") this is the link for routing-->
+    <link rel="stylesheet" type="text/css" href = "../static/summary.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='summary.css') }}">
 </head>
 <body>
     <div id="mySidenav" class="sidenav">
