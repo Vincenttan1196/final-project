@@ -27,6 +27,9 @@ def init():
 def summary(familyid):
     return render_template("summary.html", familyid = familyid)
 
+@app.route("/cheaperAlt")
+def cheaper():
+    return render_template("comparison.html")
 
 
 
