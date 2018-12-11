@@ -65,6 +65,10 @@ def yearly():
     return render_template("yearly.html")
 
 
+@app.route('/email')
+def email():
+    return render_template('email.html')
+
 
 ''' The challenge begins '''
 
