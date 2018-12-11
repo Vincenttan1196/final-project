@@ -102,10 +102,15 @@ def bills():
 def planner():
     return render_template("planner.html")
 
+
+@app.route('/')
+def main():
+    return render_template('main.html')
+
 ''' The challenge begins '''
 
 
-@app.route("/")
+@app.route("/login")
 def starter():
     if request.method == 'POST':
         username = request.form['username']
