@@ -2,6 +2,7 @@
 from flask import *
 import functools
 from persistence import *
+
 app = Flask(__name__)
 app.config.from_mapping(
     SECRET_KEY='dev'
@@ -30,7 +31,8 @@ def summary(familyid):
 
 @app.route("/cheaper")
 def cheaper():
-    return render_template("comparison.html")
+    imageList = get_imagesproduct()
+    return render_template("comparison.html", imageList = imageList)
 
 
 
