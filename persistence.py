@@ -3,6 +3,8 @@ import uuid
 from datetime import date
 # today = str(date.today())
 
+users = shelve.open('user')
+images = shelve.open("images")
 
 class User:
     def __init__(self, id):
@@ -25,9 +27,34 @@ class User:
     def get_password(self):
         return self.__password
 
+class Products:
+    def __init__(self):
+        self.name = ""
+        self.picture = ""
+        self.price = ""
 
-users = shelve.open('user')
+    def get_name(self):
+        return self.name
 
+    def set_name(self, name):
+        self.name = name
+
+    def get_picture(self):
+        return self.picture
+
+    def set_picture(self, picture):
+        self.picture = picture
+
+    def get_price(self):
+        return self.price
+
+    def set_price(self, price):
+        self.price = price
+
+images["imagesProducts"] = ["attackLiqDet.jpg", "darlieToothpaste.JPG", "knifeCookingOil.jpg"]
+
+def get_imagesproduct():
+    return images["imagesProducts"]
 
 def create_user(username, password):
     id = str(uuid.uuid4())
