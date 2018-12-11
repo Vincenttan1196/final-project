@@ -3,7 +3,10 @@ html {
 }
 
 body {
-    background-color: grey;
+    background-size:cover;
+    background-repeat: repeat-y;
+	overflow-x: hidden;
+    background-image: url(https://gyazo.com/67a3f9fd015e34afc96744f1cd320e6a.jpg);
 
 }
 

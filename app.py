@@ -94,6 +94,13 @@ def schemecheck():
 
     return render_template('schemecheck.html')
 
+@app.route("/bills")
+def bills():
+    return render_template("Bills.html")
+
+@app.route("/planner")
+def planner():
+    return render_template("planner.html")
 
 ''' The challenge begins '''
 
