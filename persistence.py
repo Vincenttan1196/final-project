@@ -4,8 +4,8 @@ from datetime import date
 # today = str(date.today())
 
 users = shelve.open('user')
+compproducts = shelve.open("products")
 images = shelve.open("images")
-
 class User:
     def __init__(self, id):
         self.__id = id
@@ -28,7 +28,8 @@ class User:
         return self.__password
 
 class Products:
-    def __init__(self):
+    def __init__(self, itemid):
+        self.itemid = itemid
         self.name = ""
         self.picture = ""
         self.price = ""
@@ -51,7 +52,25 @@ class Products:
     def set_price(self, price):
         self.price = price
 
+    def get_itemid(self):
+        return self.itemid
+
+    def set_itemid(self, itemid):
+        self.itemid = itemid
+
 images["imagesProducts"] = ["attackLiqDet.jpg", "darlieToothpaste.JPG", "knifeCookingOil.jpg"]
+
+def add_product(itemid, name, picture, price):
+    products = Products(1)
+    products.itemid = itemid
+    products.name = name
+    products.picture = picture
+    products.price = price
+    compproducts[itemid] = products
+
+def get_products(itemid):
+    if itemid in compproducts:
+        return compproducts[itemid]
 
 def get_imagesproduct():
     return images["imagesProducts"]

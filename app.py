@@ -21,8 +21,6 @@ def init():
     init_db()
     return 'db initialised'
 
-
-
 @app.route("/summary/<familyid>")
 def summary(familyid):
     return render_template("summary.html", familyid = familyid)
@@ -33,8 +31,12 @@ def cheaper():
     imageList = get_imagesproduct()
     return render_template("comparison.html", imageList = imageList)
 
-@app.route("/admin")
+@app.route("/admin", methods=('GET', 'POST'))
 def admin():
+    if request.method == 'POST':
+        name = request.form["name"]
+        picture = request.form["picture"]
+        price = request.form["price"]
     return render_template("admin.html")
 
 #@app.route('/signup')
