@@ -100,3 +100,4 @@ def check_user(username):
             print(user.get_username(), username)
             if user.get_username() == username:
                 return True
+            return False
