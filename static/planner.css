@@ -12,7 +12,8 @@ p#year {
 
 .time {
     text-align: center;
-      font-size: 300%;
+    font-size: 300%;
+    padding-bottom: 50px;
 }
 
 
@@ -105,4 +106,8 @@ textarea {
 }
 .bill {
     padding-bottom: 10px;
+}
+
+body {
+    background: url(/img/cream_dust.png) repeat 0 0;
 }
