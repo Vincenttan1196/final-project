@@ -7,6 +7,20 @@ app.config.from_mapping(
     SECRET_KEY='dev'
 )
 
+def login_required(view):
+    @functools.wraps(view)
+    def wrapped_view(**kwargs):
+        if session['id'] is None:
+            return redirect(url_for('login'))
+        return view(**kwargs)
+    return wrapped_view
+
+
+@app.route('/init')
+def init():
+    init_db()
+    return 'db initialised'
+
 
 
 @app.route("/summary/<familyid>")
@@ -50,20 +64,6 @@ def Yearly():
 ''' The challenge begins '''
 
 
-def login_required(view):
-    @functools.wraps(view)
-    def wrapped_view(**kwargs):
-        if session['id'] is None:
-            return redirect(url_for('login'))
-        return view(**kwargs)
-    return wrapped_view
-
-
-@app.route('/init')
-def init():
-    init_db()
-    return 'db initialised'
-
 
 
 @app.route("/")
@@ -86,7 +86,6 @@ def starter():
                 return redirect(url_for('ranking'))
         flash(error)
     return render_template('login.html')
-
 
 
 @app.route('/login',  methods=('GET', 'POST'))
