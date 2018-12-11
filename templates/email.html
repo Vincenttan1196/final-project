@@ -1,0 +1,80 @@
+
+
+<!--https://docs.google.com/spreadsheets/d/1XeVlGF9CndWhdIQxGOqpFzBTiNUGnQVkr-2lEhaekaw/edit#gid=0 -->
+
+<!doctype html>
+<html lang="en">
+<head>
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='forgot_password.css') }}">
+
+    	<!--	<link rel="stylesheet" type="text/css" href="../static/forgot_password.css"> -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="contact form example">
+    <title>Contact Form Example</title>
+</head>
+
+<body>
+
+        <div class="mail">
+
+    <h2 class="content-head is-center">Contact Us!</h2>
+    <aside>
+        <p>
+        </p>
+        <p>
+         Send us a message if u forgot your password!
+        </p>
+    </aside>
+
+   
+
+
+    <form id="gform" method="POST" class="pure-form pure-form-stacked" data-email="from_email@example.com"
+          action="https://script.google.com/macros/s/AKfycbyZp9drp_Nx2Pkqyl2-wKw-BYftKmrMvooSlBhS8w/exec">
+
+
+
+
+        <label for="name">Name: </label>
+        <input id="name" name="name" placeholder="Please state your name" />
+
+        <br>
+
+
+        <label for="message">Message: </label>
+        <textarea id="message" name="message" rows="10"
+                  placeholder="How can we help you?"></textarea>
+
+        <br>
+
+        <label for="email"><em>Your</em> Email Address:</label>
+        <input id="email" name="email" type="email" value=""
+               required placeholder="Email" />
+
+
+
+        <button class="button-success pure-button button-xlarge">
+            <i class="fa fa-paper-plane"></i>&nbsp;Send
+        </button>
+
+    </form>
+
+    <!-- Customise the Thankyou Message People See when they submit the form: -->
+    <div style="display:none;"  id="thankyou_message">
+        <h2>
+            <em>Thanks</em> for contacting us!
+            We will get back to you soon!
+        </h2>
+    </div>
+
+
+    <script data-cfasync="false" type="text/javascript"
+            src="https://cdn.rawgit.com/dwyl/learn-to-send-email-via-google-script-html-no-server/master/form-submission-handler.js"></script>
+
+
+</body>
+</html>
+
+
