@@ -31,9 +31,11 @@ def ranking():
     return render_template("ranking.html")
 
 
+#Testing php#
 @app.route('/Weekly')
 def Weekly():
     return render_template("Weekly.php")
+
 
 @app.route('/Monthly')
 def Monthly():

@@ -3,6 +3,7 @@ import uuid
 from datetime import date
 # today = str(date.today())
 
+
 class User:
     def __init__(self, id):
         self.__id = id
