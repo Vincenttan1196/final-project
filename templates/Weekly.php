@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
   <head>
+      <link rel="stylesheet" href="{{ url_for('bootstrap', filename='bootstrap.min.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename='ranking.css') }}">
 
     <!-- Bootstrap core JavaScript================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

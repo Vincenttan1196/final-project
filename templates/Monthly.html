@@ -1,8 +1,19 @@
-<!doctype html>
+Yoy<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <link rel="stylesheet" href="{{ url_for('bootstrap', filename='bootstrap.min.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename='ranking.css') }}">
+
+
+    <title>Ranking</title>
+
+
+  </head>
+
+  <body>
 
 
     <!-- Bootstrap core JavaScript
@@ -30,7 +41,7 @@
           labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
         datasets: [{
             label: 'Average spending',
-            data: [123, 1234, 1234, 2141, 1415, 5213 , 1400],
+            data: [1000,2000,3000,4000,5000,6000,7000],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -64,7 +75,7 @@
         }
     }
 });
-</script>
 
+</script>
   </body>
 </html>
