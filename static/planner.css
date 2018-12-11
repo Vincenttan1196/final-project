@@ -92,18 +92,20 @@ textarea {
     border-width: 3px;
     border-style: solid;
     font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
+    margin-bottom: 20px;
 }
 #boo {
     text-align: center;
     background-color: #FCEDED;
-    border-width: 1px;
+    border-width: 3px;
     border-style: solid;
     font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
+     margin-bottom: 20px;
 }
 #bo {
     text-align: center;
     background-color: #FCEDED;
-    border-width: 1px;
+    border-width: 3px;
     border-style: solid;
     font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
 }
