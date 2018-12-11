@@ -34,7 +34,9 @@ def cheaper():
     imageList = get_imagesproduct()
     return render_template("comparison.html", imageList = imageList)
 
-
+@app.route("/admin")
+def admin():
+    return render_template("admin.html")
 
 #@app.route('/signup')
 #def signup():
