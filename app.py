@@ -107,6 +107,7 @@ def planner():
 def main():
     return render_template('main.html')
 
+
 ''' The challenge begins '''
 
 
