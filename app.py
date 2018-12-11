@@ -96,8 +96,6 @@ def schemecheck():
 ''' The challenge begins '''
 
 
-
-
 @app.route("/")
 def starter():
     if request.method == 'POST':
@@ -153,11 +151,14 @@ def signup():
         elif not password:
             error = 'Password is required.'
         else:
-            create_user(username, password)
-            return redirect(url_for('login'))
+            validation = check_user(username)
+            if validation is False:
+                error = 'Username already taken,choose another one'
+            else:
+                create_user(username, password)
+                return redirect(url_for('login'))
         flash(error)
     return render_template('signup.html')
-
 
 @app.route('/logout')
 def logout():
