@@ -1,4 +1,3 @@
-#from flask import Flask, render_template
 from flask import *
 import functools
 from persistence import *
@@ -7,6 +6,7 @@ app = Flask(__name__)
 app.config.from_mapping(
     SECRET_KEY='dev'
 )
+
 
 def login_required(view):
     @functools.wraps(view)
@@ -22,8 +22,6 @@ def init():
     init_db()
     return 'db initialised'
 
-
-
 @app.route("/summary/<familyid>")
 def summary(familyid):
     return render_template("summary.html", familyid = familyid)
@@ -34,8 +32,13 @@ def cheaper():
     imageList = get_imagesproduct()
     return render_template("comparison.html", imageList = imageList)
 
-@app.route("/admin")
+
+@app.route("/admin", methods=('GET', 'POST'))
 def admin():
+    if request.method == 'POST':
+        name = request.form["name"]
+        picture = request.form["picture"]
+        price = request.form["price"]
     return render_template("admin.html")
 
 #@app.route('/signup')
@@ -160,11 +163,11 @@ def signup():
         flash(error)
     return render_template('signup.html')
 
+
 @app.route('/logout')
 def logout():
     session.clear()
     return redirect(url_for('ranking'))
-
 
 
 if __name__ == "__main__":
