@@ -27,7 +27,31 @@ class User:
     def get_password(self):
         return self.__password
 
-images["imagesProducts"] = ["attackLiqDet.jpg", "darlieToothpaste.JPG"]
+class Products:
+    def __init__(self):
+        self.name = ""
+        self.picture = ""
+        self.price = ""
+
+    def get_name(self):
+        return self.name
+
+    def set_name(self, name):
+        self.name = name
+
+    def get_picture(self):
+        return self.picture
+
+    def set_picture(self, picture):
+        self.picture = picture
+
+    def get_price(self):
+        return self.price
+
+    def set_price(self, price):
+        self.price = price
+
+images["imagesProducts"] = ["attackLiqDet.jpg", "darlieToothpaste.JPG", "knifeCookingOil.jpg"]
 
 def get_imagesproduct():
     return images["imagesProducts"]
