@@ -50,20 +50,7 @@ h1 {
 	font-size: 17px;
 	border-radius: 3px;
 }
-#signup-form button {
-	display: block;
-	margin-bottom: 10px;
-	box-sizing: border-box;
-	width: 320px;
-	height: 55px;
-	border: 2px lightgrey solid;
-	padding: 15px;
-	font-size: 20px;
-	border-radius: 3px;
-	background-color: #3Cb371;
-		color: white;
-	border: none;
-}
+
 label	{
 	display: block;
 	margin-bottom: 20px;
@@ -137,7 +124,44 @@ label	{
 }
 
 #sign_up:hover {
-	background-color:rgb(102, 255, 102);
+	background-color:green;
 	opacity:0.9;
 }
 
+
+
+
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+i {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+	margin-left:10px;
+}
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+}
