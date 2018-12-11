@@ -74,6 +74,25 @@ def email():
     return render_template('email.html')
 
 
+
+@app.route('/schemecheck', methods=('GET', 'POST'))
+def schemecheck():
+    if request.method == 'POST':
+        income = int(request.form['income'])
+        add_income('xxx', str(income))
+        if income >= 2000:
+            return render_template('schemepage0.html')
+        elif income >= 1500:
+            return render_template('schemepage1.html')
+        elif income >= 1000:
+            return render_template('schemepage2.html')
+        elif income < 1000:
+            return render_template('schemepage3.html')
+
+
+    return render_template('schemecheck.html')
+
+
 ''' The challenge begins '''
 
 
@@ -144,6 +163,7 @@ def signup():
 def logout():
     session.clear()
     return redirect(url_for('ranking'))
+
 
 
 if __name__ == "__main__":
