@@ -89,25 +89,32 @@ textarea {
 #boop {
     text-align: center;
     background-color: #FCEDED;
-    border-width: 1px;
+    border-width: 3px;
     border-style: solid;
+    font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
 }
 #boo {
     text-align: center;
     background-color: #FCEDED;
     border-width: 1px;
     border-style: solid;
+    font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
 }
 #bo {
     text-align: center;
     background-color: #FCEDED;
     border-width: 1px;
     border-style: solid;
+    font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
 }
 .bill {
     padding-bottom: 10px;
 }
 
 body {
-    background: url(/img/cream_dust.png) repeat 0 0;
+    background-color: lightblue;
+}
+
+h2#first {
+    font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
 }
