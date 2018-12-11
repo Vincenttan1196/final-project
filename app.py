@@ -8,7 +8,6 @@ app.config.from_mapping(
     SECRET_KEY='dev'
 )
 
-
 def login_required(view):
     @functools.wraps(view)
     def wrapped_view(**kwargs):
@@ -24,6 +23,7 @@ def init():
     return 'db initialised'
 
 
+
 @app.route("/summary/<familyid>")
 def summary(familyid):
     return render_template("summary.html", familyid = familyid)
@@ -33,7 +33,6 @@ def summary(familyid):
 def cheaper():
     imageList = get_imagesproduct()
     return render_template("comparison.html", imageList = imageList)
-
 
 @app.route("/admin")
 def admin():
@@ -54,6 +53,7 @@ def ranking():
     return render_template("ranking.html")
 
 
+#Testing php#
 @app.route('/weekly')
 def weekly():
     return render_template("weekly.html")
@@ -74,6 +74,7 @@ def email():
     return render_template('email.html')
 
 
+
 @app.route('/schemecheck', methods=('GET', 'POST'))
 def schemecheck():
     if request.method == 'POST':
@@ -87,6 +88,7 @@ def schemecheck():
             return render_template('schemepage2.html')
         elif income < 1000:
             return render_template('schemepage3.html')
+
 
     return render_template('schemecheck.html')
 
@@ -158,11 +160,11 @@ def signup():
         flash(error)
     return render_template('signup.html')
 
-
 @app.route('/logout')
 def logout():
     session.clear()
     return redirect(url_for('ranking'))
+
 
 
 if __name__ == "__main__":
