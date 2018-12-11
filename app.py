@@ -50,17 +50,18 @@ def ranking():
 
 
 #Testing php#
-@app.route('/Weekly')
-def Weekly():
-    return render_template("Weekly.html")
+@app.route('/weekly')
+def weekly():
+    return render_template("weekly.html")
 
 
-@app.route('/Monthly')
-def Monthly():
-    return render_template("monthly")
+@app.route('/monthly')
+def monthly():
+    return render_template("monthly.html")
 
-@app.route('/Yearly')
-def Yearly():
+
+@app.route('/yearly')
+def yearly():
     return render_template("yearly.html")
 
 

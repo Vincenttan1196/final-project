@@ -77,11 +77,11 @@ function closeNav() {
 
                 <span data-feather="calendar"></span>
 
-                  Yearly
+                  Monthly
                 <div class="dropdown-content">
-                        <a href="{{ url_for("weekly") }}">Weekly</a>
-                        <a href="{{ url_for("monthly") }}">Monthly</a>
-                          <a href="{{ url_for("yearly") }}">Yearly</a>
+                    <a href="{{ url_for("weekly") }}">Weekly</a>
+                    <a href="{{ url_for("monthly") }}">Monthly</a>
+                    <a href="{{ url_for("yearly") }}">Yearly</a>
   </div>
 
               </button>
@@ -182,7 +182,7 @@ function closeNav() {
           labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
         datasets: [{
             label: 'Average spending',
-            data: [1030, 3200, 2001, 2143, 1245, 5200 , 4010],
+            data: [100, 300, 200, 214, 125, 500 , 400],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',

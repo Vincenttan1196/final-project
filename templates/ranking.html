@@ -79,9 +79,9 @@ function closeNav() {
 
                   Weekly
                 <div class="dropdown-content">
-                    <li id="Weekly"><a href="/Weekly">Weekly</a></li>
-                    <li id="Monthly"> <a href="/Monthly">Monthly</a></li>
-                    <li id="'Yearly"><a href="/Yearly">Yearly</a></li>
+                    <a href="{{ url_for("weekly") }}">Weekly</a>
+                    <a href="{{ url_for("monthly") }}">Monthly</a>
+                    <a href="{{ url_for("yearly") }}">Yearly</a>
   </div>
 
               </button>

@@ -8,6 +8,12 @@
 
 .h2 {
     text-decoration: underline;
+    text-align:center;
+
+}
+
+.table-responsive {
+  text-align:center;
 }
 body {
   font-size: .875rem;
