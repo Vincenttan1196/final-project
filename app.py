@@ -80,7 +80,6 @@ def email():
 def schemecheck():
     if request.method == 'POST':
         income = int(request.form['income'])
-        add_income('xxx', str(income))
         if income >= 2000:
             return render_template('schemepage0.html')
         elif income >= 1500:
