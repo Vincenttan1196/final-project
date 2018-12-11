@@ -30,14 +30,13 @@
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
-  <a href="#">Test</a>
-  <a href="#">Test</a>
-  <a href="#">Test</a>
-  <a href="#">Test</a>
+  <a href="{{ url_for("summary", familyid = "test") }}">Dashboard</a>
+    <a href="{{ url_for("planner") }}">Daily Spendings</a>
+    <a href="{{ url_for("bills") }}">Your Bills</a>
+    <a href="{{ url_for("schemecheck") }}">Schemes</a>
+    <a href="{{ url_for("cheaper") }}">Cheaper Alternatives</a>
+    <a href="{{ url_for("ranking") }}">Rankings</a>
+    <a href="#">Logout</a>
 
 </div>
 <div id="main">
