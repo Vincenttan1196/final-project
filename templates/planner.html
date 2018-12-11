@@ -8,10 +8,6 @@
 </head>
 
 <body>
-  <!-----Nav bar----->
-
-
-
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -43,10 +39,11 @@ function closeNav() {
 </script>
 
 <div class = 'time'>
-    <span id = 'date'></span>
-    <span id = 'month'></span>
-    <span id = 'year'></span>
+    <span id = 'date' style="font-family:courier;"></span>
+    <span id = 'month' style="font-family:courier;"></span>
+    <span id = 'year' style="font-family:courier;"></span>
 </div>
+
 <script>
     var date = new Date();
     document.getElementById("date").innerHTML = date.getDate() + '/';
@@ -54,25 +51,37 @@ function closeNav() {
     document.getElementById("month").innerHTML = month.getMonth() + 1 + '/';
     var year = new Date();
     document.getElementById("year").innerHTML = year.getFullYear();
-    function addBox() {
-    var textBox = document.createElement("div");
-    var box = document.createElement("div");
-    document.getElementById("bo").appendChild(textBox);
-    document.getElementById("bo").appendChild(box);
-    }
 </script>
+
 <div id = 'boop' class="bill">
     <h2 id = 'first'>Item</h2>
-       <span>Item Name: </span><textarea class="inputbox" rows="1"></textarea> <span>Item Price:</span><textarea class="inputbox" rows="1"></textarea>
+    <span>Item Name: </span><textarea class="inputbox" rows="1"></textarea> <span>Item Price:</span><textarea class="inputbox" rows="1"> </textarea> <select name="cars">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="fiat">Fiat</option>
+    <option value="audi">Audi</option>
+  </select>
 </div>
+
   <div id = 'boo' class="bill">
     <h2>Bill 2</h2>
-       <span>Item Name: </span><textarea class="inputbox" rows="1"></textarea> <span>Item Price:</span><textarea class="inputbox" rows="1"></textarea>
+       <span>Item Name: </span><textarea class="inputbox" rows="1"></textarea> <span>Item Price:</span><textarea class="inputbox" rows="1"></textarea> <select name="cars">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="fiat">Fiat</option>
+    <option value="audi">Audi</option>
+  </select>
 </div>
+
 <div id = 'bo' class="bill">
     <h2>Bill 3</h2>
-       <span>Item Name: </span><textarea class="inputbox" rows="1"></textarea> <span>Item Price:</span><textarea class="inputbox" rows="1"></textarea>
+       <span>Item Name: </span><textarea class="inputbox" rows="1"></textarea> <span>Item Price:</span><textarea class="inputbox" rows="1"></textarea>  <select name="cars">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="fiat">Fiat</option>
+    <option value="audi">Audi</option>
+  </select>
 </div>
-<button id = 'butt' onClick="addBox()">Add Item</button>
+
 </body>
 </html>
