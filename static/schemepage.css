@@ -1,0 +1,23 @@
+body{
+    background-color: #BEBEBE;
+    margin: 0px;
+}
+h1{
+    text-align: center;
+    background-color: darkgrey;
+    margin-top: 0px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+#none {
+    text-align: center;
+    color:white;
+}
+div {
+    margin:10px;
+
+}
+h2{
+    border-top-style: solid;
+    border-bottom-style: solid;
+}
