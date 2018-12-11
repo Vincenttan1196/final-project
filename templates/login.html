@@ -4,20 +4,17 @@
 
 	<title>Login</title>
 
-<link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
-<!---<link rel="stylesheet" type="text/css" href="../static/login.css"> --->
+<link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}"> 
+<!---<link rel="stylesheet" type="text/css" href="../static/login.css">--->
 
 
-	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
 
-<a href="/ranking" class="button">
-          <span class="glyphicon glyphicon-arrow-left"></span> Back
-        </a>
 
 
 	<main class="form">
@@ -25,10 +22,10 @@
 		<form class="login-form"  method="post" action="/login">
 			<h1>Login</h1>
 			<label for="username" >Username</label>
-			<input name="username" name="username" id="username" placeholder="Enter your username" required autofocus >
+			<input name="username"  id="username" placeholder="Enter your username" required autofocus >
 
 			<label for="password" >Password</label>
-			<input name="password" name="password" id="password" placeholder="Enter your password" required autofocus>
+			<input name="password"  id="password" placeholder="Enter your password" required autofocus>
 			<button type="submit" value="Login">Login</button>
 			<br>
 			<a href="/forgot_password" id="forgot">Forgot your Password?</a>

@@ -141,17 +141,3 @@ label	{
 	opacity:0.9;
 }
 
-#logoImage {
-	text-align:center;
-}
-
-.button {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 30px 20px 15px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-}
