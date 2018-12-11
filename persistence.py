@@ -91,3 +91,12 @@ def init_db():
     clear_user()
     for i in range(5):
         create_user('user'+str(i), 'pass'+str(i))
+
+
+def check_user(username):
+        klist = list(users.keys())
+        for key in klist:
+            user = users[key]
+            print(user.get_username(), username)
+            if user.get_username() == username:
+                return True
