@@ -101,11 +101,11 @@ def bills():
 @app.route("/planner" ,methods=('GET', 'POST'))
 def planner():
     if request.method == 'POST':
-        price = int(request.form['price'])
-        price1 = int(request.form['price1'])
-        price2 = int(request.form['price2'])
+        price = float(request.form['price'])
+        price1 = float(request.form['price1'])
+        price2 = float(request.form['price2'])
         total = price + price1 + price2
-        return render_template("planner2.html", total = total)
+        return render_template("planner.html", total = total)
     return render_template("planner.html", total= '0')
 
 

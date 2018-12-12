@@ -11,7 +11,7 @@
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="{{ url_for("summary", familyid = "test") }}">Dashboard</a>
-    <a href="{{ url_for("planner") }}">Daily Spendings</a>
+    <a href="{{ url_for("planner")}}">Daily Spendings</a>
     <a href="{{ url_for("bills") }}">Your Bills</a>
     <a href="{{ url_for("schemecheck") }}">Schemes</a>
     <a href="{{ url_for("cheaper") }}">Cheaper Alternatives</a>
@@ -57,7 +57,7 @@ function closeNav() {
 <form method="post" action = '/planner'>
 <div id = 'boop' class="bill">
     <h2 id = 'first'>Item 1</h2>
-    <span>Item Name: </span><textarea class="inputbox" rows="1"></textarea>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>Item Price:</span><textarea name = 'price' class="inputbox" rows="1"> </textarea> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="cars">
+    <span>Item Name: </span><textarea class="inputbox" rows="1"></textarea>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>Item Price:</span><input type="number" name = 'price' class="inputbox" rows="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="cars">
     <option value="volvo">Food</option>
     <option value="saab">Luxury</option>
     <option value="fiat">Appliances</option>
@@ -83,6 +83,6 @@ function closeNav() {
 </div>
 <input type="submit">
 </form>
-{{ total }}
+<p>Total:&nbsp;&nbsp;${{ total }}</p>
 </body>
 </html>
