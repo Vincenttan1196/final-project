@@ -98,20 +98,18 @@ def schemecheck():
 def bills():
     return render_template("Bills.html")
 
-@app.route("/planner")
+@app.route("/planner" ,methods=('GET', 'POST'))
 def planner():
-    return render_template("planner.html")
+    if request.method == 'POST':
+        price = float(request.form['price'])
+        price1 = float(request.form['price1'])
+        price2 = float(request.form['price2'])
+        total = price + price1 + price2
+        return render_template("planner.html", total = total)
+    return render_template("planner.html", total= '0')
 
 
-@app.route('/')
-def main():
-    return render_template('main.html')
-
-
-''' The challenge begins '''
-
-
-@app.route("/login")
+@app.route("/")
 def starter():
     if request.method == 'POST':
         username = request.form['username']
