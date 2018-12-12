@@ -10,13 +10,51 @@
 </head>
 
 <body>
-  <div id="main">
+
+
+  <!-----Nav bar----->
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="{{ url_for("main") }}">Home</a>
+    <a href="{{ url_for("planner") }}">Daily Spendings</a>
+    <a href="{{ url_for("bills") }}">Your Bills</a>
+  <a href="{{ url_for("summary", familyid = "test") }}">Your Summary</a>
+    <a href="{{ url_for("schemecheck") }}">Schemes</a>
+    <a href="{{ url_for("cheaper") }}">Cheaper Alternatives</a>
+    <a href="{{ url_for("ranking") }}">Rankings</a>
+    <a href="#">Logout</a>
+</div>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+</div>
+
+  <script>
+/* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+  document.body.style.backgroundColor = "white";
+}
+
+</script>
+<!---- --->
+
+
+
+
+
     <div id="header">
       <div id="logo">
         <div id="logo_text">
           <!-- class="logo_colour", allows you to change the colour of the text -->
-          <h1><a href="index.html">simple<span class="logo_colour">style_banner</span></a></h1>
-          <h2>Simple. Contemporary. Website Template.</h2>
+          <h1><a href="index.html">Project <span class="logo_colour">3</span></a></h1>
         </div>
       </div>
       <div id="menubar">
@@ -83,7 +121,6 @@
     <div id="content_footer"></div>
     <div id="footer">
       <p><a href="index.html">Home</a> | <a href="examples.html">Examples</a> | <a href="page.html">A Page</a> | <a href="another_page.html">Another Page</a> | <a href="contact.html">Contact Us</a></p>
-      <p>Copyright &copy; simplestyle_banner | <a href="http://validator.w3.org/check?uri=referer">HTML5</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> | <a href="http://www.html5webtemplates.co.uk">HTML5 Web Templates</a></p>
     </div>
   </div>
 </body>
