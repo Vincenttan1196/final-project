@@ -77,6 +77,10 @@ def email():
     return render_template('email.html')
 
 
+@app.route("/")
+def main():
+    return render_template('main.html')
+
 
 @app.route('/schemecheck', methods=('GET', 'POST'))
 def schemecheck():
@@ -98,6 +102,7 @@ def schemecheck():
 def bills():
     return render_template("Bills.html")
 
+
 @app.route("/planner" ,methods=('GET', 'POST'))
 def planner():
     if request.method == 'POST':
@@ -109,7 +114,10 @@ def planner():
     return render_template("planner.html", total= '0')
 
 
-@app.route("/")
+
+
+
+@app.route("/login")
 def starter():
     if request.method == 'POST':
         username = request.form['username']
