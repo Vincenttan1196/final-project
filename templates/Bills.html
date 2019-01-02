@@ -49,25 +49,25 @@ function closeNav() {
 
 <h1 id = 'billheader'>Current bills</h1>
 
+<form method="post" action = '/bills'>
 <div class="bill">
     <h2 id = 'first'>Bill 1</h2>
-    <span>Amount: </span><textarea class="inputbox" rows="1"></textarea> <span>Due date</span><textarea class="inputbox" rows="1"></textarea> <input type="checkbox">
+    <span>Amount: </span><textarea class="inputbox" rows="1" name = 'amount1'></textarea> <span>Due date</span><textarea class="inputbox" rows="1" name = 'due1'></textarea> <input type="checkbox">
 </div>
 <div class="bill">
     <h2>Bill 2</h2>
-    <span>Amount: </span><textarea class="inputbox" rows="1"></textarea> <span>Due date</span><textarea class="inputbox" rows="1"></textarea> <input type="checkbox">
+    <span>Amount: </span><textarea class="inputbox" rows="1" name = 'amount2'></textarea> <span>Due date</span><textarea class="inputbox" rows="1" name = 'due2'></textarea> <input type="checkbox">
 </div>
 <div class="bill">
     <h2>Bill 3</h2>
-    <span>Amount: </span><textarea class="inputbox" rows="1"></textarea> <span>Due date</span><textarea class="inputbox" rows="1"></textarea> <input type="checkbox">
+    <span>Amount: </span><textarea class="inputbox" rows="1" name = 'amount3'></textarea> <span>Due date</span><textarea class="inputbox" rows="1" name = 'due3'></textarea> <input type="checkbox">
 </div>
 <div id = "finalamount">
     <h3>Total for this month</h3>
     <span>$150</span>
 </div>
-
-
-<button id = 'history'><a href="https://images-ext-2.discordapp.net/external/QJxtA5Gz4GWociifev3mCfu23SlKMZSkMXIQMp6g5Z8/https/pbs.twimg.com/media/DthiRD-VsAI5UHJ.jpg%3Alarge?width=470&height=664">View your bill history</a></button>
+<input type="submit" class = 'submit' id = 'history'>
+</form>
 
 </body>
 </html>

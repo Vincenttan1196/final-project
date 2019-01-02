@@ -120,3 +120,14 @@ def check_user(username):
             if user.get_username() == username:
                 return True
             return False
+
+
+#For Bills Page (start) --------------
+bills = shelve.open('bill')
+
+def add_amount(x,amount,due):
+    bills[x] = [amount,due]
+
+def get_amount(x):
+    return bills[x]
+#--------------------------------------
