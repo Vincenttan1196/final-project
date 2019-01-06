@@ -2,10 +2,36 @@ import shelve
 import uuid
 from datetime import date
 # today = str(date.today())
+from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
+import app
+from flask_wtf import *
+from wtforms import *
+from wtforms.validators import *
+
+
+def get_reset_token(self, expires_sec=1800):
+    s = Serializer(app.config['SECRET_KEY'], expires_sec)
+    return s.dumps({'user_id': self.id}).decode('utf-8')
+
+
+
+
+def  validate_email(self,email):
+    user = User.query.filter_by(email=email.data).first()
+    if user:
+        raise ValidationError('No account with that email')
+
+
+class ResetPasswordForm(FlaskForm):
+    password = PasswordField('Password',validators=[DataRequired()])
+    confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')])
+    submit = SubmitField('Reset Password')
+
 
 users = shelve.open('user')
 compproducts = shelve.open("products")
 images = shelve.open("images")
+
 class User:
     def __init__(self, id):
         self.__id = id
