@@ -98,7 +98,7 @@ def schemecheck():
 
     return render_template('schemecheck.html')
 
-@app.route("/bills")
+@app.route("/bills", methods = ('GET','POST'))
 def bills():
     if request.method == 'POST':
         for i in range(3):
