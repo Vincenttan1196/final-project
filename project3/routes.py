@@ -78,17 +78,9 @@ def bills():
     if request.method == 'POST':
         for i in range(3):
             x = str(i + 1)
-            print ('test')
-            ob1 = str(request.form['amount1'])
-            print (ob1)
-            ob2 = str(request.form['due1'])
-            ob3 = str(request.form['amount2'])
-            ob4 = str(request.form['due2'])
-            ob5 = str(request.form['amount3'])
-            ob6 = str(request.form['due3'])
-        add_amount('1',ob1,ob2)
-        add_amount('2', ob3, ob4)
-        add_amount('3', ob5, ob6)
+            amount = str(request.form['amount'+str(x)])
+            due = str(request.form['due'+str(x)])
+            add_amount(x,amount,due)
         return render_template('billsSaved.html', amount1 = get_amount('1')[0], due1= get_amount('1')[1], amount2 ='')
 
     return render_template('Bills.html')
