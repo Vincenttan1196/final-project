@@ -1,20 +1,10 @@
 from flask import *
-import functools
-from persistence import *
+from project3.persistence import *
 
 app = Flask(__name__)
 app.config.from_mapping(
     SECRET_KEY='dev'
 )
-
-
-def login_required(view):
-    @functools.wraps(view)
-    def wrapped_view(**kwargs):
-        if session['id'] is None:
-            return redirect(url_for('login'))
-        return view(**kwargs)
-    return wrapped_view
 
 
 @app.route('/init')
@@ -114,7 +104,7 @@ def bills():
         add_amount('1',ob1,ob2)
         add_amount('2', ob3, ob4)
         add_amount('3', ob5, ob6)
-        return render_template('billsSaved.html', amount1 = get_amount('1')[0] , due1= get_amount('1')[1] ,amount2 = '' )
+        return render_template('billsSaved.html', amount1 = get_amount('1')[0], due1= get_amount('1')[1], amount2 ='')
 
     return render_template('Bills.html')
 
@@ -131,7 +121,7 @@ def planner():
         price2 = float(request.form['price2'])
         total = price + price1 + price2
         return render_template("planner.html", total = total)
-    return render_template("planner.html", total= '0')
+    return render_template("planner.html", total='0')
 
 
 
@@ -156,7 +146,7 @@ def starter():
                 session['user_name'] = user.get_username()
                 return redirect(url_for('ranking'))
         flash(error)
-    return render_template('login.html')
+    return render_template('login1.html')
 
 
 @app.route('/login',  methods=('GET', 'POST'))
@@ -178,7 +168,7 @@ def login():
                 session['user_name'] = user.get_username()
                 return redirect(url_for('ranking'))
         flash(error)
-    return render_template('login.html')
+    return render_template('login1.html')
 
 
 @app.route('/signup', methods=('GET', 'POST'))

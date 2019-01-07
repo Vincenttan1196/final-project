@@ -89,7 +89,7 @@ def bills():
         add_amount('1',ob1,ob2)
         add_amount('2', ob3, ob4)
         add_amount('3', ob5, ob6)
-        return render_template('billsSaved.html', amount1 = get_amount('1')[0] , due1= get_amount('1')[1] ,amount2 = '' )
+        return render_template('billsSaved.html', amount1 = get_amount('1')[0], due1= get_amount('1')[1], amount2 ='')
 
     return render_template('Bills.html')
 
@@ -107,7 +107,7 @@ def planner():
         price2 = float(request.form['price2'])
         total = price + price1 + price2
         return render_template("planner.html", total = total)
-    return render_template("planner.html", total= '0')
+    return render_template("planner.html", total='0')
 
 
 
