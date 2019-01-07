@@ -157,3 +157,12 @@ def add_amount(x,amount,due):
 def get_amount(x):
     return bills[x]
 #--------------------------------------
+
+planner = shelve.open('planner')
+
+
+def add_item(x,name,price,category):
+    planner[x] = [name,price,category]
+
+def get_item(x):
+    return planner[x]
