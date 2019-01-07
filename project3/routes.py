@@ -57,7 +57,7 @@ def yearly():
 def email():
     return render_template('email.html')
 
-
+#Jonathan's stuff -----------------------------------------------------------------------
 @app.route('/schemecheck', methods=('GET', 'POST'))
 def schemecheck():
     if request.method == 'POST':
@@ -97,7 +97,7 @@ def bills():
 @app.route('/display', methods=('GET', 'POST'))
 def display():
     return render_template('billsSaved.html', amount1=get_amount('1')[0], due1=get_amount('1')[1], amount2='')
-
+#------------------------------------------------------------------------------------------------
 
 @app.route("/planner", methods=('GET', 'POST'))
 def planner():
