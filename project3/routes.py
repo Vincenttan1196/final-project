@@ -94,13 +94,15 @@ def display():
 @app.route("/planner", methods=('GET', 'POST'))
 def planner():
     if request.method == 'POST':
-        price = float(request.form['price'])
-        price1 = float(request.form['price1'])
-        price2 = float(request.form['price2'])
-        total = price + price1 + price2
-        return render_template("planner.html", total = total)
+        total = 0
+        for i in range(3):
+            x = str(i + 1)
+            itemname = str(request.form['itemname'+str(x)])
+            itemprice = int(request.form['itemprice'+str(x)])
+            itemcategory = str(request.form['category'+str(x)])
+            total = total + itemprice
+        return render_template("DailySummary.html", total = total)
     return render_template("planner.html", total='0')
-
 
 
 

@@ -19,7 +19,7 @@
 <form method="post" action = '/planner'>
 <div id = 'boop' class="bill">
     <h2 id = 'first'>Item 1</h2>
-    <span>Item Name: </span><textarea class="inputbox" rows="1"></textarea>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>Item Price:</span><input type="number" name = 'price' class="inputbox" rows="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="cars">
+    <span>Item Name: </span><textarea class="inputbox" rows="1" name = 'itemname1'></textarea>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>Item Price:</span><input type="number" name = 'itemprice1' class="inputbox" rows="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="category1">
     <option value="volvo">Food</option>
     <option value="saab">Luxury</option>
     <option value="fiat">Appliances</option>
@@ -28,7 +28,7 @@
 
   <div id = 'boo' class="bill">
     <h2>Item 2</h2>
-       <span>Item Name: </span><textarea class="inputbox" rows="1"></textarea> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Item Price:</span><input type="number" name = 'price1' class="inputbox" rows="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="cars">
+       <span>Item Name: </span><textarea class="inputbox" rows="1" name = 'itemname2'></textarea> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Item Price:</span><input type="number" name = 'itemprice2' class="inputbox" rows="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="category2">
      <option value="volvo">Food</option>
     <option value="saab">Luxury</option>
     <option value="fiat">Appliances</option>
@@ -37,7 +37,7 @@
 
 <div id = 'bo' class="bill">
     <h2>Item 3</h2>
-       <span>Item Name: </span><textarea class="inputbox" rows="1"></textarea>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>Item Price:</span><input type="number" class="inputbox" name = 'price2' rows="1">&nbsp;&nbsp;&nbsp;&nbsp;  <select name="cars">
+       <span>Item Name: </span><textarea class="inputbox" rows="1" name = 'itemname3'></textarea>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>Item Price:</span><input type="number" class="inputbox" name = 'itemprice3' rows="1">&nbsp;&nbsp;&nbsp;&nbsp;  <select name="category3">
     <option value="volvo">Food</option>
     <option value="saab">Luxury</option>
     <option value="fiat">Appliances</option>
@@ -45,7 +45,7 @@
 </div>
 <input type="submit">
 </form>
-<p>Total:&nbsp;&nbsp;${{ total }}</p>
+
 
 
 {% endblock content %}
