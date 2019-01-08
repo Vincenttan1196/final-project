@@ -1,13 +1,13 @@
-p#date {
-        font-size: 300%;
+span#date {
+        font-size: 200%;
 }
 
-p#month {
-        font-size: 300%;
+span#month {
+        font-size: 200%;
 }
 
-p#year {
-        font-size: 300%;
+span#year {
+        font-size: 200%;
 }
 
 div.time {
@@ -95,7 +95,7 @@ div#boop.bill {
     font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
     margin-bottom: 20px;
 }
-#boo {
+div#boo.bill {
     text-align: center;
     background-color: #FCEDED;
     border-width: 3px;
@@ -103,12 +103,23 @@ div#boop.bill {
     font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
      margin-bottom: 20px;
 }
-#bo {
+div#bo.bill {
     text-align: center;
     background-color: #FCEDED;
     border-width: 3px;
     border-style: solid;
     font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
+    margin-bottom: 20px;
+}
+div#newitem.bill {
+    text-align: center;
+    background-color: #FCEDED;
+    border-width: 3px;
+    border-style: solid;
+    font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
+    width:730px;
+    margin-left: 255px;
+    margin-bottom: 20px;
 }
 .bill {
     padding-bottom: 10px;
@@ -132,4 +143,6 @@ div.col-md-8 {
 
 input {
     margin-top: 10px;
+    margin-bottom: 5px;
 }
+

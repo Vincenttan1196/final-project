@@ -2,11 +2,40 @@
 {% block content %}
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='planner.css') }}">
 
+
 <div class = 'time'>
     <span id = 'date' style="font-family:courier;"></span>
     <span id = 'month' style="font-family:courier;"></span>
     <span id = 'year' style="font-family:courier;"></span>
 </div>
+
+
+
+
+
+<div class="sticky">
+    <button onClick="addItem()">Add New Item</button>
+  </div>
+  <div id="getText" style="display: none;">
+      <div id = 'newitem' class="bill">
+    <h2>Item</h2>
+          <span><font size="4">Item Name: </font></span><textarea class="inputbox" rows="1" name = 'itemname3'></textarea>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span><font size="4">Item Price:</font></span><input type="number" class="inputbox" name = 'itemprice3' rows="1">&nbsp;&nbsp;&nbsp;&nbsp;  <select name="category3">
+    <option value="volvo">Food</option>
+    <option value="saab">Luxury</option>
+    <option value="fiat">Appliances</option>
+  </select>
+</div>
+  </div>
+
+
+<script>
+  function addItem() {
+    var div = document.createElement('div');
+    div.innerHTML = document.getElementById('getText').innerHTML;
+    document.body.appendChild(div);
+  }
+</script>
+
 
 <script>
     var date = new Date();
@@ -16,10 +45,15 @@
     var year = new Date();
     document.getElementById("year").innerHTML = year.getFullYear();
 </script>
+
+
 <form method="post" action = '/planner'>
+    <input type="submit">
+
+
 <div id = 'boop' class="bill">
-    <h2 id = 'first'>Item 1</h2>
-    <span>Item Name: </span><textarea class="inputbox" rows="1" name = 'itemname1'></textarea>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>Item Price:</span><input type="number" name = 'itemprice1' class="inputbox" rows="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="category1">
+    <h2 id = 'first'>Item </h2>
+    <span><font size="4">Item Name: </font></span><textarea class="inputbox" rows="1" name = 'itemname1'></textarea>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span><font size="4">Item Price:</font></span><input type="number" name = 'itemprice1' class="inputbox" rows="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="category1">
     <option value="volvo">Food</option>
     <option value="saab">Luxury</option>
     <option value="fiat">Appliances</option>
@@ -27,8 +61,8 @@
 </div>
 
   <div id = 'boo' class="bill">
-    <h2>Item 2</h2>
-       <span>Item Name: </span><textarea class="inputbox" rows="1" name = 'itemname2'></textarea> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Item Price:</span><input type="number" name = 'itemprice2' class="inputbox" rows="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="category2">
+    <h2>Item</h2>
+      <span><font size="4">Item Name: </font></span><textarea class="inputbox" rows="1" name = 'itemname2'></textarea> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><font size="4">Item Price:</font></span><input type="number" name = 'itemprice2' class="inputbox" rows="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="category2">
      <option value="volvo">Food</option>
     <option value="saab">Luxury</option>
     <option value="fiat">Appliances</option>
@@ -36,15 +70,16 @@
 </div>
 
 <div id = 'bo' class="bill">
-    <h2>Item 3</h2>
-       <span>Item Name: </span><textarea class="inputbox" rows="1" name = 'itemname3'></textarea>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>Item Price:</span><input type="number" class="inputbox" name = 'itemprice3' rows="1">&nbsp;&nbsp;&nbsp;&nbsp;  <select name="category3">
+    <h2>Item</h2>
+    <span><font size="4">Item Name: </font></span><textarea class="inputbox" rows="1" name = 'itemname3'></textarea>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span><font size="4">Item Price:</font></span><input type="number" class="inputbox" name = 'itemprice3' rows="1">&nbsp;&nbsp;&nbsp;&nbsp;  <select name="category3">
     <option value="volvo">Food</option>
     <option value="saab">Luxury</option>
     <option value="fiat">Appliances</option>
   </select>
 </div>
-<input type="submit">
 </form>
+
+
 
 
 
