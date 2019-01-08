@@ -35,6 +35,9 @@
     var div = document.createElement('div');
     div.innerHTML = document.getElementById('getText').innerHTML;
     document.body.appendChild(div);
+    counter = parseInt(document.getElementById("count").textContent);
+    counter = counter + 1;
+    document.getElementById("count").innerHTML = counter;
   }
 
     var date = new Date();
@@ -43,18 +46,6 @@
     document.getElementById("month").innerHTML = month.getMonth() + 1 + '/';
     var year = new Date();
     document.getElementById("year").innerHTML = year.getFullYear();
-
-
-  function start() {
-  var button = document.getElementById("buttonadd");
-  window.addEventListener("click", count, false);
-}
-
-function count() {
-  counter = parseInt(document.getElementById("count").textContent);
-  counter = counter + 1;
-  document.getElementById("count").innerHTML = counter;
-}
 
 window.addEventListener("load", start, false);
 </script>
