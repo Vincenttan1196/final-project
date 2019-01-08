@@ -91,6 +91,8 @@ def display():
     return render_template('billsSaved.html', amount1=get_amount('1')[0], due1=get_amount('1')[1], amount2='')
 #------------------------------------------------------------------------------------------------
 
+
+
 @app.route("/planner", methods=('GET', 'POST'))
 def planner():
     if request.method == 'POST':
@@ -103,8 +105,6 @@ def planner():
             total = total + itemprice
         return render_template("DailySummary.html", total = total)
     return render_template("planner.html", total='0')
-
-
 
 
 

@@ -14,7 +14,9 @@
 
 
 <div class="sticky">
-    <button onClick="addItem()">Add New Item</button>
+    <p><button onClick="addItem()" id="buttonadd" >Add New Item</button></p>
+    <p> Number Of Items Bought Today:  <span id = "count">3</span></p>
+
   </div>
   <div id="getText" style="display: none;">
       <div id = 'newitem' class="bill">
@@ -33,17 +35,19 @@
     var div = document.createElement('div');
     div.innerHTML = document.getElementById('getText').innerHTML;
     document.body.appendChild(div);
+    counter = parseInt(document.getElementById("count").textContent);
+    counter = counter + 1;
+    document.getElementById("count").innerHTML = counter;
   }
-</script>
 
-
-<script>
     var date = new Date();
     document.getElementById("date").innerHTML = date.getDate() + '/';
     var month = new Date();
     document.getElementById("month").innerHTML = month.getMonth() + 1 + '/';
     var year = new Date();
     document.getElementById("year").innerHTML = year.getFullYear();
+
+window.addEventListener("load", start, false);
 </script>
 
 
