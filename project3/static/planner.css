@@ -10,10 +10,11 @@ p#year {
         font-size: 300%;
 }
 
-.time {
+div.time {
     text-align: center;
+    width:100%;
+    margin:auto;
     font-size: 300%;
-    padding-bottom: 50px;
 }
 
 
@@ -86,7 +87,7 @@ textarea {
     border-bottom-style: solid;
     border-bottom-color: black;
 }
-#boop {
+div#boop.bill {
     text-align: center;
     background-color: #FCEDED;
     border-width: 3px;
@@ -123,4 +124,12 @@ h2#first {
 
 p{
     font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
+}
+
+div.col-md-8 {
+    margin-left: 180px;
+}
+
+input {
+    margin-top: 10px;
 }
