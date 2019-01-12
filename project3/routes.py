@@ -53,9 +53,10 @@ def yearly():
     return render_template("yearly.html")
 
 
-@app.route('/email')
-def email():
-    return render_template('email.html')
+@app.route('/feedback')
+def feedback():
+    return render_template('feedback.html')
+
 
 #Jonathan's stuff -----------------------------------------------------------------------
 @app.route('/schemecheck', methods=('GET', 'POST'))
