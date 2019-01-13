@@ -10,11 +10,17 @@ images = shelve.open("images")
 
 
 class Products:
-    def __init__(self, itemid):
-        self.itemid = itemid
+    def __init__(self):
+        self.itemid = ""
         self.name = ""
         self.picture = ""
         self.price = ""
+
+    def get_id(self):
+        return self.itemid
+
+    def set_id(self, itemid):
+        self.itemid = itemid
 
     def get_name(self):
         return self.name
