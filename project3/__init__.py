@@ -21,4 +21,5 @@ app.config['MAIL_USERNAME'] = 'project3nyp@gmail.com'
 app.config['MAIL_PASSWORD'] = 'rich2222'
 mail = Mail(app)
 
+
 from project3 import routes
