@@ -7,34 +7,15 @@
 
     <div class = "catalogue">
         <b>Pick an item to compare</b>
-        <input class = "search" type="text" size = "30" placeholder="Item e.g. toothpaste, shampoo...">
+        <!--<input class = "search" type="text" size = "30" placeholder="Item e.g. toothpaste, shampoo..."> -->
 
 
-    <div class = "catalogue">
+        <div class = "catalogue">
+            {{ test.itemid }} {{ test.name }}
 
 
 
+        </div>
 
-    </div>
-        {{ test.itemid }} {{ test.name }}
-        <!--<table>
-            <tr>
-
-                {% for image in imageList %}
-                <td><img class = "thumbnail" src = "{{ url_for("static", filename = "images/" +  image)}}">
-                    <p>Product Name</p><br></td>
-                {% endfor %}
-
-            </tr>
-            <tr>
-                <td>
-                    <p>something else</p><br></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td> <td></td> <td></td>
-            </tr>
-        </table>-->
     </div>
 {% endblock content %}

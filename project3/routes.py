@@ -18,8 +18,10 @@ def summary(familyid):
 
 @app.route("/cheaper")
 def cheaper():
-    imageList = get_imagesproduct()
-    return render_template("comparison.html", imageList = imageList)
+    p = Products()
+    id = p.get_id()
+    get_products(id)
+    return render_template('comparison.html', test=p)
 
 
 @app.route("/admin", methods=('GET', 'POST'))

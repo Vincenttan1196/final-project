@@ -47,8 +47,6 @@ class Products:
         self.itemid = itemid
 
 
-images["imagesProducts"] = ["attackLiqDet.jpg", "darlieToothpaste.JPG", "knifeCookingOil.jpg"]
-
 
 def add_product(product):
     compproducts[product.itemid] = product
