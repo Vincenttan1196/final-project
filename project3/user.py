@@ -48,7 +48,7 @@ def create_user(username, password):
 
 class scores(User):
     def __init__(self, username, score):
-        super().__init__()
+        super.__init__()
         self.__username = username
         self.__score = score
         super(score, self).__init__()

@@ -6,15 +6,11 @@
 </head>
 <body>
     <form method="post">
-        <label for="itemid">Item ID</label>
-        <input name="itemid" id="itemid" value="{{ request.form['itemid'] }}" required>
-        <label for="name">Name</label>
-        <input name="name" id="name" value="{{ request.form['name'] }}" required>
-        <label for="picture">Picture URL</label>
-        <input name="picture" id="picture" value="{{ request.form['picture'] }}" required>
-        <label for="price">Price</label>
-        <input name="price" id="price" value="{{ request.form['price'] }}" required>
-        <input type="submit" value="Save">
+        <label>Item ID</label>
+        <textarea class="inputbox" rows="1" name = 'itemid'></textarea>
+        <label>Name</label>
+        <textarea class="inputbox" rows="1" name = 'name'></textarea>
+        <input type="submit" class = 'submit'>
     </form>
 
 </body>
