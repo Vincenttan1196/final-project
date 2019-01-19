@@ -50,13 +50,8 @@ class Products:
 images["imagesProducts"] = ["attackLiqDet.jpg", "darlieToothpaste.JPG", "knifeCookingOil.jpg"]
 
 
-def add_product(itemid, name, picture, price):
-    products = Products(1)
-    products.itemid = itemid
-    products.name = name
-    products.picture = picture
-    products.price = price
-    compproducts[itemid] = products
+def add_product(product):
+    compproducts[product.itemid] = product
 
 
 def get_products(itemid):
