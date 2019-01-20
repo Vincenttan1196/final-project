@@ -53,8 +53,7 @@ def add_product(product):
 
 
 def get_products(itemid):
-    if itemid in compproducts:
-        return compproducts[itemid]
+    return compproducts[itemid]
 
 
 def get_imagesproduct():

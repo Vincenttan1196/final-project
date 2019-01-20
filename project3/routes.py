@@ -18,10 +18,10 @@ def summary(familyid):
 
 @app.route("/cheaper")
 def cheaper():
-    p = Products()
-    id = p.get_id()
-    get_products(id)
-    return render_template('comparison.html', test=p)
+
+    test = 1
+
+    return render_template('comparison.html', productObj = test)
 
 
 @app.route("/admin", methods=('GET', 'POST'))
@@ -30,10 +30,8 @@ def admin():
         p = Products()
         p.itemid = request.form['itemid']
         p.name = request.form["name"]
-        p.picture = ''
-        p.price = ''
         add_product(p)
-        return render_template('comparison.html', test = p)
+        return render_template('comparison.html', productObj = p)
     return render_template("admin.html")
 
 
