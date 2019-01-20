@@ -98,20 +98,21 @@ def display():
     return render_template('billsSaved.html', amount1=get_amount('1')[0], due1=get_amount('1')[1], amount2='')
 #------------------------------------------------------------------------------------------------
 
-
+#Immanuels Stuff-------------------------------------------------------------------------------------------
 
 @app.route("/planner", methods=('GET', 'POST'))
 def planner():
     if request.method == 'POST':
         total = 0
-        for i in range(3):
-            x = str(i + 1)
-            itemname = str(request.form['itemname'+str(x)])
-            itemprice = int(request.form['itemprice'+str(x)])
-            itemcategory = str(request.form['category'+str(x)])
-            total = total + itemprice
+        counter = str(request.form['totalitems'])
+        for i in range (counter):
+            a = productInfo()
+            a.price = int(request.form['itemprice' + 'counter'])
+            total = total + int(a.price)
         return render_template("DailySummary.html", total = total)
     return render_template("planner.html", total='0')
+
+#-------------------------------------------------------------------------------------------------
 
 
 

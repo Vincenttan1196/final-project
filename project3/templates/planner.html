@@ -12,21 +12,10 @@
 
 
 
-
-<div class="sticky">
-    <p><button onClick="addItem()" id="buttonadd" >Add New Item</button></p>
-    <p> Number Of Items Bought Today:  <span id = "count">3</span></p>
-
-
-  </div>
   <div id="getText" style="display: none;">
       <div id = 'newitem' class="bill">
     <h2>Item</h2>
-          <span><font size="4">Item Name: </font></span><textarea class="inputbox" rows="1" name = 'itemname3'></textarea>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span><font size="4">Item Price:</font></span><input type="number" class="inputbox" name = 'itemprice3' rows="1">&nbsp;&nbsp;&nbsp;&nbsp;  <select name="category3">
-    <option value="volvo">Food</option>
-    <option value="saab">Luxury</option>
-    <option value="fiat">Appliances</option>
-  </select>
+          <span><font size="4">Item Name: </font></span><textarea class="inputbox" rows="1" name = 'itemname'></textarea>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span><font size="4">Item Price:</font></span><input type="number" class="inputbox" name = 'itemprice' rows="1">&nbsp;&nbsp;&nbsp;&nbsp;
 </div>
   </div>
 
@@ -36,9 +25,9 @@
     var div = document.createElement('div');
     div.innerHTML = document.getElementById('getText').innerHTML;
     document.body.appendChild(div);
-    counter = parseInt(document.getElementById("count").textContent);
-    counter = counter + 1;
-    document.getElementById("count").innerHTML = counter;
+      counter = parseInt(document.getElementById("count").textContent);
+  counter = counter + 1;
+  document.getElementById("count").innerHTML = counter;
   }
 
     var date = new Date();
@@ -48,39 +37,32 @@
     var year = new Date();
     document.getElementById("year").innerHTML = year.getFullYear();
 
-window.addEventListener("load", start, false);
 </script>
 
 
 <form method="post" action = '/planner'>
     <input type="submit">
 
+    <div class="sticky">
+    <p><button onClick="addItem()" id="buttonadd" >Add New Item</button></p>
+    <p> Number Of Items Bought Today:  <span id = "count" name = "totalitems">3</span></p>
+
+
+  </div>
 
 <div id = 'boop' class="bill">
     <h2 id = 'first'>Item </h2>
-    <span><font size="4">Item Name: </font></span><textarea class="inputbox" rows="1" name = 'itemname1'></textarea>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span><font size="4">Item Price:</font></span><input type="number" name = 'itemprice1' class="inputbox" rows="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="category1">
-    <option value="volvo">Food</option>
-    <option value="saab">Luxury</option>
-    <option value="fiat">Appliances</option>
-  </select>
+    <span><font size="4">Item Name: </font></span><textarea class="inputbox" rows="1" name = 'itemname1'></textarea>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span><font size="4">Item Price:</font></span><input type="number" name = 'itemprice1' class="inputbox" rows="1">&nbsp;&nbsp;&nbsp;&nbsp;
 </div>
 
   <div id = 'boo' class="bill">
     <h2>Item</h2>
-      <span><font size="4">Item Name: </font></span><textarea class="inputbox" rows="1" name = 'itemname2'></textarea> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><font size="4">Item Price:</font></span><input type="number" name = 'itemprice2' class="inputbox" rows="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="category2">
-     <option value="volvo">Food</option>
-    <option value="saab">Luxury</option>
-    <option value="fiat">Appliances</option>
-  </select>
-</div>
+      <span><font size="4">Item Name: </font></span><textarea class="inputbox" rows="1" name = 'itemname2'></textarea> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><font size="4">Item Price:</font></span><input type="number" name = 'itemprice2' class="inputbox" rows="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </div>
 
 <div id = 'bo' class="bill">
     <h2>Item</h2>
-    <span><font size="4">Item Name: </font></span><textarea class="inputbox" rows="1" name = 'itemname3'></textarea>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span><font size="4">Item Price:</font></span><input type="number" class="inputbox" name = 'itemprice3' rows="1">&nbsp;&nbsp;&nbsp;&nbsp;  <select name="category3">
-    <option value="volvo">Food</option>
-    <option value="saab">Luxury</option>
-    <option value="fiat">Appliances</option>
-  </select>
+    <span><font size="4">Item Name: </font></span><textarea class="inputbox" rows="1" name = 'itemname3'></textarea>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span><font size="4">Item Price:</font></span><input type="number" class="inputbox" name = 'itemprice3' rows="1">&nbsp;&nbsp;&nbsp;&nbsp;
 </div>
 </form>
 

@@ -56,7 +56,6 @@ def get_products(itemid):
     if itemid in compproducts:
         return compproducts[itemid]
 
-
 def get_imagesproduct():
     return images["imagesProducts"]
 
@@ -71,3 +70,30 @@ def add_amount(x,amount,due):
 def get_amount(x):
     return bills[x]
 #--------------------------------------
+
+
+#Immanuels Stuff----------------------------------------------------------------------------------
+
+productinfo = shelve.open('productPrice')
+
+class productInfo:
+    def __init__(self):
+        self.name = ''
+        self.price = ''
+
+    def get_name(self):
+        return self.name
+
+    def get_price(self):
+        return self.price
+
+    def set_name(self, name):
+        self.name = name
+
+    def set_price(self,price):
+        self.price = price
+
+def add_productprice(productprice):
+    productInfo[productprice.itemprice] = productprice
+
+#----------------------------------------------------------------------------------------------
