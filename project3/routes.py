@@ -19,7 +19,6 @@ def summary(familyid):
 @app.route("/cheaper")
 def cheaper():
     test = get_products()
-
     return render_template('comparison.html', productObj = test)
 
 

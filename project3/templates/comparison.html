@@ -6,20 +6,16 @@
     <link href="{{ url_for('static', filename='comparison.css') }}" rel="stylesheet">
 
     <div class = "catalogue">
-        <b>Pick an item to compare</b>
+        <h1>Pick an item to compare</h1>
         <!--<input class = "search" type="text" size = "30" placeholder="Item e.g. toothpaste, shampoo..."> -->
-
-
-        <div class = "catalogue">
 
             {% for productObj in productObj %}
                 <div>
                     <p>ID:{{ productObj['itemid'] }}</p>
                     <p>Name: {{ productObj['name']}}</p>
                 </div>
-            {{% endfor %}}
+            {% endfor %}
 
-        </div>
 
     </div>
 {% endblock content %}

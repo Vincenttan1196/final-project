@@ -63,9 +63,8 @@ def get_products():
         x.append(compproducts[i])
     return x
 
-def get_imagesproduct():
-    return images["imagesProducts"]
-
+def clear_product(id):
+    del compproducts[id]
 
 
 #For Bills Page (start) --------------
