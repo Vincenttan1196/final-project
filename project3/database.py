@@ -8,9 +8,8 @@ users = User.query.all()
 
 db.session.commit()
 
-user1 = User.query.limit(2).all()
+#ID / USERNAME / SCORE
 
 print(users)
 
 
-print(user1)
