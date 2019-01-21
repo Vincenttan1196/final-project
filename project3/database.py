@@ -14,6 +14,7 @@ rank = db.session.query(User.rank).all()
 username = db.session.query(User.username).all()
 scores = db.session.query(User.score).all()
 
+
 db.session.commit()
 
 print(users)
