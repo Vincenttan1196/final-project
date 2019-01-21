@@ -81,17 +81,19 @@ def bills():
     if request.method == 'POST':
         for i in range(3):
             x = str(i + 1)
-            amount = str(request.form['amount'+str(x)])
+            id = x
+            amount = str(request.form['amount' + str(x)])
             due = str(request.form['due'+str(x)])
-            add_amount(x,amount,due)
-        return render_template('billsSaved.html', amount1 = get_amount('1')[0], due1= get_amount('1')[1], amount2 ='')
-
+            add_totalbills(id,amount,due)
+        y = get_totalbills()
+        return render_template('billsSaved.html', info = y)
     return render_template('Bills.html')
 
 
 @app.route('/display', methods=('GET', 'POST'))
 def display():
-    return render_template('billsSaved.html', amount1=get_amount('1')[0], due1=get_amount('1')[1], amount2='')
+    y = get_totalbills()
+    return render_template('billsSaved.html', info = y)
 #------------------------------------------------------------------------------------------------
 
 #Immanuels Stuff-------------------------------------------------------------------------------------------

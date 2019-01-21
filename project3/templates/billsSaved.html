@@ -8,25 +8,21 @@
 <body>
 <h1 id = 'billheader'>Current bills</h1>
 
-<form method="post" action = '/bills'>
-<div class="bill">
-    <h2 id = 'first'>Bill 1</h2>
-    <span>Amount: </span>{{ amount1 }} <span>Due date: </span>{{ due1 }} <input type="checkbox">
-</div>
-<div class="bill">
-    <h2>Bill 2</h2>
-    <span>Amount: </span><textarea class="inputbox" rows="1" name = 'amount2'></textarea> <span>Due date</span><textarea class="inputbox" rows="1" name = 'due2'></textarea> <input type="checkbox">
-</div>
-<div class="bill">
-    <h2>Bill 3</h2>
-    <span>Amount: </span><textarea class="inputbox" rows="1" name = 'amount3'></textarea> <span>Due date</span><textarea class="inputbox" rows="1" name = 'due3'></textarea> <input type="checkbox">
-</div>
+{% for i in info %}
+    <div class="bill">
+        <h2 id = 'first'>Bill {{ i['id'] }}</h2>
+        <span>Amount: </span>{{ i['amount'] }} <span>Due date: </span>{{ i['due'] }} <input type="checkbox">
+    </div>
+{% endfor %}
+
 <div id = "finalamount">
     <h3>Total for this month</h3>
-    <span>$150</span>
+    {% for i in info %}
+    <span>$ {{  }}</span>
+    {% endfor %}
 </div>
-<input type="submit" class = 'submit' id = 'history'>
-</form>
+
+
 
 </body>
 </html>

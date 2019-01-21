@@ -69,13 +69,38 @@ def get_imagesproduct():
 
 
 #For Bills Page (start) --------------
-bills = shelve.open('bill')
+billinfo = shelve.open('bill')
 
-def add_amount(x,amount,due):
-    bills[x] = [amount,due]
 
-def get_amount(x):
-    return bills[x]
+class Bill:
+    count = 0
+
+    # count and index are both for tracking the bill number, it is not decided which to use yet
+    def __init__(self):
+        self.index = ''
+        self.amount = ''
+        self.due = ''
+
+    def set_amount(self, amount):
+        self.amount = amount
+
+    def set_due(self, due):
+        self.due = due
+
+def add_totalbills(id,amount,due):
+    bill = Bill()
+    bill.id = id
+    bill.amount = amount
+    bill.due = due
+    billinfo[id] = bill
+
+def get_totalbills():
+    keylist = list(billinfo.keys())
+    x = []
+    for i in keylist:
+        x.append(billinfo[i])
+    return x
+
 #--------------------------------------
 
 
