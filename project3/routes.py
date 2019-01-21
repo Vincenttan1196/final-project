@@ -35,7 +35,9 @@ def admin():
 
 @app.route('/ranking')
 def ranking():
-    return render_template("ranking.html")
+    score = db.session.query(User.rank, User.username, User.score)
+
+    return render_template("ranking.html", score=score)
 
 
 #Testing php#
@@ -48,12 +50,16 @@ def weekly():
 
 @app.route('/monthly')
 def monthly():
-    return render_template("monthly.html")
+    score = db.session.query(User.rank, User.username, User.score)
+
+    return render_template("monthly.html", score=score)
 
 
 @app.route('/yearly')
 def yearly():
-    return render_template("yearly.html")
+    score = db.session.query(User.rank, User.username, User.score)
+
+    return render_template("yearly.html", score=score)
 
 
 @app.route('/feedback')
