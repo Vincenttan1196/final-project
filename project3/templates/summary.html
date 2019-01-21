@@ -4,14 +4,14 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='summary.css') }}">
 
 
-    <h1 class = "mainHeader"> {{ familyid }}'s Summary</h1>
     <div class = "output">
-        <h3 class = "mainHeader"> Your Family's Overview</h3>
+    <h1 class = "mainHeader"> {{ familyid }}'s Summary</h1>
         <span class = "period">Daily</span>
         <span class = "period">Monthly</span>
         <span class = "period">Yearly</span>
         <p class= "heading">Overall Spending</p>
-            <span class="tableHeader">Categories</span><span class="tableHeader" id = "amount">Amount</span>
+            <span class="tableHeader">Categories</span>
+            <span class="tableHeader" id = "amount">Amount</span>
             <table class = "Category">
                 <tr>
                     <td class = "categoryHeader" width = "50%">Food</td><td></td>
