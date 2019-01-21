@@ -1,6 +1,5 @@
+from project3 import user
 import shelve
-from project3.models import User
-from project3.models import db
 
 
 
