@@ -105,15 +105,23 @@ def planner():
         count = int(request.form['totalitems'])
         for i in range(count):
             a = productInfo()
+            a.name = str(request.form['itemname' + str(i + 1)])
             a.price = int(request.form['itemprice' + str(i + 1)])
             total = total + int(a.price)
-        return render_template("DailySummary.html", total = total)
+            add_productprice(a)
+            add_totalprices(total)
+            a = get_productname()
+        return render_template("DailySummary.html", total = total, productObj = a)
     return render_template("planner.html", total='0')
+
+
 
 
 @app.route("/DailySummary", methods=('GET', 'POST'))
 def DailySummary():
-    return render_template("DailySummary.html")
+    a = get_productname()
+    return render_template("DailySummary.html", total = total['total'], productObj = a)
+
 
 
 #-------------------------------------------------------------------------------------------------
