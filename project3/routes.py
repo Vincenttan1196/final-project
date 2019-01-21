@@ -10,6 +10,8 @@ from flask_mail import Message
 from project3.persistence import *
 from project3.models import *
 from project3.database import User, username, scores, rank
+from sqlalchemy import desc
+
 
 @app.route("/summary/<familyid>")
 def summary(familyid):
@@ -33,16 +35,11 @@ def admin():
 
 
 
-@app.route('/ranking')
-def ranking():
-    score = db.session.query(User.rank, User.username, User.score)
-
-    return render_template("ranking.html", score=score)
-
 
 #Testing php#
 @app.route('/weekly')
 def weekly():
+
     score = db.session.query(User.rank, User.username, User.score)
 
     return render_template("weekly.html", score=score)
