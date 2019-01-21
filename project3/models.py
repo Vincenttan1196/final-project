@@ -3,7 +3,6 @@ from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from project3 import db, login_manager, app
 from flask_login import UserMixin
 
-
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
@@ -23,6 +22,8 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(60), nullable=False)
     score = db.Column(db.Integer,default = 0)
     rank = db.Column(db.Integer)
+
+
 
     def get_reset_token(self, expires_sec=1800):
         s = Serializer(app.config['SECRET_KEY'], expires_sec)
