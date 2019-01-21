@@ -78,11 +78,11 @@ def get_amount(x):
 #Immanuels Stuff----------------------------------------------------------------------------------
 
 productinfo = shelve.open('productPrice')
-
 class productInfo:
     def __init__(self):
         self.name = ''
         self.price = ''
+        self.indivprice = ''
 
     def get_name(self):
         return self.name
@@ -90,13 +90,26 @@ class productInfo:
     def get_price(self):
         return self.price
 
+    def get_indivprice(self):
+        return self.indivprice
+
+    def set_indivprice(self, indivprice):
+        self.indivprice = indivprice
+
     def set_name(self, name):
         self.name = name
 
     def set_price(self,price):
         self.price = price
 
+
 def add_productprice(productprice):
-    productInfo[productprice.itemprice] = productprice
+    productInfo[productprice.index] = productprice
+
+
+def showProduct(productInfo):
+    def __init__(self, indivprice, name):
+        super().__init__(indivprice, name)
+
 
 #----------------------------------------------------------------------------------------------
