@@ -29,7 +29,8 @@ def admin():
     if request.method == 'POST':
         itemid = request.form['itemid']
         name = request.form["name"]
-        create_product(itemid, name)
+        price = request.form["price"]
+        create_product(itemid, name, price)
         return render_template('admin.html')
     return render_template("admin.html")
 

@@ -11,11 +11,12 @@
 
             {% for productObj in productObj %}
                 <div>
-                    <img src={{ productObj['produrl']}}>
+                    <img src="">
 
                     <span>
                         ID:{{ productObj['itemid'] }}
                         Name: {{ productObj['name']}}
+                        Price: ${{ productObj['price']}}
                     </span>
                 </div>
             {% endfor %}

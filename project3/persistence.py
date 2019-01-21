@@ -54,10 +54,11 @@ class Product:
 def add_product(product):
     compproducts[product.itemid] = product
 
-def create_product(itemid, name):
+def create_product(itemid, name, price):
     product = Product()
     product.itemid = itemid
     product.name = name
+    product.price = price
     compproducts[itemid] = product
 
 def get_products():
