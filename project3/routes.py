@@ -9,11 +9,11 @@ from project3.models import User
 from flask_login import login_user, current_user, logout_user, login_required
 from flask_mail import Message
 from project3.persistence import *
-
+from project3.models import *
 
 @app.route("/summary/<familyid>")
 def summary(familyid):
-    return render_template("summary.html", familyid = familyid)
+    return render_template("summary.html", familyid = current_user.username)
 
 
 @app.route("/cheaper")
@@ -119,28 +119,11 @@ def DailySummary():
 
 
 
-#testing
+#Michaels stuff
 
 
 
 
-
-
-
-posts = [
-    {
-        'author': 'Corey Schafer',
-        'title': 'Blog Post 1',
-        'content': 'First post content',
-        'date_posted': 'April 20, 2018'
-    },
-    {
-        'author': 'Jane Doe',
-        'title': 'Blog Post 2',
-        'content': 'Second post content',
-        'date_posted': 'April 21, 2018'
-    }
-]
 
 
 @app.route("/")
@@ -214,12 +197,16 @@ def account():
             current_user.image_file = picture_file
         current_user.username = form.username.data
         current_user.email = form.email.data
+        current_user.password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
+
         db.session.commit()
         flash('Your account has been updated!', 'success')
         return redirect(url_for('account'))
     elif request.method == 'GET':
         form.username.data = current_user.username
         form.email.data = current_user.email
+        form.password.data = current_user.password
+
     image_file = url_for('static', filename='pics/' + current_user.image_file)
     return render_template('account.html', title='Account',
                            image_file=image_file, form=form)
@@ -267,3 +254,6 @@ def reset_token(token):
         flash('Your password has been updated! You are now able to log in', 'success')
         return redirect(url_for('login'))
     return render_template('reset_token.html', title='Reset Password', form=form)
+
+
+#-------------------------------------------------------------------------------------------

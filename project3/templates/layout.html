@@ -32,9 +32,30 @@
 
 
     <style>
+
+        div.col-md-8 {
+    width:100%;
+}
+
+*{
+    margin: 0;
+}
+
+.row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    /display: block;
+    -ms-flex-wrap: nowrap;
+     flex-wrap: nowrap;
+     margin-right: 0;
+     margin-left: 0;
+}
+
+
 body {
   font-family: "Lato", sans-serif;
 }
+
 
 .sidenav {
   height: 100%;
@@ -98,7 +119,6 @@ body {
             {% endwith %}
           {% block content %}{% endblock %}
         </div>
-      </div>
 
 
 
@@ -113,7 +133,7 @@ body {
         <a href="{{ url_for("home") }}">Home</a>
         <a href="{{ url_for("planner") }}">Daily Spendings</a>
         <a href="{{ url_for("bills") }}">Your Bills</a>
-        <a href="{{ url_for("summary", familyid = "test") }}">Your Summary</a>
+        <a href="{{ url_for("summary", familyid = current_user.username) }}">Your Summary</a>
         <a href="{{ url_for("schemecheck") }}">Schemes</a>
         <a href="{{ url_for("cheaper") }}">Cheaper Alternatives</a>
         <a href="{{ url_for("ranking") }}">Rankings</a>
@@ -145,6 +165,7 @@ function closeNav() {
           </button>
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
+
               <a class="nav-item nav-link" href="/">Home</a>
               <a class="nav-item nav-link" href="/about">About</a>
 
@@ -152,6 +173,8 @@ function closeNav() {
 
  <div class="navbar-nav">
                 {% if current_user.is_authenticated %}
+                                <a class="nav-item nav-link" href="/feedback">Contact us</a>
+
      <a class="nav-item nav-link" href="/account">Account</a>
                 <a class="nav-item nav-link" href="/logout">Logout</a>
                 {% else %}
