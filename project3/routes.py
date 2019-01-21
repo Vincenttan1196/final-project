@@ -98,17 +98,24 @@ def display():
 
 #Immanuels Stuff-------------------------------------------------------------------------------------------
 
+
 @app.route("/planner", methods=('GET', 'POST'))
 def planner():
     if request.method == 'POST':
         total = 0
-        counter = str(request.form['totalitems'])
-        for i in range (counter):
+        count = int(request.form['totalitems'])
+        for i in range(count):
             a = productInfo()
-            a.price = int(request.form['itemprice' + 'counter'])
+            a.price = int(request.form['itemprice' + str(i + 1)])
             total = total + int(a.price)
         return render_template("DailySummary.html", total = total)
     return render_template("planner.html", total='0')
+
+
+@app.route("/DailySummary", methods=('GET', 'POST'))
+def DailySummary():
+    return render_template("DailySummary.html")
+
 
 #-------------------------------------------------------------------------------------------------
 
