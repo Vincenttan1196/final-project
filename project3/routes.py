@@ -18,22 +18,19 @@ def summary(familyid):
 
 @app.route("/cheaper")
 def cheaper():
-    p = Products()
-    id = p.get_id()
-    get_products(id)
-    return render_template('comparison.html', test=p)
+
+
+    return render_template('comparison.html', productObj = 1)
 
 
 @app.route("/admin", methods=('GET', 'POST'))
 def admin():
     if request.method == 'POST':
-        p = Products()
-        p.itemid = request.form['itemid']
-        p.name = request.form["name"]
-        p.picture = ''
-        p.price = ''
-        add_product(p)
-        return render_template('comparison.html', test = p)
+        itemid = request.form['itemid']
+        name = request.form["name"]
+        create_product(itemid, name)
+        test = compproducts['1']
+        return render_template('comparison.html', productObj = test)
     return render_template("admin.html")
 
 
@@ -100,17 +97,24 @@ def display():
 
 #Immanuels Stuff-------------------------------------------------------------------------------------------
 
+
 @app.route("/planner", methods=('GET', 'POST'))
 def planner():
     if request.method == 'POST':
         total = 0
-        counter = str(request.form['totalitems'])
-        for i in range (counter):
+        count = int(request.form['totalitems'])
+        for i in range(count):
             a = productInfo()
-            a.price = int(request.form['itemprice' + 'counter'])
+            a.price = int(request.form['itemprice' + str(i + 1)])
             total = total + int(a.price)
         return render_template("DailySummary.html", total = total)
     return render_template("planner.html", total='0')
+
+
+@app.route("/DailySummary", methods=('GET', 'POST'))
+def DailySummary():
+    return render_template("DailySummary.html")
+
 
 #-------------------------------------------------------------------------------------------------
 

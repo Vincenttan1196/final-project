@@ -1,6 +1,5 @@
+from project3 import user
 import shelve
-from project3.models import User
-from project3.models import db
 
 
 
@@ -9,7 +8,7 @@ compproducts = shelve.open("products")
 images = shelve.open("images")
 
 
-class Products:
+class Product:
     def __init__(self):
         self.itemid = ""
         self.name = ""
@@ -51,10 +50,14 @@ class Products:
 def add_product(product):
     compproducts[product.itemid] = product
 
+def create_product(itemid, name):
+    product = Product()
+    product.itemid = itemid
+    product.name = name
+    compproducts[itemid] = product
 
 def get_products(itemid):
-    if itemid in compproducts:
-        return compproducts[itemid]
+    return compproducts[itemid]
 
 def get_imagesproduct():
     return images["imagesProducts"]
@@ -75,11 +78,11 @@ def get_amount(x):
 #Immanuels Stuff----------------------------------------------------------------------------------
 
 productinfo = shelve.open('productPrice')
-
 class productInfo:
     def __init__(self):
         self.name = ''
         self.price = ''
+        self.indivprice = ''
 
     def get_name(self):
         return self.name
@@ -87,13 +90,26 @@ class productInfo:
     def get_price(self):
         return self.price
 
+    def get_indivprice(self):
+        return self.indivprice
+
+    def set_indivprice(self, indivprice):
+        self.indivprice = indivprice
+
     def set_name(self, name):
         self.name = name
 
     def set_price(self,price):
         self.price = price
 
+
 def add_productprice(productprice):
-    productInfo[productprice.itemprice] = productprice
+    productInfo[productprice.index] = productprice
+
+
+def showProduct(productInfo):
+    def __init__(self, indivprice, name):
+        super().__init__(indivprice, name)
+
 
 #----------------------------------------------------------------------------------------------

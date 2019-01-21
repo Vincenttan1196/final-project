@@ -13,42 +13,66 @@
 
 
   <div id="getText" style="display: none;">
-      <div id = 'newitem' class="bill">
     <h2>Item</h2>
-          <span><font size="4">Item Name: </font></span><textarea class="inputbox" rows="1" name = 'itemname'></textarea>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span><font size="4">Item Price:</font></span><input type="number" class="inputbox" name = 'itemprice' rows="1">&nbsp;&nbsp;&nbsp;&nbsp;
-</div>
+          <span><font size="4">Item Name: </font></span><textarea class="inputbox" rows="1" name = 'noname' onchange="uniqueName(this, 'itemname', 'textarea')"></textarea>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span><font size="4">Item Price:</font></span><input type="number" class="inputbox" name = 'noprice' onchange="uniqueName(this, 'itemprice', 'input')" rows="1">&nbsp;&nbsp;&nbsp;&nbsp;
   </div>
 
 
 <script>
   function addItem() {
     var div = document.createElement('div');
+    div.id='boo';
+    div.classList.add("bill");
     div.innerHTML = document.getElementById('getText').innerHTML;
-    document.body.appendChild(div);
-      counter = parseInt(document.getElementById("count").textContent);
-  counter = counter + 1;
-  document.getElementById("count").innerHTML = counter;
+
+    document.getElementById("inputform").appendChild(div);
+    counter = parseInt(document.getElementById("count").textContent);
+    counter = counter + 1;
+    document.getElementById("count").innerHTML = counter;
+    document.getElementById("count_trans").value = counter;
   }
 
-    var date = new Date();
-    document.getElementById("date").innerHTML = date.getDate() + '/';
-    var month = new Date();
-    document.getElementById("month").innerHTML = month.getMonth() + 1 + '/';
-    var year = new Date();
-    document.getElementById("year").innerHTML = year.getFullYear();
+  // var date = new Date();
+  // document.getElementById("date").innerHTML = date.getDate() + '/';
+  // var month = new Date();
+  // document.getElementById("month").innerHTML = month.getMonth() + 1 + '/';
+  // var year = new Date();
+  // document.getElementById("year").innerHTML = year.getFullYear();
+
+  function uniqueName(element, name, type){
+    var value = 1;
+    if(type=="textarea"){
+      var inputs = document.getElementsByTagName(type);
+    } else {
+      var inputs = document.querySelectorAll("input")
+    }
+
+    for (x = 0 ; x < inputs.length ; x++){
+      itemname = inputs[x].getAttribute("name");
+
+      if(itemname == null){
+        itemname = inputs[x].name;
+      }
+
+      if(itemname.indexOf(name) == 0){
+        value ++;
+      }
+    }
+
+    var newname = name + value;
+    element.name = newname;
+  }
 
 </script>
 
-
-<form method="post" action = '/planner'>
+<form method="post" action = '/planner' id="inputform">
     <input type="submit">
 
+
     <div class="sticky">
-    <p><button onClick="addItem()" id="buttonadd" >Add New Item</button></p>
-    <p> Number Of Items Bought Today:  <span id = "count" name = "totalitems">3</span></p>
-
-
-  </div>
+    <p><input type="button" onClick="addItem()" id="buttonadd" value="Add New Item" ></input></p>
+           <p> Number Of Items Bought Today:  <input type="hidden" value="3" name="totalitems" id="count_trans"><a id = "count">3</a></p>
+    </div>
 
 <div id = 'boop' class="bill">
     <h2 id = 'first'>Item </h2>
