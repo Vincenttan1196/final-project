@@ -114,16 +114,23 @@ class productInfo:
     def __init__(self):
         self.name = ''
         self.price = ''
+        self.index = ''
         self.indivprice = ''
 
     def get_name(self):
         return self.name
+
+    def get_index(self):
+        return self.index
 
     def get_price(self):
         return self.price
 
     def get_indivprice(self):
         return self.indivprice
+
+    def set_index(self, index):
+        self.index = index
 
     def set_indivprice(self, indivprice):
         self.indivprice = indivprice
@@ -136,13 +143,21 @@ class productInfo:
 
 
 def add_productprice(productprice):
-    productInfo[productprice.index] = productprice
+    productinfo[productprice.index] = productprice
 
 
-def showProduct(productInfo):
-    def __init__(self, indivprice, name):
-        super().__init__(indivprice, name)
+total = shelve.open('totalprices')
 
+def add_totalprices(totalprice):
+    total['total'] = totalprice
+
+
+def get_productname():
+    infolist = list(productinfo.keys())
+    y = []
+    for i in infolist:
+        y.append(productinfo[i])
+    return y
 
 #----------------------------------------------------------------------------------------------\
 
