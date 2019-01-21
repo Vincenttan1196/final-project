@@ -9,13 +9,20 @@ def load_user(user_id):
     return User.query.get(int(user_id))
 
 
+class Score(db.Model):
+    id = db.Column(db.Integer,primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    score = db.Column(db.Integer, default=0)
+
+
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(20), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     image_file = db.Column(db.String(20), nullable=False, default='default.jpg')
     password = db.Column(db.String(60), nullable=False)
-    score = db.Column(db.Integer, nullable=False, default=0)
+    score = db.Column(db.Integer,default = 0)
+    rank = db.Column(db.Integer)
 
     def get_reset_token(self, expires_sec=1800):
         s = Serializer(app.config['SECRET_KEY'], expires_sec)
@@ -32,10 +39,12 @@ class User(db.Model, UserMixin):
 
 
     def __repr__(self):
-        return f"User('{self.id},{self.username},{self.score} )"
+        return f"User('RANK-{self.rank},ID-{self.id},USERNAME-{self.username},'EMAIL-{self.email}',SCORE-{self.score} )"
 
 
 
     #def __repr__(self):
-        #return f"User('{self.username}', '{self.email}', '{self.image_file}' )"
+        #return f"User('USERNAME-{self.username}', 'EMAIL-{self.email}', '{self.image_file}' )"
+
+
 

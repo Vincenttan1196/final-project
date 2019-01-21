@@ -5,11 +5,11 @@ from flask import render_template, url_for, flash, redirect, request
 from project3 import app, db, bcrypt, mail
 from project3.forms import (RegistrationForm, LoginForm, UpdateAccountForm,
                             RequestResetForm, ResetPasswordForm)
-from project3.models import User
 from flask_login import login_user, current_user, logout_user, login_required
 from flask_mail import Message
 from project3.persistence import *
 from project3.models import *
+from project3.database import User, username, scores, rank
 
 @app.route("/summary/<familyid>")
 def summary(familyid):
@@ -41,7 +41,9 @@ def ranking():
 #Testing php#
 @app.route('/weekly')
 def weekly():
-    return render_template("weekly.html")
+    score = db.session.query(User.rank, User.username, User.score)
+
+    return render_template("weekly.html", score=score)
 
 
 @app.route('/monthly')
