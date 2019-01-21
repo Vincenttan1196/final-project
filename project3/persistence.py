@@ -56,8 +56,12 @@ def create_product(itemid, name):
     product.name = name
     compproducts[itemid] = product
 
-def get_products(itemid):
-    return compproducts[itemid]
+def get_products():
+    klist = list(compproducts.keys())
+    x = []
+    for i in klist:
+        x.append(compproducts[i])
+    return x
 
 def get_imagesproduct():
     return images["imagesProducts"]

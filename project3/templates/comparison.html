@@ -1,4 +1,4 @@
-{e{% extends "layout.html" %}
+{% extends "layout.html" %}
 {% block content %}
     <title>What Items</title>
 
@@ -12,9 +12,12 @@
 
         <div class = "catalogue">
 
-                {{ productObj['itemid'] }} {{ productObj['name']}}
-
-
+            {% for productObj in productObj %}
+                <div>
+                    <p>ID:{{ productObj['itemid'] }}</p>
+                    <p>Name: {{ productObj['name']}}</p>
+                </div>
+            {{% endfor %}}
 
         </div>
 
