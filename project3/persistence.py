@@ -8,7 +8,7 @@ compproducts = shelve.open("products")
 images = shelve.open("images")
 
 
-class Products:
+class Product:
     def __init__(self):
         self.itemid = ""
         self.name = ""
@@ -50,6 +50,11 @@ class Products:
 def add_product(product):
     compproducts[product.itemid] = product
 
+def create_product(itemid, name):
+    product = Product()
+    product.itemid = itemid
+    product.name = name
+    compproducts[itemid] = product
 
 def get_products(itemid):
     return compproducts[itemid]
