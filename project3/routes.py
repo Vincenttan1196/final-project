@@ -68,8 +68,8 @@ def bills():
             add_totalbills(id,amount,due)
         y = get_totalbills()
         return render_template('billsSaved.html', info = y)
-
-    return render_template('Bills.html')
+    y = get_totalbills()
+    return render_template('Bills.html', info = '1234')
 
 
 @app.route('/display', methods=('GET', 'POST'))

@@ -14,9 +14,25 @@
 
 <h1 id = 'billheader'>Current bills</h1>
 
+
+
+
 <form method="post" action = '/bills'>
-<div class="bill">
-    <h2 id = 'first'>Bill 1</h2>
+
+    <div class="bill">
+        <h2>Bill {{ i }}</h2>
+        <span>Amount: </span><textarea class="inputbox" rows="1" name = '{{ i }}' >{{ i }}</textarea> <span>Due date</span><textarea class="inputbox" rows="1" name = 'due1 {{i}}'>{{ i }}</textarea> <input type="checkbox">
+    </div>
+
+
+    {% for i in info %}
+    <div class="bill">
+        <h2>Bill {{ i }}</h2>
+        <span>Amount: </span><textarea class="inputbox" rows="1" name = '{{ i }}' >{{ i }}</textarea> <span>Due date</span><textarea class="inputbox" rows="1" name = 'due1 {{i}}'>{{ i }}</textarea> <input type="checkbox">
+    </div>
+    {% endfor %}
+<!-- <div class="bill">
+    <h2 id = >Bill 1</h2>
     <span>Amount: </span><textarea class="inputbox" rows="1" name = 'amount1' >{{ 'test' }}</textarea> <span>Due date</span><textarea class="inputbox" rows="1" name = 'due1'></textarea> <input type="checkbox">
 </div>
 <div class="bill">
@@ -26,7 +42,7 @@
 <div class="bill">
     <h2>Bill 3</h2>
     <span>Amount: </span><textarea class="inputbox" rows="1" name = 'amount3'></textarea> <span>Due date</span><textarea class="inputbox" rows="1" name = 'due3'></textarea> <input type="checkbox">
-</div>
+</div> -->
 <div id = "finalamount">
     <h3>Total for this month</h3>
     <span>$150</span>
