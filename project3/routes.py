@@ -9,8 +9,8 @@ from flask_login import login_user, current_user, logout_user, login_required
 from flask_mail import Message
 from project3.persistence import *
 from project3.models import *
-from project3.database import User, username, scores, rank
-import pandas as pd
+from project3.database import User
+
 
 @app.route("/summary/<familyid>")
 def summary(familyid):
@@ -250,14 +250,13 @@ def reset_token(token):
 def weekly():
 
     score = User.query.order_by(User.score.desc()).all()
-
     return render_template("weekly.html", score=score)
 
 
 @app.route('/monthly')
 def monthly():
-    score = db.session.query(User.rank, User.username, User.score)
-    User.query.order_by(User.score.desc()).all()
+    score = User.query.order_by(User.score.desc()).all()
+
     return render_template("monthly.html", score=score)
 
 
