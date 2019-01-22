@@ -26,8 +26,11 @@ def cheaper():
 
 @app.route("/comparison")
 def comparison():
+    selectedproduct = get_product(id)
+    #^to display the product selected by user
 
-    return render_template("comparison2.html")
+
+    return render_template("comparison2.html", selprod = selectedproduct)
 
 
 @app.route("/admin", methods=('GET', 'POST'))
