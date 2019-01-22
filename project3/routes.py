@@ -70,7 +70,10 @@ def bills():
             due = str(request.form['due'+str(x)])
             add_totalbills(id,amount,due)
         y = get_totalbills()
-        return render_template('billsSaved.html', info = y)
+        total = 0
+        for i in y:
+            total += int(i.amount)
+        return render_template('billsSaved.html', info = y, total = total)
     y = get_totalbills()
     if y == []:
         add_totalbills('1','Enter the amount','Enter the due date')
