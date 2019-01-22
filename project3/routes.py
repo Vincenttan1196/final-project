@@ -13,8 +13,9 @@ from project3.database import User
 
 
 @app.route("/summary/<familyid>")
-def summary(familyid):
-    return render_template("summary.html", familyid = current_user.username)
+def summary():
+    total = get_totalprices()
+    return render_template("summary.html", familyid = current_user.username, total = total)
 
 
 @app.route("/cheaper")
@@ -25,8 +26,11 @@ def cheaper():
 
 @app.route("/comparison")
 def comparison():
+    selectedproduct = get_product(id)
+    #^to display the product selected by user
 
-    return render_template("comparison2.html")
+
+    return render_template("comparison2.html", selprod = selectedproduct)
 
 
 @app.route("/admin", methods=('GET', 'POST'))
