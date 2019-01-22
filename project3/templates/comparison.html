@@ -6,18 +6,21 @@
     <link href="{{ url_for('static', filename='comparison.css') }}" rel="stylesheet">
 
     <div class = "catalogue">
-        <h1>Pick an item to compare</h1>
+        <h1 class="heading">Pick an item to compare</h1>
         <!--<input class = "search" type="text" size = "30" placeholder="Item e.g. toothpaste, shampoo..."> -->
 
             {% for productObj in productObj %}
-                <div>
-                    <img src="">
+                <div class = "listing">
+                    <img src="{{ productObj['picture']}}" width="150" height="150">
 
                     <span>
                         ID:{{ productObj['itemid'] }}
                         Name: {{ productObj['name']}}
                         Price: ${{ productObj['price']}}
                     </span>
+                    <form>
+                        <input type="submit" name="{{productObj['itemid']}}">
+                    </form>
                 </div>
             {% endfor %}
 

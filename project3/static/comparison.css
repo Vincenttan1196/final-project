@@ -10,9 +10,17 @@ body {
 
 }
 
+.heading {
+    margin-bottom: 50px;
+}
+
+.listing{
+    border-style: solid;
+}
+
 .catalogue {
-  margin-left: 200px;
-  margin-right: 200px;
+  margin-left: 300px;
+  margin-right: 300px;
   padding: 10px;
   background-color: #f2f2f2;
 }

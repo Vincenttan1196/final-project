@@ -54,10 +54,11 @@ class Product:
 def add_product(product):
     compproducts[product.itemid] = product
 
-def create_product(itemid, name, price):
+def create_product(itemid, name, picture, price):
     product = Product()
     product.itemid = itemid
     product.name = name
+    product.picture = picture
     product.price = price
     compproducts[itemid] = product
 
@@ -70,10 +71,10 @@ def get_products():
 
 def get_product(id):
     klist = list(compproducts.keys())
-    x = []
+    y = []
     for id in klist:
-        x.append(compproducts[id])
-    return x
+        y.append(compproducts[id])
+    return y
 
 def clear_product(id):
     del compproducts[id]
