@@ -167,9 +167,9 @@ function closeNav() {
                     {% for productObj in productObj %}
                 <div>
                     <p>Name: {{ productObj['name'] }}</p>
-                    <p>Price: {{ productObj['price']}}</p>
+                    <p>Price: ${{ productObj['price']}}</p>
                 </div>
-            {% endfor %}
+                    {% endfor %}
                 </td>
         </table>
     </div>

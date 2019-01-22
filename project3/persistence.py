@@ -113,34 +113,28 @@ def get_totalbills():
 productinfo = shelve.open('productPrice')
 class productInfo:
     def __init__(self):
-        self.name = ''
-        self.price = ''
-        self.index = ''
-        self.indivprice = ''
+        self.__name = ''
+        self.__price = ''
+        self.__index = ''
+
 
     def get_name(self):
-        return self.name
+        return self.__name
 
     def get_index(self):
-        return self.index
+        return self.__index
 
     def get_price(self):
-        return self.price
-
-    def get_indivprice(self):
-        return self.indivprice
+        return self.__price
 
     def set_index(self, index):
-        self.index = index
-
-    def set_indivprice(self, indivprice):
-        self.indivprice = indivprice
+        self.__index = index
 
     def set_name(self, name):
-        self.name = name
+        self.__name = name
 
     def set_price(self,price):
-        self.price = price
+        self.__price = price
 
 
 def add_productprice(productprice):

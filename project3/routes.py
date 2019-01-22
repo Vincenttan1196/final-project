@@ -111,6 +111,7 @@ def planner():
         count = int(request.form['totalitems'])
         for i in range(count):
             a = productInfo()
+            a.index = str(i + 1)
             a.name = str(request.form['itemname' + str(i + 1)])
             a.price = int(request.form['itemprice' + str(i + 1)])
             total = total + int(a.price)
