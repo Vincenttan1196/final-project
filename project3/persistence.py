@@ -1,5 +1,8 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from project3.models import *
+from project3 import db
+from sqlalchemy import desc
 
 
 
@@ -163,21 +166,6 @@ def get_productname():
     return y
 
 #----------------------------------------------------------------------------------------------\
-
-#Michael stuff
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
