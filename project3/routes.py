@@ -17,10 +17,9 @@ def summary(familyid):
     return render_template("summary.html", familyid = current_user.username)
 
 
-@app.route("/cheaper", methods=("GET", "POST"))
+@app.route("/cheaper")
 def cheaper():
     test = get_products()
-    if request.method == "POST":
 
     return render_template('comparison.html', productObj = test)
 
