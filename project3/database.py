@@ -1,9 +1,11 @@
 from project3.models import *
 from project3 import db
+from sqlalchemy import desc
 
 db.create_all()
 
-users = User.query.all()
+users = User.query.order_by(User.score.desc()).all()
+
 #RANK / ID / USERNAME /EMAIL / SCORE
 
 

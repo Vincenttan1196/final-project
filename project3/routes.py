@@ -10,8 +10,7 @@ from flask_mail import Message
 from project3.persistence import *
 from project3.models import *
 from project3.database import User, username, scores, rank
-from sqlalchemy import desc
-
+import pandas as pd
 
 @app.route("/summary/<familyid>")
 def summary(familyid):
@@ -36,32 +35,6 @@ def admin():
 
 
 
-
-#Testing php#
-@app.route('/weekly')
-def weekly():
-
-    score = db.session.query(User.rank, User.username, User.score)
-    return render_template("weekly.html", score=score)
-
-
-@app.route('/monthly')
-def monthly():
-    score = db.session.query(User.rank, User.username, User.score)
-
-    return render_template("monthly.html", score=score)
-
-
-@app.route('/yearly')
-def yearly():
-    score = db.session.query(User.rank, User.username, User.score)
-
-    return render_template("yearly.html", score=score)
-
-
-@app.route('/feedback')
-def feedback():
-    return render_template('feedback.html')
 
 
 #Jonathan's stuff -----------------------------------------------------------------------
@@ -269,6 +242,33 @@ def reset_token(token):
         flash('Your password has been updated! You are now able to log in', 'success')
         return redirect(url_for('login'))
     return render_template('reset_token.html', title='Reset Password', form=form)
+
+
+@app.route('/weekly')
+def weekly():
+
+    score = User.query.order_by(User.score.desc()).all()
+
+    return render_template("weekly.html", score=score)
+
+
+@app.route('/monthly')
+def monthly():
+    score = db.session.query(User.rank, User.username, User.score)
+    User.query.order_by(User.score.desc()).all()
+    return render_template("monthly.html", score=score)
+
+
+@app.route('/yearly')
+def yearly():
+    score = db.session.query(User.rank, User.username, User.score)
+
+    return render_template("yearly.html", score=score)
+
+
+@app.route('/feedback')
+def feedback():
+    return render_template('feedback.html')
 
 
 #-------------------------------------------------------------------------------------------
