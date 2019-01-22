@@ -1,6 +1,5 @@
-from project3.models import User, Score
+from project3.models import *
 from project3 import db
-from sqlalchemy import desc
 
 db.create_all()
 
@@ -16,5 +15,6 @@ username = db.session.query(User.username).all()
 scores = db.session.query(User.score).all()
 
 db.session.commit()
+
 
 print(users)

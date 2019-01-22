@@ -21,9 +21,7 @@ class User(db.Model, UserMixin):
     image_file = db.Column(db.String(20), nullable=False, default='default.jpg')
     password = db.Column(db.String(60), nullable=False)
     score = db.Column(db.Integer,default = 0)
-    rank = db.Column(db.Integer)
-
-
+    rank = db.Column(db.Integer, default=1)
 
     def get_reset_token(self, expires_sec=1800):
         s = Serializer(app.config['SECRET_KEY'], expires_sec)
@@ -41,7 +39,6 @@ class User(db.Model, UserMixin):
 
     def __repr__(self):
         return f"User('RANK-{self.rank},ID-{self.id},USERNAME-{self.username},'EMAIL-{self.email}',SCORE-{self.score} )"
-
 
 
     #def __repr__(self):
