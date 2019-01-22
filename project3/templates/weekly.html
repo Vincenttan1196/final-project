@@ -46,7 +46,7 @@
 
 
 
-                  <th>#</th>
+                  <th>ID</th>
 
                   <th>Username</th>
 
@@ -57,10 +57,11 @@
                 <tr>
                     <td>
 
-                    {% for rank in score %}
+                    {% for id in score %}
                                         <div>
-                                 {{ rank.rank }}
+                                 {{ id.id }}
                                         </div>
+
                         {% endfor %}
                 </td>
 

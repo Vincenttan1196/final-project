@@ -23,6 +23,8 @@ class User(db.Model, UserMixin):
     score = db.Column(db.Integer,default = 0)
     rank = db.Column(db.Integer, default=1)
 
+
+
     def get_reset_token(self, expires_sec=1800):
         s = Serializer(app.config['SECRET_KEY'], expires_sec)
         return s.dumps({'user_id': self.id}).decode('utf-8')
@@ -43,6 +45,7 @@ class User(db.Model, UserMixin):
 
     #def __repr__(self):
         #return f"User('USERNAME-{self.username}', 'EMAIL-{self.email}', '{self.image_file}' )"
+
 
 
 
