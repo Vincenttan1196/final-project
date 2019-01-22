@@ -103,7 +103,7 @@ class Bill:
 
 def add_totalbills(id,amount,due):
     bill = Bill()
-    bill.id = id
+    bill.index = id
     bill.amount = amount
     bill.due = due
     billinfo[id] = bill
