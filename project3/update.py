@@ -10,6 +10,4 @@ print(second)
 print(second.score)
 
 all = User.query.all()
-all.score = User.query
 
-print(all.score)
