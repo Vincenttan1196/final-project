@@ -68,6 +68,13 @@ def get_products():
         x.append(compproducts[i])
     return x
 
+def get_product(id):
+    klist = list(compproducts.keys())
+    x = []
+    for id in klist:
+        x.append(compproducts[id])
+    return x
+
 def clear_product(id):
     del compproducts[id]
 
