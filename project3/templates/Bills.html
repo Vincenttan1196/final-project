@@ -20,15 +20,15 @@
 <form method="post" action = '/bills'>
 
     <div class="bill">
-        <h2>Bill {{ i }}</h2>
-        <span>Amount: </span><textarea class="inputbox" rows="1" name = '{{ i }}' >{{ i }}</textarea> <span>Due date</span><textarea class="inputbox" rows="1" name = 'due1 {{i}}'>{{ i }}</textarea> <input type="checkbox">
+        <h2>Bill {{ i.index }}</h2>
+        <span>Amount: </span><textarea class="inputbox" rows="1" name = '{{i.index}}' >{{ i.amount }}</textarea> <span>Due date</span><textarea class="inputbox" rows="1" name = 'due1 {{i.index}}'>{{ i.due }}</textarea> <input type="checkbox">
     </div>
 
 
     {% for i in info %}
     <div class="bill">
-        <h2>Bill {{ i }}</h2>
-        <span>Amount: </span><textarea class="inputbox" rows="1" name = '{{ i }}' >{{ i }}</textarea> <span>Due date</span><textarea class="inputbox" rows="1" name = 'due1 {{i}}'>{{ i }}</textarea> <input type="checkbox">
+        <h2>Bill {{ i.index }}</h2>
+        <span>Amount: </span><textarea class="inputbox" rows="1" name = '{{i.index}}' >{{ i.amount }}</textarea> <span>Due date</span><textarea class="inputbox" rows="1" name = 'due1 {{i.index}}'>{{ i.due }}</textarea> <input type="checkbox">
     </div>
     {% endfor %}
 <!-- <div class="bill">

@@ -69,7 +69,10 @@ def bills():
         y = get_totalbills()
         return render_template('billsSaved.html', info = y)
     y = get_totalbills()
-    return render_template('Bills.html', info = '1234')
+    if y == []:
+        add_totalbills(1,'test','test2')
+        y = get_totalbills()
+    return render_template('Bills.html', info = 'y')
 
 
 @app.route('/display', methods=('GET', 'POST'))
