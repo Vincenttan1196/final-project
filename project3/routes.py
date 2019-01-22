@@ -42,7 +42,6 @@ def admin():
 def weekly():
 
     score = db.session.query(User.rank, User.username, User.score)
-    rank = all.order_by(rank.desc())
     return render_template("weekly.html", score=score)
 
 
