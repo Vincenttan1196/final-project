@@ -14,8 +14,8 @@ from project3.database import User
 
 @app.route("/summary/<familyid>")
 def summary():
-
-    return render_template("summary.html", familyid = current_user.username)
+    total = get_totalprices()
+    return render_template("summary.html", familyid = current_user.username, total = total)
 
 
 @app.route("/cheaper")
