@@ -41,7 +41,8 @@
             <table class="table table-striped table-sm">
               <thead>
                 <tr>
-                  <th>#</th>
+
+                  <th>#Rank</th>
 
                   <th>Username</th>
 
@@ -52,14 +53,14 @@
                 <tr>
                     <td>
 
-                    {% for rank in score %}
+{% set count = namespace(a=1) %}
+{% for i in score %}
                                         <div>
+  {{ count.a }}
+                                        </div>
+  {% set count.a = count.a + 1 %}
 
-                        {{ rank.rank }}
-
-                                                            </div>
-
-                    {% endfor %}
+{% endfor %}
                 </td>
 
                 <td>
