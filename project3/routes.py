@@ -20,10 +20,12 @@ def summary(familyid):
 @app.route("/cheaper")
 def cheaper():
     test = get_products()
+
     return render_template('comparison.html', productObj = test)
 
 @app.route("/comparison")
 def comparison():
+
     return render_template("comparison2.html")
 
 
@@ -32,8 +34,9 @@ def admin():
     if request.method == 'POST':
         itemid = request.form['itemid']
         name = request.form["name"]
+        picture = request.form["picture"]
         price = request.form["price"]
-        create_product(itemid, name, price)
+        create_product(itemid, name, picture, price)
         return render_template('admin.html')
     return render_template("admin.html")
 
