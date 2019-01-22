@@ -15,14 +15,16 @@
     </div>
 {% endfor %}
 
-<div id = "finalamount">
+<!--<div id = "finalamount">
     <h3>Total for this month</h3>
+    {%= total = 0 %}
     {% for i in info %}
-
-    <span>$</span>
+    {%  total += i.amount%}
     {% endfor %}
-</div>
+    <span>$ {{ total }}</span>
 
+</div>
+-->
 
 
 </body>
