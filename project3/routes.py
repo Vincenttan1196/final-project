@@ -13,18 +13,24 @@ from project3.database import User
 
 
 @app.route("/summary/<familyid>")
-def summary(familyid):
-    return render_template("summary.html", familyid = current_user.username)
+def summary():
+    total = get_totalprices()
+    return render_template("summary.html", familyid = current_user.username, total = total)
 
 
 @app.route("/cheaper")
 def cheaper():
     test = get_products()
+
     return render_template('comparison.html', productObj = test)
 
 @app.route("/comparison")
 def comparison():
-    return render_template("comparison2.html")
+    selectedproduct = get_product(id)
+    #^to display the product selected by user
+
+
+    return render_template("comparison2.html", selprod = selectedproduct)
 
 
 @app.route("/admin", methods=('GET', 'POST'))
@@ -32,8 +38,9 @@ def admin():
     if request.method == 'POST':
         itemid = request.form['itemid']
         name = request.form["name"]
+        picture = request.form["picture"]
         price = request.form["price"]
-        create_product(itemid, name, price)
+        create_product(itemid, name, picture, price)
         return render_template('admin.html')
     return render_template("admin.html")
 
@@ -60,16 +67,22 @@ def schemecheck():
 @app.route("/bills", methods = ('GET','POST'))
 def bills():
     if request.method == 'POST':
-        for i in range(3):
+        for i in range(1):
             x = str(i + 1)
             id = x
             amount = str(request.form['amount' + str(x)])
             due = str(request.form['due'+str(x)])
             add_totalbills(id,amount,due)
         y = get_totalbills()
-        return render_template('billsSaved.html', info = y)
-
-    return render_template('Bills.html')
+        total = 0
+        for i in y:
+            total += int(i.amount)
+        return render_template('billsSaved.html', info = y, total = total)
+    y = get_totalbills()
+    if y == []:
+        add_totalbills('1','Enter the amount','Enter the due date')
+        y = get_totalbills()
+    return render_template('Bills.html', info = y)
 
 
 @app.route('/display', methods=('GET', 'POST'))
@@ -253,6 +266,7 @@ def reset_token(token):
 @app.route('/weekly')
 def weekly():
 
+
     score = User.query.order_by(User.score.desc()).all()
     return render_template("weekly.html", score=score)
 
@@ -266,7 +280,7 @@ def monthly():
 
 @app.route('/yearly')
 def yearly():
-    score = db.session.query(User.rank, User.username, User.score)
+    score = User.query.order_by(User.score.desc()).all()
 
     return render_template("yearly.html", score=score)
 

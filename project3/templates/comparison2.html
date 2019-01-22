@@ -1,10 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "layout.html" %}
+{% block content %}
+    <title>What Items</title>
 
-</body>
-</html>
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='comparison.css') }}" rel="stylesheet">
+
+    <div class = "catalogue">
+        <span class="board">
+            <img src = "{{ selprod['picture'] }}">
+            {{ selprod['name'] }}
+            {{ selprod['price'] }}
+        </span>
+
+        <span class="board">
+            Image here
+        </span>
+    </div>
+{% endblock content %}
