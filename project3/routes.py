@@ -91,6 +91,7 @@ def bills():
             add_totalbills(id,amount,due)
         y = get_totalbills()
         return render_template('billsSaved.html', info = y)
+
     return render_template('Bills.html')
 
 
