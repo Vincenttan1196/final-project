@@ -259,6 +259,7 @@ def reset_token(token):
 @app.route('/weekly')
 def weekly():
 
+
     score = User.query.order_by(User.score.desc()).all()
     return render_template("weekly.html", score=score)
 
@@ -272,7 +273,7 @@ def monthly():
 
 @app.route('/yearly')
 def yearly():
-    score = db.session.query(User.rank, User.username, User.score)
+    score = User.query.order_by(User.score.desc()).all()
 
     return render_template("yearly.html", score=score)
 

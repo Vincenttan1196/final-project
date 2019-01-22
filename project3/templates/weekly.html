@@ -46,7 +46,7 @@
 
 
 
-                  <th>ID</th>
+                  <th>#Rank</th>
 
                   <th>Username</th>
 
@@ -57,12 +57,14 @@
                 <tr>
                     <td>
 
-                    {% for id in score %}
+{% set count = namespace(a=1) %}
+{% for i in score %}
                                         <div>
-                                 {{ id.id }}
+  {{ count.a }}
                                         </div>
+  {% set count.a = count.a + 1 %}
 
-                        {% endfor %}
+{% endfor %}
                 </td>
 
                 <td>
