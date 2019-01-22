@@ -53,6 +53,11 @@ class Product:
         self.itemid = itemid
 
 
+class Object(Product):
+    def __init__(self):
+        super.__init__(super)
+
+
 
 def add_product(product):
     compproducts[product.itemid] = product

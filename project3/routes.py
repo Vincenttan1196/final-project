@@ -13,7 +13,8 @@ from project3.database import User
 
 
 @app.route("/summary/<familyid>")
-def summary(familyid):
+def summary():
+
     return render_template("summary.html", familyid = current_user.username)
 
 
