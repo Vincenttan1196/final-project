@@ -107,7 +107,7 @@ def planner():
             total = total + int(a.price)
             add_productprice(a)
             add_totalprices(total)
-            a = get_productname()
+        a = get_productname()
         return render_template("DailySummary.html", total = total, productObj = a)
     return render_template("planner.html", total='0')
 
