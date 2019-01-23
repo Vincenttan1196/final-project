@@ -14,9 +14,6 @@ div {
     border-width: 1px;
     border-style: solid;
 }
-#first {
-    margin-top: 0;
-}
 
 .bill {
     padding-bottom: 10px;
@@ -93,4 +90,53 @@ a:hover{
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
+}
+
+@media (min-width: 1000px) {
+.col-md-8 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 100%;}
+
+}
+
+
+
+@media (min-width: 1000px) {
+.container {
+     max-width: 100%; }
+}
+
+*, ::after, ::before {
+    box-sizing: unset;
+}
+
+*, ::after, ::before {
+    box-sizing: unset;
+
+}
+
+div.output {
+        margin-left: 200px;
+        margin-right: 200px;
+}
+
+
+div.col-md-8 {
+    width:100%;
+}
+
+*{
+    margin: 0;
+}
+
+.row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    /display: block;
+    -ms-flex-wrap: nowrap;
+     flex-wrap: nowrap;
+     margin-right: 0;
+     margin-left: 0;
 }

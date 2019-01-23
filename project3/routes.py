@@ -86,7 +86,10 @@ def bills():
 @app.route('/display', methods=('GET', 'POST'))
 def display():
     y = get_totalbills()
-    return render_template('billsSaved.html', info = y)
+    total = 0
+    for i in y:
+        total += int(i.amount)
+    return render_template('billsSaved.html', info = y, total = total)
 #------------------------------------------------------------------------------------------------
 
 #Immanuels Stuff-------------------------------------------------------------------------------------------
