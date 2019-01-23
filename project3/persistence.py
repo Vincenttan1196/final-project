@@ -13,7 +13,7 @@ import shelve
 users = shelve.open('user')
 compproducts = shelve.open("products")
 images = shelve.open("images")
-
+catTotal = shelve.open("categoryTotal")
 
 class Product:
     def __init__(self):
@@ -51,6 +51,11 @@ class Product:
 
     def set_itemid(self, itemid):
         self.itemid = itemid
+
+
+class Object(Product):
+    def __init__(self):
+        super.__init__(super)
 
 
 
@@ -157,6 +162,8 @@ total = shelve.open('totalprices')
 def add_totalprices(totalprice):
     total['total'] = totalprice
 
+def get_totalprices():
+    return total['total']
 
 def get_productname():
     infolist = list(productinfo.keys())
