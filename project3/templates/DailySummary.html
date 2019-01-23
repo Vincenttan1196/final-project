@@ -153,7 +153,7 @@ function closeNav() {
 
 
 <span id = 'total'>Total Amount Spent Today:&nbsp;&nbsp;${{ total }}</span>
-
+<span>Budget Left: ${{ budget }}</span>
 
 
     <div class="invoice-box">
@@ -166,8 +166,8 @@ function closeNav() {
                 <td>
                     {% for productObj in productObj %}
                 <div>
-                    <p>Name: {{ productObj['name'] }}</p>
-                    <p>Price: ${{ productObj['price']}}</p>
+                    <p>Name: {{ productObj['name'] }} &nbsp; Price: ${{ productObj['price']}}</p>
+
                 </div>
                     {% endfor %}
                 </td>
