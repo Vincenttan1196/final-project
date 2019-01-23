@@ -11,12 +11,9 @@ from project3.persistence import *
 from project3.models import *
 from project3.database import User
 
-
 @app.route("/summary/<familyid>")
-def summary():
-    total = get_totalprices()
-    return render_template("summary.html", familyid = current_user.username, total = total)
-
+def summary(familyid):
+    return render_template("summary.html", familyid = current_user.username)
 
 @app.route("/cheaper")
 def cheaper():
