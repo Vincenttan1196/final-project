@@ -55,19 +55,25 @@ class Product:
 
 class Object(Product):
     def __init__(self):
-        super.__init__(super)
+        super().__init__()
+        self.type = ""
 
+    def set_type(self,type):
+        self.type = type
 
+    def get_type(self):
+        return self.type
 
 def add_product(product):
     compproducts[product.itemid] = product
 
-def create_product(itemid, name, picture, price):
-    product = Product()
+def create_product(itemid, name, picture, price, type):
+    product = Object()
     product.itemid = itemid
     product.name = name
     product.picture = picture
     product.price = price
+    product.type = type
     compproducts[itemid] = product
 
 def get_products():

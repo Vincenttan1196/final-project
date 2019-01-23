@@ -37,7 +37,8 @@ def admin():
         name = request.form["name"]
         picture = request.form["picture"]
         price = request.form["price"]
-        create_product(itemid, name, picture, price)
+        type = request.form["type"]
+        create_product(itemid, name, picture, price, type)
         return render_template('admin.html')
     return render_template("admin.html")
 
