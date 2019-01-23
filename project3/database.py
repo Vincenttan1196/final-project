@@ -19,3 +19,5 @@ username = db.session.query(User.username).all()
 scores = db.session.query(User.score).all()
 db.session.commit()
 test = User.query.order_by(User.score.desc()).first()
+
+print(users)

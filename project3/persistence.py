@@ -55,19 +55,25 @@ class Product:
 
 class Object(Product):
     def __init__(self):
-        super.__init__(super)
+        super().__init__()
+        self.type = ""
 
+    def set_type(self,type):
+        self.type = type
 
+    def get_type(self):
+        return self.type
 
 def add_product(product):
     compproducts[product.itemid] = product
 
-def create_product(itemid, name, picture, price):
-    product = Product()
+def create_product(itemid, name, picture, price, type):
+    product = Object()
     product.itemid = itemid
     product.name = name
     product.picture = picture
     product.price = price
+    product.type = type
     compproducts[itemid] = product
 
 def get_products():
@@ -126,16 +132,22 @@ def get_totalbills():
 
 #Immanuels Stuff----------------------------------------------------------------------------------
 
+
+
 productinfo = shelve.open('productPrice')
 class productInfo:
     def __init__(self):
         self.__name = ''
         self.__price = ''
         self.__index = ''
+        self.__budget = ''
 
 
     def get_name(self):
         return self.__name
+
+    def get_budget(self):
+        return self.__budget
 
     def get_index(self):
         return self.__index
@@ -145,6 +157,9 @@ class productInfo:
 
     def set_index(self, index):
         self.__index = index
+
+    def set_budget(self, budget):
+        self.__budget = budget
 
     def set_name(self, name):
         self.__name = name
@@ -162,8 +177,6 @@ total = shelve.open('totalprices')
 def add_totalprices(totalprice):
     total['total'] = totalprice
 
-def get_totalprices():
-    return total['total']
 
 def get_productname():
     infolist = list(productinfo.keys())
@@ -171,6 +184,25 @@ def get_productname():
     for i in infolist:
         y.append(productinfo[i])
     return y
+
+fambudget = shelve.open('familybudget')
+
+
+class family(productInfo):
+    def __init__(self, budget):
+        super().__init__(budget)
+
+    def get_budget(self):
+        return self.__budget
+
+    def set_budget(self, budget):
+        self.__budget = budget
+
+
+def add_familybudget(familybudget):
+    fambudget[familybudget.index] = familybudget
+
+
 
 #----------------------------------------------------------------------------------------------\
 
