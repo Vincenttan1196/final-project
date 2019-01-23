@@ -7,10 +7,9 @@
     <meta charset="UTF-8">
     <title>Bills</title>
 </head>
-<body>
 
 <h1 id = 'billheader'>Current bills</h1>
-
+<div>
 <form method="post" action = '/bills'>
     {% for i in info %}
     <div class="bill">
@@ -32,5 +31,5 @@
 </div> -->
 <input type="submit" class = 'submit' id = 'history'>
 </form>
-
+</div>
 {% endblock content %}
