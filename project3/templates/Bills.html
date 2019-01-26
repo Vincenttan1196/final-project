@@ -14,10 +14,8 @@
 
 <input type="button" onClick="addItem()" value= "add new">
 
-<div id="template">
-    <h2>Bill {{ count }}</h2>
-    <span>Amount: </span><textarea class="inputbox" rows="1" name = 'amount{{ i }}' ></textarea> <span>Due date</span><textarea class="inputbox" rows="1" name = 'due{{ i }}'></textarea> <input type="checkbox">
-</div>
+
+
     <script>
           function addItem() {
             var div = document.createElement('div');
@@ -28,9 +26,10 @@
             document.getElementById("area").appendChild(div);
             counter = parseInt(document.getElementById("count").textContent);
             counter = counter + 1;
-            {% set count = count + 1 %}
             document.getElementById("count").innerHTML = counter;
+
           }
+
     </script>
 
 
@@ -40,16 +39,21 @@
     {% set i = i + 1 %}
     {% set i = i|string %}
     {% set x = bill[i] %}
+
     <div class="bill">
         <h2>Bill {{ i }}</h2>
         <span>Amount: </span><textarea class="inputbox" rows="1" name = 'amount{{ i }}' >{{ x.amount }}</textarea> <span>Due date</span><textarea class="inputbox" rows="1" name = 'due{{ i }}'>{{ x.due }}</textarea> <input type="checkbox">
     </div>
     {% endfor %}
 
+
 <input type="submit" class = 'submit' id = 'history'>
 </form>
 
-
+<div id="template">
+    <h2>{{ count }}</h2>
+    <span>Amount: </span><textarea class="inputbox" id="'test1'" rows="1" name = 'amount{{ i }}' ></textarea> <span>Due date</span><textarea class="inputbox" rows="1" name = 'due{{ i }}'></textarea> <input type="checkbox">
+</div>
 
 </div>
 
