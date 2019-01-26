@@ -11,10 +11,13 @@
 <h1 id = 'billheader'>Current bills</h1>
 <div>
 <form method="post" action = '/bills'>
-    {% for i in info %}
+    {% for i in range(count) %}
+    {% set i = i + 1 %}
+    {% set i = i|string %}
+    {% set x = bill[i] %}
     <div class="bill">
-        <h2>Bill {{ i.index }}</h2>
-        <span>Amount: </span><textarea class="inputbox" rows="1" name = 'amount{{i.index}}' >{{ i.amount }}</textarea> <span>Due date</span><textarea class="inputbox" rows="1" name = 'due{{i.index}}'>{{ i.due }}</textarea> <input type="checkbox">
+        <h2>Bill {{ x.index }}</h2>
+        <span>Amount: </span><textarea class="inputbox" rows="1" name = 'amount{{x.index}}' >{{ x.amount }}</textarea> <span>Due date</span><textarea class="inputbox" rows="1" name = 'due{{x.index}}'>{{ x.due }}</textarea> <input type="checkbox">
     </div>
     {% endfor %}
 <!-- <div class="bill">
