@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "layout.html" %}
+{% block content %}
 <head>
 
     <meta charset="UTF-8">
@@ -156,6 +156,7 @@ function closeNav() {
 <span>Budget Left: ${{ budget }}</span>
 
 
+
     <div class="invoice-box">
         <table cellpadding="0" cellspacing="0">
             <tr class="top">
@@ -169,11 +170,17 @@ function closeNav() {
                     <p>Name: {{ productObj['name'] }} &nbsp; Price: ${{ productObj['price']}} &nbsp; Category: {{ productObj['category'] }}</p>
 
                 </div>
+
                     {% endfor %}
                 </td>
         </table>
     </div>
+<span>Total Spent On Food: ${{ food }}</span> &nbsp;&nbsp; <span>Total Spent On Groceries: ${{ grocery }}</span>&nbsp;&nbsp; <span>Total Spent On Entertainment: ${{ entertainment }}</span>&nbsp;&nbsp; <span>Total Spent On Luxury: ${{ luxury }}</span>&nbsp;&nbsp; <span>Total Spent On Others: ${{ others }}</span>
 
 </body>
 
-</html>
+
+
+
+
+{% endblock content %}

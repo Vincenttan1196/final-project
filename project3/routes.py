@@ -97,34 +97,57 @@ def display():
 #Immanuels Stuff-------------------------------------------------------------------------------------------
 
 
+
+
 @app.route("/planner", methods=('GET', 'POST'))
 def planner():
-        if request.method == 'POST':
-            total = 0
-            budge = 0
-            count = int(request.form['totalitems'])
-            for i in range(count):
-                a = productInfo()
-                a.index = str(i + 1)
-                a.name = str(request.form['itemname' + str(i + 1)])
-                a.price = int(request.form['itemprice' + str(i + 1)])
-                a.budget = int(request.form['budget'])
-                a.category = str(request.form['itemcategory' + str(i + 1)])
-                total = total + int(a.price)
-                budge = a.budget - total
-                add_productprice(a)
-                add_totalprices(total)
-            a = get_productname()
-            return render_template("DailySummary.html", total = total, productObj = a, budget = budge)
-        return render_template("planner.html", total='0')
-
+    if request.method == 'POST':
+        total = 0
+        budge = 0
+        food = 0
+        grocery = 0
+        entertainment = 0
+        luxury = 0
+        others = 0
+        count = int(request.form['totalitems'])
+        for i in range(count):
+            a = productInfo()
+            a.index = str(i + 1)
+            a.name = str(request.form['itemname' + str(i + 1)])
+            a.price = int(request.form['itemprice' + str(i + 1)])
+            a.budget = int(request.form['budget'])
+            a.category = str(request.form['itemcategory' + str(i + 1)])
+            total = total + int(a.price)
+            budge = a.budget - total
+            if a.category == 'food' or a.category == 'Food':
+                food = food + int(a.price)
+            elif a.category == 'groceries' or a.category == 'Groceries':
+                grocery = grocery + int(a.price)
+            elif a.category == 'entertainment' or a.category == 'Entertainment':
+                entertainment = entertainment + int(a.price)
+            elif a.category == 'luxury' or a.category == 'Luxury':
+                luxury = luxury + int(a.price)
+            elif a.category == 'others' or a.category == 'Others':
+                others = others + int(a.price)
+            add_productprice(a)
+            add_totalprices(total)
+            add_totalfoods(food)
+            add_groceries(grocery)
+            add_entertainment(entertainment)
+            add_luxury(luxury)
+            add_other(others)
+        a = get_productname()
+        return render_template("DailySummary.html", total = total, productObj = a, budget = budge, food = food, grocery = grocery, entertainment = entertainment, luxury = luxury, others = others)
+    return render_template("planner.html", total='0')
 
 
 
 @app.route("/DailySummary", methods=('GET', 'POST'))
 def DailySummary():
     a = get_productname()
-    return render_template("DailySummary.html", total = total['total'], productObj = a)
+    return render_template("DailySummary.html", total = total['total'], productObj = a, food = food['food'], grocery = groceries['groceries'], entertainment = entertainment['entertainment'], luxury = luxury['luxury'], others = others['others'])
+
+
 
 
 
