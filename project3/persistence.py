@@ -111,8 +111,9 @@ class Bill:
     def set_due(self, due):
         self.due = due
 
-def add_totalbills(id,amount,due):
+def add_totalbills(id,amount,due,name):
     bill = Bill()
+    bill.name = name
     bill.index = id
     bill.amount = amount
     bill.due = due

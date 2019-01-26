@@ -68,9 +68,10 @@ def bills():
         for i in range(1):
             x = str(i + 1)
             id = x
+            name = str(request.form['name' + str(x)])
             amount = str(request.form['amount' + str(x)])
             due = str(request.form['due'+str(x)])
-            add_totalbills(id,amount,due)
+            add_totalbills(id,amount,due,name)
         y = get_totalbills()
         total = 0
         for i in y:
@@ -80,7 +81,7 @@ def bills():
     #print (count)
     y = get_totalbills()
     if y == []:
-        add_totalbills('1','Enter the amount','Enter the due date')
+        add_totalbills('1','Enter the amount','Enter the due date','Enter a name')
         y = get_totalbills()
     return render_template('Bills.html', count = 1, bill = billinfo)
 
