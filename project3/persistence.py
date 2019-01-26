@@ -121,6 +121,7 @@ def add_totalbills(id,amount,due):
 def get_totalbills():
     keylist = list(billinfo.keys())
     x = []
+    print (keylist)
     for i in keylist:
         x.append(billinfo[i])
     return x
