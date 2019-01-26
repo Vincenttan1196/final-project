@@ -22,7 +22,12 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(60), nullable=False)
     score = db.Column(db.Integer,default = 0)
     rank = db.Column(db.Integer, default=1)
-
+    #Summary total cost
+    items = db.Column(db.Integer, default=0)
+    food = db.Column(db.Integer, default=0)
+    groceries = db.Column(db.Integer, default=0)
+    luxury = db.Column(db.Integer, default=0)
+    entertainment = db.Column(db.Integer, default=0)
 
 
     def get_reset_token(self, expires_sec=1800):
@@ -40,7 +45,7 @@ class User(db.Model, UserMixin):
 
 
     def __repr__(self):
-        return f"User('RANK-{self.rank},ID-{self.id},USERNAME-{self.username},'EMAIL-{self.email}',SCORE-{self.score} )"
+        return f"User('ID-{self.id},USERNAME-{self.username},'EMAIL-{self.email}',SCORE-{self.score} )"
 
 
     #def __repr__(self):
