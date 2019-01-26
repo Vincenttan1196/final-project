@@ -1,28 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Admin Page</title>
-</head>
-<body>
-    <form method="post">
-        <label>Item ID</label>
-        <textarea class="inputbox" rows="1" name = 'itemid'></textarea>
-        <label>Name</label>
-        <textarea class="inputbox" rows="1" name = 'name'></textarea>
-        <label>Picture URL</label>
-        <textarea class="inputbox" rows="1" name = 'picture'></textarea>
-        <label>Price</label>
-        <textarea class="inputbox" rows="1" name = 'price'></textarea>
-        <label>Item</label>
-        <textarea class="inputbox" rows="1" name = 'type'></textarea>
-        <input type="submit" class = 'submit'>
-    </form>
+{% extends "layout.html" %}
+{% block content %}
+    <title>What Items</title>
 
-    <!--<form method="post">
-        <label>Delete ID:</label>
-        <textarea class="inputbox" rows="1" name = 'delid'></textarea>
-        <input type="submit" class = "submit">
-    </form>-->
-</body>
-</html>
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='comparison.css') }}" rel="stylesheet">
+
+    <div class = "catalogue">
+        <form method="post">
+            <label>Item ID</label>
+            <textarea class="inputbox" rows="1" name = 'itemid'></textarea>
+            <label>Name</label>
+            <textarea class="inputbox" rows="1" name = 'name'></textarea>
+            <label>Picture URL</label>
+            <textarea class="inputbox" rows="1" name = 'picture'></textarea>
+            <label>Price</label>
+            <textarea class="inputbox" rows="1" name = 'price'></textarea>
+            <label>Item</label>
+            <textarea class="inputbox" rows="1" name = 'type'></textarea>
+            <input type="submit" class = 'submit'>
+        </form>
+
+    </div>
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+<form method="post">
+    <label>Item ID</label>
+    <textarea class="inputbox" rows="1" name = 'itemid'></textarea>
+    <label>Name</label>
+    <textarea class="inputbox" rows="1" name = 'name'></textarea>
+    <label>Picture URL</label>
+    <textarea class="inputbox" rows="1" name = 'picture'></textarea>
+    <label>Price</label>
+    <textarea class="inputbox" rows="1" name = 'price'></textarea>
+    <label>Item</label>
+    <textarea class="inputbox" rows="1" name = 'type'></textarea>
+    <input type="submit" class = 'submit'>
+</form>

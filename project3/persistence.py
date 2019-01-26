@@ -84,11 +84,8 @@ def get_products():
     return x
 
 def get_product(id):
-    klist = list(compproducts.keys())
-    y = []
-    for id in klist:
-        y.append(compproducts[id])
-    return y
+    if id in compproducts:
+        return compproducts[id]
 
 def clear_product(id):
     del compproducts[id]

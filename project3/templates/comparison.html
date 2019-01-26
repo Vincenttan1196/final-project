@@ -9,8 +9,8 @@
         <h1 class="heading">Pick an item to compare</h1>
         <!--<input class = "search" type="text" size = "30" placeholder="Item e.g. toothpaste, shampoo..."> -->
 
-            {% for productObj in productObj %}
-                <div class = "listing">
+            {% for productObj in productObjs %}
+                <a href ="{{url_for('comparison', objectid = productObj['itemid'])}}"> <div class = "listing">
                     <img src="{{ productObj['picture']}}" width="150" height="150">
 
                     <span>
@@ -19,7 +19,7 @@
                         {{ productObj['type']}}
                         Price: ${{ productObj['price']}}
                     </span>
-                </div>
+                </div></a>
             {% endfor %}
 
     </div>
