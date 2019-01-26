@@ -19,11 +19,11 @@ def summary(familyid):
 def cheaper():
     test = get_products()
 
-    return render_template('comparison.html', productObj = test)
+    return render_template('comparison.html', productObjs = test)
 
-@app.route("/comparison")
-def comparison():
-    selectedproduct = get_product(id)
+@app.route("/comparison/<objectid>")
+def comparison(objectid):
+    selectedproduct = get_product(objectid)
     #^to display the product selected by user
 
 
