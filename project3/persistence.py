@@ -95,6 +95,7 @@ def clear_product(id):
 billinfo = shelve.open('bill')
 counter = shelve.open('billscounter')
 
+
 class Bill:
     count = 0
 
@@ -124,7 +125,17 @@ def get_totalbills():
         x.append(billinfo[i])
     return x
 
+def tester():
+    return ('test')
+app.jinja_env.globals.update(tester=tester)
 
+def counter_up():
+    count = counter['x']
+    count += 1
+    counter['x'] = count
+    print (count)
+    return count
+app.jinja_env.globals.update(counter_up=counter_up)
 #--------------------------------------
 
 
