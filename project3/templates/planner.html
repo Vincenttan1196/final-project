@@ -14,7 +14,14 @@
 
   <div id="getText" style="display: none;">
     <h2>Item</h2>
-          <span><font size="4">Item Name: </font></span><textarea class="inputbox" rows="1" name = 'noname' onchange="uniqueName(this, 'itemname', 'textarea')"></textarea>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span><font size="4">Item Price:</font></span><input type="number" class="inputbox" name = 'noprice' onchange="uniqueName(this, 'itemprice', 'input')" rows="1">&nbsp;&nbsp;&nbsp;&nbsp;<span><font size="4"> Item Category: </font></span><textarea placeholder="Groceries/Food/Entertainment/Luxury" class="inputbox" rows="1" name = 'nocategory' onchange="uniqueName(this, 'itemcategory', 'textarea')"></textarea>
+          <span><font size="4">Item Name: </font></span><textarea class="inputbox" rows="1" name = 'noname' onchange="uniqueName(this, 'itemname', 'textarea')"></textarea>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span><font size="4">Item Price:</font></span><input type="number" class="inputbox" name = 'noprice' onchange="uniqueName(this, 'itemprice', 'input')" rows="1">&nbsp;&nbsp;&nbsp;&nbsp;<span><font size="4"> Item Category: </font></span>
+          <select name = 'nocategory' onchange="uniqueName(this, 'itemcategory', 'select')">
+            <option value="Food">Food</option>
+            <option value="Groceries">Groceries</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Luxury">Luxury</option>
+            <option value="Others">Others</option>
+          </select>
   </div>
 
 
@@ -32,16 +39,10 @@
     document.getElementById("count_trans").value = counter;
   }
 
-  // var date = new Date();
-  // document.getElementById("date").innerHTML = date.getDate() + '/';
-  // var month = new Date();
-  // document.getElementById("month").innerHTML = month.getMonth() + 1 + '/';
-  // var year = new Date();
-  // document.getElementById("year").innerHTML = year.getFullYear();
-
   function uniqueName(element, name, type){
     var value = 1;
-    if(type=="textarea"){
+    if(type==="textarea" || type==="select"){
+      element.name = "noname";
       var inputs = document.getElementsByTagName(type);
     } else {
       var inputs = document.querySelectorAll("input")
@@ -54,7 +55,7 @@
         itemname = inputs[x].name;
       }
 
-      if(itemname.indexOf(name) == 0){
+      if(itemname.indexOf(name) === 0){
         value ++;
       }
     }
@@ -63,8 +64,16 @@
     element.name = newname;
   }
 
+
   function verify() {
-  alert("Are You Sure?");
+  var txt;
+  var r = confirm("Are You Sure?");
+  if (r == true) {
+    txt = "You pressed OK!";
+  } else {
+    txt = "You pressed Cancel!";
+  }
+
 }
 
 </script>
@@ -82,17 +91,41 @@
 
 <div id = 'boop' class="bill">
     <h2 id = 'first'>Item </h2>
-    <span><font size="4">Item Name: </font></span><textarea class="inputbox" rows="1" name = 'itemname1'></textarea>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span><font size="4">Item Price:</font></span><input type="number" name = 'itemprice1' class="inputbox" rows="1">&nbsp;&nbsp;&nbsp;&nbsp; <span><font size="4"> Item Category: </font></span><textarea class="inputbox" rows="1" name = 'itemcategory1'></textarea>
+    <span><font size="4">Item Name: </font></span><textarea class="inputbox" rows="1" name = 'itemname1'></textarea>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span><font size="4">Item Price:</font></span><input type="number" name = 'itemprice1' class="inputbox" rows="1">&nbsp;&nbsp;&nbsp;&nbsp; <span><font size="4"> Item Category: </font></span>
+    <select name = 'itemcategory1'>
+  <option value="Food">Food</option>
+  <option value="Groceries">Groceries</option>
+  <option value="Entertainment">Entertainment</option>
+  <option value="Luxury">Luxury</option>
+    <option value="Others">Others</option>
+</select>
+
 </div>
 
   <div id = 'boo' class="bill">
     <h2>Item</h2>
-      <span><font size="4">Item Name: </font></span><textarea class="inputbox" rows="1" name = 'itemname2'></textarea> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><font size="4">Item Price:</font></span><input type="number" name = 'itemprice2' class="inputbox" rows="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span><font size="4"> Item Category: </font></span><textarea class="inputbox" rows="1" name = 'itemcategory2'></textarea>
+      <span><font size="4">Item Name: </font></span><textarea class="inputbox" rows="1" name = 'itemname2'></textarea> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><font size="4">Item Price:</font></span><input type="number" name = 'itemprice2' class="inputbox" rows="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span><font size="4"> Item Category: </font></span>
+      <select name = 'itemcategory2'>
+  <option value="Food">Food</option>
+  <option value="Groceries">Groceries</option>
+  <option value="Entertainment">Entertainment</option>
+  <option value="Luxury">Luxury</option>
+    <option value="Others">Others</option>
+</select>
+
   </div>
 
 <div id = 'bo' class="bill">
     <h2>Item</h2>
-    <span><font size="4">Item Name: </font></span><textarea class="inputbox" rows="1" name = 'itemname3'></textarea>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span><font size="4">Item Price:</font></span><input type="number" class="inputbox" name = 'itemprice3' rows="1">&nbsp;&nbsp;&nbsp;&nbsp; <span><font size="4"> Item Category: </font></span><textarea class="inputbox" rows="1" name = 'itemcategory3'></textarea>
+    <span><font size="4">Item Name: </font></span><textarea class="inputbox" rows="1" name = 'itemname3'></textarea>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span><font size="4">Item Price:</font></span><input type="number" class="inputbox" name = 'itemprice3' rows="1">&nbsp;&nbsp;&nbsp;&nbsp; <span><font size="4"> Item Category: </font></span>
+    <select name = 'itemcategory3'>
+  <option value="Food">Food</option>
+  <option value="Groceries">Groceries</option>
+  <option value="Entertainment">Entertainment</option>
+  <option value="Luxury">Luxury</option>
+    <option value="Others">Others</option>
+</select>
+
 </div>
 </form>
 

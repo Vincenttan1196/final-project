@@ -119,15 +119,15 @@ def planner():
             a.category = str(request.form['itemcategory' + str(i + 1)])
             total = total + int(a.price)
             budge = a.budget - total
-            if a.category == 'food' or a.category == 'Food':
+            if a.category == 'Food':
                 food = food + int(a.price)
-            elif a.category == 'groceries' or a.category == 'Groceries':
+            elif a.category == 'Groceries':
                 grocery = grocery + int(a.price)
-            elif a.category == 'entertainment' or a.category == 'Entertainment':
+            elif a.category == 'Entertainment':
                 entertainment = entertainment + int(a.price)
-            elif a.category == 'luxury' or a.category == 'Luxury':
+            elif a.category == 'Luxury':
                 luxury = luxury + int(a.price)
-            elif a.category == 'others' or a.category == 'Others':
+            elif a.category == 'Others':
                 others = others + int(a.price)
             add_productprice(a)
             add_totalprices(total)
