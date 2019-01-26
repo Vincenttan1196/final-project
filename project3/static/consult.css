@@ -220,7 +220,6 @@ ul#menu li a:hover
 
 #content ul li, .sidebar ul li
 { list-style-type: none;
-  background: url(bullet.png) no-repeat;
   margin: 0 0 0 0;
   padding: 0 0 4px 25px;
   line-height: 1.5em;}
@@ -232,7 +231,6 @@ ul#menu li a:hover
   height: 80px;
   padding: 28px 0 5px 0;
   text-align: center;
-  background: #3B3939 url(footer.png) repeat-x;
   color: #A8AA94;}
 
 #footer p
@@ -370,3 +368,84 @@ table tr td
   .sidenav a {font-size: 18px;}
 }
 
+
+
+
+
+
+
+.banner {
+  width: 100%;
+  height: 500px;
+  background: url('../static/image/test4.jpg');
+  background-position: center center;
+  background-size: cover;
+}
+
+.main {
+  background-color: royalblue;
+}
+
+
+
+
+@media (min-width: 1000px) {
+.col-md-8 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 100%;}
+
+}
+
+
+
+@media (min-width: 1000px) {
+.container {
+     max-width: 100%; }
+}
+
+*, ::after, ::before {
+    box-sizing: unset;
+}
+
+*, ::after, ::before {
+    box-sizing: unset;
+
+}
+
+div.output {
+        margin-left: 200px;
+        margin-right: 200px;
+}
+
+
+div.col-md-8 {
+    width:100%;
+}
+
+*{
+    margin: 0;
+}
+
+.row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    /display: block;
+    -ms-flex-wrap: nowrap;
+     flex-wrap: nowrap;
+     margin-right: 0;
+     margin-left: 0;
+}
+
+div {
+}
+
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+     padding-left: 0px;
+    margin-right: auto;
+     margin-left: 0px;
+}
