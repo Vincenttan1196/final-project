@@ -23,6 +23,7 @@ class User(db.Model, UserMixin):
     score = db.Column(db.Integer,default = 0)
     rank = db.Column(db.Integer, default=1)
     #Summary total cost
+    budget = db.Column(db.Integer, default=0)
     items = db.Column(db.Integer, default=0)
     food = db.Column(db.Integer, default=0)
     groceries = db.Column(db.Integer, default=0)
