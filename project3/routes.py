@@ -75,11 +75,13 @@ def bills():
         for i in y:
             total += int(i.amount)
         return render_template('billsSaved.html', info = y, total = total)
+    #count = 'test'
+    #print (count)
     y = get_totalbills()
     if y == []:
         add_totalbills('1','Enter the amount','Enter the due date')
         y = get_totalbills()
-    return render_template('Bills.html', info = y)
+    return render_template('Bills.html', count = 1, bill = billinfo)
 
 
 @app.route('/display', methods=('GET', 'POST'))
