@@ -84,11 +84,8 @@ def get_products():
     return x
 
 def get_product(id):
-    klist = list(compproducts.keys())
-    y = []
-    for id in klist:
-        y.append(compproducts[id])
-    return y
+    if id in compproducts:
+        return compproducts[id]
 
 def clear_product(id):
     del compproducts[id]
@@ -146,6 +143,8 @@ app.jinja_env.globals.update(counter_up=counter_up)
 
 
 
+
+
 productinfo = shelve.open('productPrice')
 class productInfo:
     def __init__(self):
@@ -154,10 +153,30 @@ class productInfo:
         self.__index = ''
         self.__budget = ''
         self.__category = ''
+        self.__food = ''
+        self.__groceries = ''
+        self.__entertainment = ''
+        self.__luxury = ''
+        self.__others = ''
 
 
     def get_name(self):
         return self.__name
+
+    def get_others(self):
+        return self.__others
+
+    def get_food(self):
+        return self.__food
+
+    def get_groceries(self):
+        return self.__groceries
+
+    def get_entertainment(self):
+        return self.__entertainment
+
+    def get_luxury(self):
+        return self.__luxury
 
     def get_category(self):
         return self.__category
@@ -173,6 +192,21 @@ class productInfo:
 
     def set_index(self, index):
         self.__index = index
+
+    def set_others(self, others):
+        self.__others = others
+
+    def set_food(self, food):
+        self.__food = food
+
+    def set_groceries(self, groceries):
+        self.__groceries = groceries
+
+    def set_entertainment(self, entertainment):
+        self.__entertainment = entertainment
+
+    def set_luxury(self, luxury):
+        self.__luxury = luxury
 
     def set_category(self, category):
         self.__category = category
@@ -193,8 +227,44 @@ def add_productprice(productprice):
 
 total = shelve.open('totalprices')
 
+
 def add_totalprices(totalprice):
     total['total'] = totalprice
+
+
+food = shelve.open('totalfood')
+
+
+def add_totalfoods(totalfood):
+    food['food'] = totalfood
+
+
+groceries = shelve.open('totalgrocery')
+
+
+def add_groceries(totalgrocery):
+    groceries['groceries'] = totalgrocery
+
+
+entertainment = shelve.open('totalentertainment')
+
+
+def add_entertainment(totalentertainment):
+    entertainment['entertainment'] = totalentertainment
+
+
+luxury = shelve.open('totalluxury')
+
+
+def add_luxury(totalluxury):
+    luxury['luxury'] = totalluxury
+
+
+others = shelve.open('others')
+
+
+def add_other(totalothers):
+    others['others'] = totalothers
 
 
 def get_productname():
@@ -220,6 +290,8 @@ class family(productInfo):
 
 def add_familybudget(familybudget):
     fambudget[familybudget.index] = familybudget
+
+
 
 
 

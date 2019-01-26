@@ -19,11 +19,11 @@ def summary(familyid):
 def cheaper():
     test = get_products()
 
-    return render_template('comparison.html', productObj = test)
+    return render_template('comparison.html', productObjs = test)
 
-@app.route("/comparison")
-def comparison():
-    selectedproduct = get_product(id)
+@app.route("/comparison/<objectid>")
+def comparison(objectid):
+    selectedproduct = get_product(objectid)
     #^to display the product selected by user
 
 
@@ -104,6 +104,11 @@ def planner():
     if request.method == 'POST':
         total = 0
         budge = 0
+        food = 0
+        grocery = 0
+        entertainment = 0
+        luxury = 0
+        others = 0
         count = int(request.form['totalitems'])
         for i in range(count):
             a = productInfo()
@@ -114,19 +119,35 @@ def planner():
             a.category = str(request.form['itemcategory' + str(i + 1)])
             total = total + int(a.price)
             budge = a.budget - total
+            if a.category == 'Food':
+                food = food + int(a.price)
+            elif a.category == 'Groceries':
+                grocery = grocery + int(a.price)
+            elif a.category == 'Entertainment':
+                entertainment = entertainment + int(a.price)
+            elif a.category == 'Luxury':
+                luxury = luxury + int(a.price)
+            elif a.category == 'Others':
+                others = others + int(a.price)
             add_productprice(a)
             add_totalprices(total)
+            add_totalfoods(food)
+            add_groceries(grocery)
+            add_entertainment(entertainment)
+            add_luxury(luxury)
+            add_other(others)
         a = get_productname()
-        return render_template("DailySummary.html", total = total, productObj = a, budget = budge)
+        return render_template("DailySummary.html", total = total, productObj = a, budget = budge, food = food, grocery = grocery, entertainment = entertainment, luxury = luxury, others = others)
     return render_template("planner.html", total='0')
-
 
 
 
 @app.route("/DailySummary", methods=('GET', 'POST'))
 def DailySummary():
     a = get_productname()
-    return render_template("DailySummary.html", total = total['total'], productObj = a)
+    return render_template("DailySummary.html", total = total['total'], productObj = a, food = food['food'], grocery = groceries['groceries'], entertainment = entertainment['entertainment'], luxury = luxury['luxury'], others = others['others'])
+
+
 
 
 
@@ -277,8 +298,6 @@ def reset_token(token):
 
 @app.route('/weekly')
 def weekly():
-
-
     score = User.query.order_by(User.score.desc()).all()
     return render_template("weekly.html", score=score)
 
