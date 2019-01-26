@@ -15,7 +15,7 @@
 <input type="button" onClick="addItem()" value= "add new">
 
 <div id="template">
-    <h2>{{ count }}</h2>
+    <h2><textarea class="inputbox" rows="1" name = 'name' onchange="uniqueName(this, 'name', 'textarea')" ></textarea></h2>
     <span>Amount: </span><textarea class="inputbox" id="test1" rows="1" name = 'amount' onchange="uniqueName(this, 'amount', 'textarea')" ></textarea> <span>Due date</span><textarea class="inputbox" rows="1" name = 'due' onchange="uniqueName(this, 'due', 'textarea')"></textarea> <input type="checkbox">
 </div>
 
@@ -33,7 +33,7 @@
     }
 
 function uniqueName(element, name, type){
-    var value = '{{ count }}';
+    var value = '{{ count - 1}}';
     if(type==="textarea" || type==="select"){
       element.name = "noname";
       var inputs = document.getElementsByTagName(type);
