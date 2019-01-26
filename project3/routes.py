@@ -37,7 +37,8 @@ def admin():
         name = request.form["name"]
         picture = request.form["picture"]
         price = request.form["price"]
-        create_product(itemid, name, picture, price)
+        type = request.form["type"]
+        create_product(itemid, name, picture, price, type)
         return render_template('admin.html')
     return render_template("admin.html")
 
@@ -94,21 +95,27 @@ def display():
 #Immanuels Stuff-------------------------------------------------------------------------------------------
 
 
+
+
 @app.route("/planner", methods=('GET', 'POST'))
 def planner():
     if request.method == 'POST':
         total = 0
+        budge = 0
         count = int(request.form['totalitems'])
         for i in range(count):
             a = productInfo()
             a.index = str(i + 1)
             a.name = str(request.form['itemname' + str(i + 1)])
             a.price = int(request.form['itemprice' + str(i + 1)])
+            a.budget = int(request.form['budget'])
+            a.category = str(request.form['itemcategory' + str(i + 1)])
             total = total + int(a.price)
+            budge = a.budget - total
             add_productprice(a)
             add_totalprices(total)
-            a = get_productname()
-        return render_template("DailySummary.html", total = total, productObj = a)
+        a = get_productname()
+        return render_template("DailySummary.html", total = total, productObj = a, budget = budge)
     return render_template("planner.html", total='0')
 
 
@@ -118,6 +125,9 @@ def planner():
 def DailySummary():
     a = get_productname()
     return render_template("DailySummary.html", total = total['total'], productObj = a)
+
+
+
 
 
 

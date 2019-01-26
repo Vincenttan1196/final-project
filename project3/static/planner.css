@@ -94,6 +94,7 @@ div#boop.bill {
     border-style: solid;
     font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
     margin-bottom: 20px;
+    width:900px;
 }
 div#boo.bill {
     text-align: center;
@@ -102,6 +103,7 @@ div#boo.bill {
     border-style: solid;
     font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
      margin-bottom: 20px;
+    width:900px;
 }
 div#bo.bill {
     text-align: center;
@@ -110,6 +112,7 @@ div#bo.bill {
     border-style: solid;
     font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
     margin-bottom: 20px;
+    width:900px;
 }
 div#newitem.bill {
     text-align: center;
@@ -117,7 +120,7 @@ div#newitem.bill {
     border-width: 3px;
     border-style: solid;
     font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
-    width:730px;
+    width:900px;
     margin-left: 255px;
     margin-bottom: 20px;
 }
@@ -145,4 +148,3 @@ input {
     margin-top: 10px;
     margin-bottom: 5px;
 }
-
