@@ -24,6 +24,7 @@ def cheaper():
 @app.route("/comparison/<objectid>")
 def comparison(objectid):
     selectedproduct = get_product(objectid)
+
     #^to display the product selected by user
 
 
