@@ -141,10 +141,14 @@ class productInfo:
         self.__price = ''
         self.__index = ''
         self.__budget = ''
+        self.__category = ''
 
 
     def get_name(self):
         return self.__name
+
+    def get_category(self):
+        return self.__category
 
     def get_budget(self):
         return self.__budget
@@ -157,6 +161,9 @@ class productInfo:
 
     def set_index(self, index):
         self.__index = index
+
+    def set_category(self, category):
+        self.__category = category
 
     def set_budget(self, budget):
         self.__budget = budget
