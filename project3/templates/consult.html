@@ -1,74 +1,31 @@
-<!DOCTYPE HTML>
-<html>
+{% extends "layout.html" %}
 
+{% block content %}
 <head>
   <title>simplestyle_banner - another page</title>
   <meta name="description" content="website description" />
   <meta name="keywords" content="website keywords, website keywords" />
   <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
   <link rel="stylesheet" type="text/css" href="../static/consult.css" />
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
-<body>
 
 
-  <!-----Nav bar----->
 
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="{{ url_for("main") }}">Home</a>
-    <a href="{{ url_for("planner") }}">Daily Spendings</a>
-    <a href="{{ url_for("bills") }}">Your Bills</a>
-  <a href="{{ url_for("summary", familyid = "test") }}">Your Summary</a>
-    <a href="{{ url_for("schemecheck") }}">Schemes</a>
-    <a href="{{ url_for("cheaper") }}">Cheaper Alternatives</a>
-    <a href="{{ url_for("ranking") }}">Rankings</a>
-    <a href="#">Logout</a>
-</div>
-  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
-</div>
 
-  <script>
-/* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
-function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
-  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-}
-
-/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-  document.getElementById("main").style.marginLeft = "0";
-  document.body.style.backgroundColor = "white";
-}
-
-</script>
-<!---- --->
+<div class="banner"></div>
 
 
 
 
 
-    <div id="header">
-      <div id="logo">
-        <div id="logo_text">
-          <!-- class="logo_colour", allows you to change the colour of the text -->
-          <h1><a href="index.html">Project <span class="logo_colour">3</span></a></h1>
-        </div>
-      </div>
-      <div id="menubar">
-        <ul id="menu">
-          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
-          <li><a href="index.html">Home</a></li>
-          <li><a href="examples.html">Examples</a></li>
-          <li><a href="page.html">A Page</a></li>
-          <li class="selected"><a href="another_page.html">Another Page</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-      </div>
-    </div>
-    <div id="content_header"></div>
     <div id="site_content">
       <div id="sidebar_container">
         <div class="sidebar">
@@ -77,8 +34,11 @@ function closeNav() {
             <!-- insert your sidebar items here -->
             <h3>Latest News</h3>
             <h4>New Website Launched</h4>
-            <h5>February 1st, 2014</h5>
-            <p>2014 sees the redesign of our website. Take a look around and let us know what you think.<br /><a href="#">Read more</a></p>
+            <h5>February 27th, 2019</h5>
+              <p>New features: Ranking</p>
+              <P>Take a look around and let us know what you think of the added
+                feature.<br /><a href="/weekly">Bring me now!</a></p>
+
           </div>
           <div class="sidebar_base"></div>
         </div>
@@ -98,30 +58,47 @@ function closeNav() {
         <div class="sidebar">
           <div class="sidebar_top"></div>
           <div class="sidebar_item">
-            <h3>Search</h3>
-            <form method="post" action="#" id="search_form">
-              <p>
-                <input class="search" type="text" name="search_field" value="Enter keywords....." />
-                <input name="search" type="image" style="border: 0; margin: 0 0 -9px 5px;" src="style/search.png" alt="Search" title="Search" />
-              </p>
-            </form>
+
+
+
+
+
+
           </div>
           <div class="sidebar_base"></div>
         </div>
       </div>
-      <div id="content">
         <!-- insert the page content here -->
-        <h1>Another Page</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui.</p>
-      </div>
-    </div>
-    <div id="content_footer"></div>
-    <div id="footer">
-      <p><a href="index.html">Home</a> | <a href="examples.html">Examples</a> | <a href="page.html">A Page</a> | <a href="another_page.html">Another Page</a> | <a href="contact.html">Contact Us</a></p>
-    </div>
-  </div>
-</body>
-</html>
+    <main>
+      <h1>Be more thoughtful about your life and goals.</h1>
+       <p>It's easy to be passive and reactive. That's the default. The problem is that when you don't take an active role in your own life, you become a pawn for someone else and their life
+      This doesn't mean you dont have all the answers, but it does mean that you have to spend time and thought about what you want to acomplish, be, and obtain.
+      What is important to you? What do you want from your life? Think about all these questions and come up with answers- even if they change (and they will). Be the architect of your own life. Financial planning is about taking charge and managing your finances to help you achieve your life goals.
+        </p>
+
+        <p> Right here at Project 3, we will give you some tips and information to help you get started!</p>
+
+
+
+
+
+        <h2>1. Create a Financial Calendar</h2>
+          <p>If you are uncerntain to remember to pay your quarterly taxes or periodically pull a cr
+              edit report, think about setting appointment reminders for these important money to-dos in the same way that you would
+              an annual doctor's visit or car tune-up.</p>
+
+        <h2>2.  Set a Budget, Period</h2>
+            <p>This is the  <a href="/planner">Starting point</a> for every other goal in your life. </p>
+
+
+
+        <h2>3. Allocate at Least 20% of Your Income Toward Financial Priorities</h2>
+
+        By priorities, we mean building up emergency savings, paying off debt, and padding your retirement nest egg.
+
+        <h2>4. Don't do it yourself.</h2>
+           <p> It is very difficult to be objective about your own circumstances, particularly when it comes to failures or shortcomings. You need an honest assessment of your financial
+               situation, and the only way to get that is to have it done by an objective third party, Such as a financial planner </p>
+</main>
+        </div>
+{% endblock content %}

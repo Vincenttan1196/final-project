@@ -23,12 +23,12 @@ class User(db.Model, UserMixin):
     score = db.Column(db.Integer,default = 0)
     rank = db.Column(db.Integer, default=1)
     #Summary total cost
-    items = db.Column(db.Integer, default=0)
+    budget = db.Column(db.Integer, default=0)
     food = db.Column(db.Integer, default=0)
-    groceries = db.Column(db.Integer, default=0)
-    luxury = db.Column(db.Integer, default=0)
+    grocery = db.Column(db.Integer, default=0)
     entertainment = db.Column(db.Integer, default=0)
-
+    luxury = db.Column(db.Integer, default=0)
+    others = db.Column(db.Integer, default=0)
 
     def get_reset_token(self, expires_sec=1800):
         s = Serializer(app.config['SECRET_KEY'], expires_sec)
@@ -45,8 +45,10 @@ class User(db.Model, UserMixin):
 
 
     def __repr__(self):
-        return f"User('ID-{self.id},USERNAME-{self.username},'EMAIL-{self.email}',SCORE-{self.score} )"
-
+        return f"User('ID-{self.id},USERNAME-{self.username},'EMAIL-{self.email}',SCORE-{self.score}, " \
+               f"budget-{self.budget}, " \
+               f"FOOD-{self.food},GROCERY-{self.grocery}, entertainment-{self.entertainment},LUXURY-{self.luxury}," \
+               f"OTHERS-{self.others})"
 
     #def __repr__(self):
         #return f"User('USERNAME-{self.username}', 'EMAIL-{self.email}', '{self.image_file}' )"

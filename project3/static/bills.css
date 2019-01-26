@@ -41,7 +41,13 @@ a:hover{
     border-bottom-style: solid;
     border-bottom-color: black;
 }
+#template{
+    display: none;
+}
 
+
+
+/*------------------------------------------------------*/
 /* The side navigation menu */
 .sidenav {
   height: 100%; /* 100% Full-height */

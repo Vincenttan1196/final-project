@@ -70,9 +70,10 @@ def bills():
         for i in range(1):
             x = str(i + 1)
             id = x
+            name = str(request.form['name' + str(x)])
             amount = str(request.form['amount' + str(x)])
             due = str(request.form['due'+str(x)])
-            add_totalbills(id,amount,due)
+            add_totalbills(id,amount,due,name)
         y = get_totalbills()
         total = 0
         for i in y:
@@ -82,7 +83,7 @@ def bills():
     #print (count)
     y = get_totalbills()
     if y == []:
-        add_totalbills('1','Enter the amount','Enter the due date')
+        add_totalbills('1','Enter the amount','Enter the due date','Enter a name')
         y = get_totalbills()
     return render_template('Bills.html', count = 1, bill = billinfo)
 
@@ -103,32 +104,66 @@ def display():
 
 @app.route("/planner", methods=('GET', 'POST'))
 def planner():
-    if request.method == 'POST':
-        total = 0
-        budge = 0
-        count = int(request.form['totalitems'])
-        for i in range(count):
-            a = productInfo()
-            a.index = str(i + 1)
-            a.name = str(request.form['itemname' + str(i + 1)])
-            a.price = int(request.form['itemprice' + str(i + 1)])
-            a.budget = int(request.form['budget'])
-            a.category = str(request.form['itemcategory' + str(i + 1)])
-            total = total + int(a.price)
-            budge = a.budget - total
-            add_productprice(a)
-            add_totalprices(total)
-        a = get_productname()
-        return render_template("DailySummary.html", total = total, productObj = a, budget = budge)
-    return render_template("planner.html", total='0')
-
+    if current_user.is_authenticated:
+        if request.method == 'POST':
+            total = 0
+            budge = 0
+            food = 0
+            grocery = 0
+            entertainment = 0
+            luxury = 0
+            others = 0
+            count = int(request.form['totalitems'])
+            for i in range(count):
+                a = productInfo()
+                a.index = str(i + 1)
+                a.name = str(request.form['itemname' + str(i + 1)])
+                a.price = int(request.form['itemprice' + str(i + 1)])
+                a.budget = int(request.form['budget'])
+                a.category = str(request.form['itemcategory' + str(i + 1)])
+                total = total + int(a.price)
+                budge = a.budget - total
+                current_user.budget = budge
+                db.session.commit()
+                if a.category == 'food' or a.category == 'Food':
+                    food = food + int(a.price)
+                    current_user.food = food
+                    db.session.commit()
+                elif a.category == 'groceries' or a.category == 'Groceries':
+                    grocery = grocery + int(a.price)
+                    current_user.grocery = grocery
+                    db.session.commit()
+                elif a.category == 'entertainment' or a.category == 'Entertainment':
+                    entertainment = entertainment + int(a.price)
+                    current_user.entertainment = entertainment
+                    db.session.commit()
+                elif a.category == 'luxury' or a.category == 'Luxury':
+                    luxury = luxury + int(a.price)
+                    current_user.luxury = luxury
+                    db.session.commit()
+                elif a.category == 'others' or a.category == 'Others':
+                    others = others + int(a.price)
+                    current_user.others = others
+                    db.session.commit()
+                add_productprice(a)
+                add_totalprices(total)
+                add_totalfoods(food)
+                add_groceries(grocery)
+                add_entertainment(entertainment)
+                add_luxury(luxury)
+                add_other(others)
+            a = get_productname()
+            return render_template("DailySummary.html", total = total, productObj = a, budget = budge, food = food, grocery = grocery, entertainment = entertainment, luxury = luxury, others = others)
+        return render_template("planner.html", total='0')
 
 
 
 @app.route("/DailySummary", methods=('GET', 'POST'))
 def DailySummary():
     a = get_productname()
-    return render_template("DailySummary.html", total = total['total'], productObj = a)
+    return render_template("DailySummary.html", total = total['total'], productObj = a, food = food['food'], grocery = groceries['groceries'], entertainment = entertainment['entertainment'], luxury = luxury['luxury'], others = others['others'])
+
+
 
 
 
@@ -279,8 +314,6 @@ def reset_token(token):
 
 @app.route('/weekly')
 def weekly():
-
-
     score = User.query.order_by(User.score.desc()).all()
     return render_template("weekly.html", score=score)
 
@@ -303,5 +336,8 @@ def yearly():
 def feedback():
     return render_template('feedback.html')
 
+@app.route('/consult')
+def consult():
+    return render_template('consult.html')
 
 #-------------------------------------------------------------------------------------------

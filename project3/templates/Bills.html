@@ -10,29 +10,82 @@
 
 <h1 id = 'billheader'>Current bills</h1>
 <div>
-<form method="post" action = '/bills'>
+
+
+<input type="button" onClick="addItem()" value= "add new">
+
+<div id="template">
+    <h2><textarea class="inputbox" rows="1" name = 'name' onchange="uniqueName(this, 'name', 'textarea')" ></textarea></h2>
+    <span>Amount: </span><textarea class="inputbox" id="test1" rows="1" name = 'amount' onchange="uniqueName(this, 'amount', 'textarea')" ></textarea> <span>Due date</span><textarea class="inputbox" rows="1" name = 'due' onchange="uniqueName(this, 'due', 'textarea')"></textarea> <input type="checkbox">
+</div>
+
+<script>
+    function addItem() {
+        var div = document.createElement('div');
+        div.id='';
+        div.classList.add("bill");
+        div.innerHTML = document.getElementById('template').innerHTML;
+
+        document.getElementById("area").appendChild(div);
+        counter = parseInt(document.getElementById("count").textContent);
+        counter = counter + 1;
+        document.getElementById("count").innerHTML = counter;
+    }
+
+function uniqueName(element, name, type){
+    var value = '{{ count - 1}}';
+    if(type==="textarea" || type==="select"){
+      element.name = "noname";
+      var inputs = document.getElementsByTagName(type);
+    } else {
+      var inputs = document.querySelectorAll("input")
+    }
+
+    for (x = 0 ; x < inputs.length ; x++){
+      itemname = inputs[x].getAttribute("name");
+
+      if(itemname == null){
+        itemname = inputs[x].name;
+      }
+
+      if(itemname.indexOf(name) === 0){
+        value ++;
+      }
+    }
+
+    var newname = name + value;
+    element.name = newname;
+  }
+
+
+</script>
+
+<form method="post" action = '/bills' id = 'area'>
+    <p id = 'count' name = 'counter'> {{ count }}</p>
     {% for i in range(count) %}
     {% set i = i + 1 %}
     {% set i = i|string %}
     {% set x = bill[i] %}
+
     <div class="bill">
-        <h2>Bill {{ x.index }}</h2>
-        <span>Amount: </span><textarea class="inputbox" rows="1" name = 'amount{{x.index}}' >{{ x.amount }}</textarea> <span>Due date</span><textarea class="inputbox" rows="1" name = 'due{{x.index}}'>{{ x.due }}</textarea> <input type="checkbox">
+        <h2><textarea class="inputbox" rows="1" name = 'name{{ i }}' >{{ x.name }}</textarea></h2>
+        <span>Amount: </span><textarea class="inputbox" rows="1" name = 'amount{{ i }}' >{{ x.amount }}</textarea> <span>Due date</span><textarea class="inputbox" rows="1" name = 'due{{ i }}'>{{ x.due }}</textarea>   <select name="category{{ i }}">
+    <option value="Water">Water</option>
+    <option value="Electricity">Electricity</option>
+    <option value="Gas">Gas</option>
+    <option value="Data">Data</option>
+    <option value="Others">Others</option>
+  </select> <input type="checkbox">
     </div>
     {% endfor %}
-<!-- <div class="bill">
-    <h2 id = >Bill 1</h2>
-    <span>Amount: </span><textarea class="inputbox" rows="1" name = 'amount1' >{{ 'test' }}</textarea> <span>Due date</span><textarea class="inputbox" rows="1" name = 'due1'></textarea> <input type="checkbox">
-</div>
-<div class="bill">
-    <h2>Bill 2</h2>
-    <span>Amount: </span><textarea class="inputbox" rows="1" name = 'amount2'></textarea> <span>Due date</span><textarea class="inputbox" rows="1" name = 'due2'></textarea> <input type="checkbox">
-</div>
-<div class="bill">
-    <h2>Bill 3</h2>
-    <span>Amount: </span><textarea class="inputbox" rows="1" name = 'amount3'></textarea> <span>Due date</span><textarea class="inputbox" rows="1" name = 'due3'></textarea> <input type="checkbox">
-</div> -->
+
+
 <input type="submit" class = 'submit' id = 'history'>
 </form>
+
+
+
 </div>
+
+
 {% endblock content %}
