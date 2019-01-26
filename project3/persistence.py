@@ -111,8 +111,9 @@ class Bill:
     def set_due(self, due):
         self.due = due
 
-def add_totalbills(id,amount,due):
+def add_totalbills(id,amount,due,name):
     bill = Bill()
+    bill.name = name
     bill.index = id
     bill.amount = amount
     bill.due = due
@@ -121,21 +122,10 @@ def add_totalbills(id,amount,due):
 def get_totalbills():
     keylist = list(billinfo.keys())
     x = []
+    print (keylist)
     for i in keylist:
         x.append(billinfo[i])
     return x
-
-def tester():
-    return ('test')
-app.jinja_env.globals.update(tester=tester)
-
-def counter_up():
-    count = counter['x']
-    count += 1
-    counter['x'] = count
-    print (count)
-    return count
-app.jinja_env.globals.update(counter_up=counter_up)
 #--------------------------------------
 
 

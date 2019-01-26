@@ -41,7 +41,7 @@ a:hover{
     border-bottom-style: solid;
     border-bottom-color: black;
 }
-.template{
+#template{
     display: none;
 }
 
