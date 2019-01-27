@@ -29,6 +29,8 @@ class User(db.Model, UserMixin):
     entertainment = db.Column(db.Integer, default=0)
     luxury = db.Column(db.Integer, default=0)
     others = db.Column(db.Integer, default=0)
+    electricity = db.Column(db.Integer, default=0)
+    water = db.Column(db.Integer, default=0)
 
     def get_reset_token(self, expires_sec=1800):
         s = Serializer(app.config['SECRET_KEY'], expires_sec)
@@ -43,12 +45,10 @@ class User(db.Model, UserMixin):
             return None
         return User.query.get(user_id)
 
-
     def __repr__(self):
         return f"User('ID-{self.id},USERNAME-{self.username},'EMAIL-{self.email}',SCORE-{self.score}, " \
-               f"budget-{self.budget}, " \
-               f"FOOD-{self.food},GROCERY-{self.grocery}, entertainment-{self.entertainment},LUXURY-{self.luxury}," \
-               f"OTHERS-{self.others})"
+               f"BUDGET-{self.budget}, ELECTRICITY-{self.electricity}, WATER-{self.water}"
+
 
     #def __repr__(self):
         #return f"User('USERNAME-{self.username}', 'EMAIL-{self.email}', '{self.image_file}' )"
