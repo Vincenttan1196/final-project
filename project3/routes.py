@@ -196,6 +196,7 @@ def DailySummary():
 @app.route("/")
 @app.route("/home")
 def home():
+    clear_products()
     return render_template('home.html')
 
 

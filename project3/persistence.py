@@ -95,8 +95,10 @@ def get_product(id):
     if id in compproducts:
         return compproducts[id]
 
-def clear_product(id):
-    del compproducts[id]
+def clear_products():
+    klist = list(compproducts.keys())
+    for key in klist:
+        del compproducts[key]
 
 
 #For Bills Page (start) --------------

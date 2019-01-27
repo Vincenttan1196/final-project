@@ -6,19 +6,15 @@
     <link href="{{ url_for('static', filename='comparison.css') }}" rel="stylesheet">
 
     <div class = "blocks">
-        <span class="board">
-            <img src = "{{ selprod['picture'] }}" width="150" height="150">
-            {{ selprod['name'] }}
-            {{ selprod['price1'] }}
-        </span>
+        <img src = "{{ selprod['picture'] }}" width="150" height="150">
+        <p>{{ selprod['name'] }}</p>
+        <p>{{ selprod['price1'] }}</p>
     </div>
 
     <div class="blocks">
-        <span class="board">
-            <img src="{{ selprod['picture'] }}" width="150" height="150">
-            {{ selprod['name'] }}
-            {{ selprod['price2'] }}
-        </span>
+        <img src="{{ selprod['picture'] }}" width="150" height="150">
+        <p>{{ selprod['name'] }}</p>
+        <p>{{ selprod['price2'] }}</p>
     </div>
 {% endblock content %}...........
 
