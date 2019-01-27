@@ -115,11 +115,11 @@ def planner():
         if request.method == 'POST':
             total = 0
             budge = 0
-            food = 0
-            grocery = 0
-            entertainment = 0
-            luxury = 0
-            others = 0
+            food = current_user.food
+            grocery = current_user.grocery
+            entertainment = current_user.entertainment
+            luxury = current_user.luxury
+            others = current_user.luxury
             count = int(request.form['totalitems'])
             for i in range(count):
                 a = productInfo()

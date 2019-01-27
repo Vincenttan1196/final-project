@@ -6,84 +6,53 @@
 
     <div class = "output">
     <h1 class = "mainHeader"> {{ familyid }}'s Summary</h1>
-        <span class = "period">Daily</span>
-        <span class = "period">Monthly</span>
-        <span class = "period">Yearly</span>
-        <p class= "heading">Overall Spending</p>
+            <p>Current Budget: ${{ current_user.budget }}</p>
+        <p class= "heading">Overall Spendings</p>
             <span class="tableHeader">Categories</span>
             <span class="tableHeader" id = "amount">Amount</span>
             <table class = "Category">
                 <tr>
-                    <td class = "categoryHeader" width = "50%">Food</td><td></td>
+                    <td class = "categoryHeader" width = "50%">Food</td><td>${{ current_user.food }}</td>
                 </tr>
                 <tr>
                     <td width = "50%">Spent:</td><td></td>
-                </tr>
-                <tr>
-                    <td width = "50%">Your Average: </td><td></td>
-                </tr>
-                <tr>
-                    <td width = "50%">Everyone's Average:</td><td></td>
                 </tr>
             </table>
             <table class = "Category">
                 <tr>
-                    <td class = "categoryHeader" width = "50%">Luxury</td><td></td>
+                    <td class = "categoryHeader" width = "50%">Groceries</td><td>${{ current_user.grocery }}</td>
                 </tr>
                 <tr>
                     <td width = "50%">Spent:</td><td></td>
-                </tr>
-                <tr>
-                    <td width = "50%">Your Average: </td><td></td>
-                </tr>
-                <tr>
-                    <td width = "50%">Everyone's Average:</td><td></td>
                 </tr>
             </table>
             <table class = "Category">
                 <tr>
-                    <td class = "categoryHeader" width = "50%">Groceries</td><td></td>
+                    <td class = "categoryHeader" width = "50%">Entertainment:</td><td>${{ current_user.entertainment }}</td>
                 </tr>
                 <tr>
                     <td width = "50%">Spent:</td><td></td>
-                </tr>
-                <tr>
-                    <td width = "50%">Your Average: </td><td></td>
-                </tr>
-                <tr>
-                    <td width = "50%">Everyone's Average:</td><td></td>
                 </tr>
             </table>
             <table class = "Category">
                 <tr>
-                    <td class = "categoryHeader" width = "50%">Water</td><td></td>
+                    <td class = "categoryHeader" width = "50%">Luxury</td><td>${{ current_user.luxury }}</td>
                 </tr>
                 <tr>
                     <td width = "50%">Spent:</td><td></td>
-                </tr>
-                <tr>
-                    <td width = "50%">Your Average: </td><td></td>
-                </tr>
-                <tr>
-                    <td width = "50%">Everyone's Average:</td><td></td>
                 </tr>
             </table>
             <table class = "Category">
                 <tr>
-                    <td class = "categoryHeader" width = "50%">Electricity</td><td></td>
+                    <td class = "categoryHeader" width = "50%">Others</td><td>${{ current_user.others }}</td>
                 </tr>
                 <tr>
                     <td width = "50%">Spent:</td><td></td>
-                </tr>
-                <tr>
-                    <td width = "50%">Your Average: </td><td></td>
-                </tr>
-                <tr>
-                    <td width = "50%">Everyone's Average:</td><td></td>
                 </tr>
 
+
             </table>
-        <td class = "categoryHeader" width = "50%">Overall Total</td><td>$ {{ total }}</td>
+        <td class = "categoryHeader" width = "50%">Overall Spent:</td><td> ${{ current_user.food + current_user.grocery + current_user.entertainment + current_user.luxury + current_user.others}}</td>
 
     </div>
 
