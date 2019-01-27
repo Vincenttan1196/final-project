@@ -129,6 +129,7 @@ def planner():
                 total = total + int(a.price)
                 budge = a.budget - total
                 current_user.budget = budge
+                current_user.score = current_user.score + 1
                 db.session.commit()
                 if a.category == 'food' or a.category == 'Food':
                     food = food + int(a.price)
@@ -137,18 +138,22 @@ def planner():
                 elif a.category == 'groceries' or a.category == 'Groceries':
                     grocery = grocery + int(a.price)
                     current_user.grocery = grocery
+                    current_user.score = current_user.score + 1
                     db.session.commit()
                 elif a.category == 'entertainment' or a.category == 'Entertainment':
                     entertainment = entertainment + int(a.price)
                     current_user.entertainment = entertainment
+                    current_user.score = current_user.score + 1
                     db.session.commit()
                 elif a.category == 'luxury' or a.category == 'Luxury':
                     luxury = luxury + int(a.price)
                     current_user.luxury = luxury
+                    current_user.score = current_user.score + 1
                     db.session.commit()
                 elif a.category == 'others' or a.category == 'Others':
                     others = others + int(a.price)
                     current_user.others = others
+                    current_user.score = current_user.score + 1
                     db.session.commit()
                 add_productprice(a)
                 add_totalprices(total)
