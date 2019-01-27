@@ -80,9 +80,9 @@ def bills():
         for i in range(int(get_counter())):
             x = str(i + 1)
             id = x
-            name = str(request.form['name' + str(x)])
-            amount = str(request.form['amount' + str(x)])
-            due = str(request.form['due'+str(x)])
+            name = str(request.form['billname' + str(x)])
+            amount = str(request.form['billamount' + str(x)])
+            due = str(request.form['billdue'+str(x)])
             add_totalbills(id,amount,due,name)
         y = get_totalbills()
         total = 0
