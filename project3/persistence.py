@@ -102,7 +102,7 @@ def clear_products():
         del compproducts[key]
 
 def create_shoplist():
-    if "1" in shoplist:
+    if "1" not in shoplist:
         return "yes"
     else:
         return "no"
