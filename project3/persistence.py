@@ -20,7 +20,8 @@ class Product:
         self.itemid = ""
         self.name = ""
         self.picture = ""
-        self.price = ""
+        self.price1 = ""
+        self.price2 = ""
 
     def get_id(self):
         return self.itemid
@@ -40,11 +41,17 @@ class Product:
     def set_picture(self, picture):
         self.picture = picture
 
-    def get_price(self):
-        return self.price
+    def get_price1(self):
+        return self.price1
 
-    def set_price(self, price):
-        self.price = price
+    def set_price1(self, price1):
+        self.price1 = price1
+
+    def get_price2(self):
+        return self.price2
+
+    def set_price2(self, price2):
+        self.price2 = price2
 
     def get_itemid(self):
         return self.itemid
@@ -67,12 +74,13 @@ class Object(Product):
 def add_product(product):
     compproducts[product.itemid] = product
 
-def create_product(itemid, name, picture, price, type):
+def create_product(itemid, name, picture, price1, price2, type):
     product = Object()
     product.itemid = itemid
     product.name = name
     product.picture = picture
-    product.price = price
+    product.price1 = price1
+    product.price2 = price2
     product.type = type
     compproducts[itemid] = product
 
@@ -87,8 +95,10 @@ def get_product(id):
     if id in compproducts:
         return compproducts[id]
 
-def clear_product(id):
-    del compproducts[id]
+def clear_products():
+    klist = list(compproducts.keys())
+    for key in klist:
+        del compproducts[key]
 
 
 #For Bills Page (start) --------------

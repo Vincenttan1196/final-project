@@ -32,6 +32,7 @@ def cheaper():
 @app.route("/comparison/<objectid>")
 def comparison(objectid):
     selectedproduct = get_product(objectid)
+
     #^to display the product selected by user
 
 
@@ -44,9 +45,10 @@ def admin():
         itemid = request.form['itemid']
         name = request.form["name"]
         picture = request.form["picture"]
-        price = request.form["price"]
+        price1 = request.form["price1"]
+        price2 = request.form["price2"]
         type = request.form["type"]
-        create_product(itemid, name, picture, price, type)
+        create_product(itemid, name, picture, price1, price2, type)
         return render_template('admin.html')
     return render_template("admin.html")
 
@@ -129,6 +131,7 @@ def planner():
                 total = total + int(a.price)
                 budge = a.budget - total
                 current_user.budget = budge
+                current_user.score = current_user.score + 1
                 db.session.commit()
                 if a.category == 'food' or a.category == 'Food':
                     food = food + int(a.price)
@@ -137,18 +140,22 @@ def planner():
                 elif a.category == 'groceries' or a.category == 'Groceries':
                     grocery = grocery + int(a.price)
                     current_user.grocery = grocery
+                    current_user.score = current_user.score + 1
                     db.session.commit()
                 elif a.category == 'entertainment' or a.category == 'Entertainment':
                     entertainment = entertainment + int(a.price)
                     current_user.entertainment = entertainment
+                    current_user.score = current_user.score + 1
                     db.session.commit()
                 elif a.category == 'luxury' or a.category == 'Luxury':
                     luxury = luxury + int(a.price)
                     current_user.luxury = luxury
+                    current_user.score = current_user.score + 1
                     db.session.commit()
                 elif a.category == 'others' or a.category == 'Others':
                     others = others + int(a.price)
                     current_user.others = others
+                    current_user.score = current_user.score + 1
                     db.session.commit()
                 add_productprice(a)
                 add_totalprices(total)
@@ -189,6 +196,7 @@ def DailySummary():
 @app.route("/")
 @app.route("/home")
 def home():
+    clear_products()
     return render_template('home.html')
 
 

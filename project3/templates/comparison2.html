@@ -5,15 +5,17 @@
     <!-- Custom styles for this template -->
     <link href="{{ url_for('static', filename='comparison.css') }}" rel="stylesheet">
 
-    <div class = "catalogue">
-        <span class="board">
-            <img src = "{{ selprod['picture'] }}">
-            {{ selprod['name'] }}
-            {{ selprod['price'] }}
-        </span>
-
-        <span class="board">
-            Image here
-        </span>
+    <div class = "blocks">
+        <img src = "{{ selprod['picture'] }}" width="150" height="150">
+        <p>{{ selprod['name'] }}</p>
+        <p>{{ selprod['price1'] }}</p>
     </div>
-{% endblock content %}
+
+    <div class="blocks">
+        <img src="{{ selprod['picture'] }}" width="150" height="150">
+        <p>{{ selprod['name'] }}</p>
+        <p>{{ selprod['price2'] }}</p>
+    </div>
+{% endblock content %}...........
+
+
