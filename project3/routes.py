@@ -73,6 +73,7 @@ def schemecheck():
 
 
 @app.route("/bills", methods = ('GET','POST'))
+@login_required
 def bills():
     if request.method == 'POST':
         counter['x'] = str(request.form['counter'])
@@ -324,10 +325,10 @@ def reset_token(token):
     return render_template('reset_token.html', title='Reset Password', form=form)
 
 
-@app.route('/weekly')
-def weekly():
+@app.route('/ranking')
+def ranking():
     score = User.query.order_by(User.score.desc()).all()
-    return render_template("weekly.html", score=score)
+    return render_template("ranking.html", score=score)
 
 
 @app.route('/monthly')
