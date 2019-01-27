@@ -334,5 +334,8 @@ def yearly():
 def feedback():
     return render_template('feedback.html')
 
+@app.route('/consult')
+def consult():
+    return render_template('consult.html')
 
 #-------------------------------------------------------------------------------------------
