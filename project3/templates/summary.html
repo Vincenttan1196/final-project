@@ -6,55 +6,69 @@
 
     <div class = "output">
     <h1 class = "mainHeader"> {{ familyid }}'s Summary</h1>
-            <p>Current Budget: ${{ current_user.budget }}</p>
+            <p name = "budget">Current Budget: ${{ current_user.budget }}</p>
         <p class= "heading">Overall Spendings</p>
             <span class="tableHeader">Categories</span>
             <span class="tableHeader" id = "amount">Amount</span>
             <table class = "Category">
                 <tr>
-                    <td class = "categoryHeader" width = "50%">Food</td><td>${{ current_user.food }}</td>
+                    <td class = "categoryHeader" width = "50%">Food</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;Spent: ${{ current_user.food }}</td>
                 </tr>
-                <tr>
-                    <td width = "50%">Spent:</td><td></td>
-                </tr>
+
             </table>
             <table class = "Category">
                 <tr>
-                    <td class = "categoryHeader" width = "50%">Groceries</td><td>${{ current_user.grocery }}</td>
+                    <td class = "categoryHeader" width = "50%">Groceries</td><td>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;Spent: ${{ current_user.grocery }}</td>
                 </tr>
-                <tr>
-                    <td width = "50%">Spent:</td><td></td>
-                </tr>
+
             </table>
             <table class = "Category">
                 <tr>
-                    <td class = "categoryHeader" width = "50%">Entertainment:</td><td>${{ current_user.entertainment }}</td>
+                    <td class = "categoryHeader" width = "50%">Entertainment:</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;Spent: ${{ current_user.entertainment }}</td>
                 </tr>
-                <tr>
-                    <td width = "50%">Spent:</td><td></td>
-                </tr>
+
             </table>
             <table class = "Category">
                 <tr>
-                    <td class = "categoryHeader" width = "50%">Luxury</td><td>${{ current_user.luxury }}</td>
+                    <td class = "categoryHeader" width = "50%">Luxury</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;Spent: ${{ current_user.luxury }}</td>
                 </tr>
-                <tr>
-                    <td width = "50%">Spent:</td><td></td>
-                </tr>
+
             </table>
             <table class = "Category">
                 <tr>
-                    <td class = "categoryHeader" width = "50%">Others</td><td>${{ current_user.others }}</td>
-                </tr>
-                <tr>
-                    <td width = "50%">Spent:</td><td></td>
+                    <td class = "categoryHeader" width = "50%">Others</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;Spent: ${{ current_user.others }}</td>
                 </tr>
 
 
-            </table>
-        <td class = "categoryHeader" width = "50%">Overall Spent:</td><td> ${{ current_user.food + current_user.grocery + current_user.entertainment + current_user.luxury + current_user.others}}</td>
 
+            </table>
+
+        <p class = "categoryHeader" width = "50%">Overall Spent: ${{ current_user.food + current_user.grocery + current_user.entertainment + current_user.luxury + current_user.others}}</p>
+        <p>The most money you have spent for a category is <font size = "5"><ins>${{ highest }}</ins>.</font> In order to maximise your spending, you can cut down on spending on what you want and instead spend on what you really need.</p>
     </div>
+
+
 
 
 {% endblock content %}

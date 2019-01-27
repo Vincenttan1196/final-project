@@ -155,9 +155,9 @@ function closeNav() {
             <tr class="top">
                 <td colspan="2">
                     <p><font size="8"></font><font face="verdana"><b>Items That You Purchased Today</b></font></p>
-
+                    <p><span id = 'total'>Total Amount Spent Today:&nbsp;${{ total }}</span><br><span id = 'budget'>Budget Left: ${{ budget }}</span></p>
              <tr class="heading">
-                <td>
+                <td id = "woop">
                     {% for productObj in productObj %}
                 <div>
                     <p>Name: {{ productObj['name'] }} &nbsp; Price: ${{ productObj['price']}} &nbsp; Category: {{ productObj['category'] }}</p>
@@ -169,11 +169,5 @@ function closeNav() {
         </table>
     </div>
 
-<span id = 'total'>Total Amount Spent Today:&nbsp;&nbsp;${{ total }}</span>
-<span>Budget Left: ${{ budget }}</span>
-<span id = "keep">Total Spent On Food: ${{ food }}</span> &nbsp;&nbsp;
-<span>Total Spent On Groceries: ${{ grocery }}</span>&nbsp;&nbsp;
-<span>Total Spent On Entertainment: ${{ entertainment }}</span>&nbsp;&nbsp;
-<span>Total Spent On Luxury: ${{ luxury }}</span>&nbsp;&nbsp;
-<span>Total Spent On Others: ${{ others }}</span>
+
 {% endblock content %}

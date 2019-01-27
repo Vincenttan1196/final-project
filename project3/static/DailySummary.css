@@ -83,7 +83,7 @@ p#year {
 div.invoice-box {
 	border: 1px solid green;
 	background-color:#E0E0E0;
-    height: 500px;
+    height: 1000px;
     margin-left: 350px;
 }
 
@@ -91,3 +91,6 @@ td#store {
     text-align: center;
 }
 
+td#woop {
+    width: 500px;
+}
