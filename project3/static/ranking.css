@@ -35,10 +35,6 @@ body {
  * Content
  */
 
-[role="main"] {
-  padding-top: 48px; /* Space for fixed navbar */
-}
-
 
 
 body {
@@ -54,7 +50,6 @@ body {
   left: 0;
   background-color: #111; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
@@ -167,3 +162,47 @@ tbody td:last-child, thead th:last-child {
 
 
 
+@media (min-width: 768px){
+.col-md-8 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 100%;
+    margin-bottom: 100%;
+}}
+
+
+
+body {
+    background: #fafafa;
+    color: #333333;
+     margin-top: 0;
+}
+
+.row {
+    display: -webkit-box;
+    /: ;
+    display: inline-block;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    margin-right: 400px;
+
+}
+
+.container {
+    width: 110%;
+    padding-right: 0;
+    padding-left: 150px;
+    margin-right: 0;
+    margin-left: 200px;
+}
+
+body {
+    line-height: 1.5;
+}
+body{
+    background:url('../static/image/test1.jpg');
+    background-size:cover;
+    background-repeat: repeat-y;
+	overflow-x: hidden;
+}
