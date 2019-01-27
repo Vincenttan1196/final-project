@@ -29,7 +29,8 @@
         document.getElementById("area").appendChild(div);
         counter = parseInt(document.getElementById("count").textContent);
         counter = counter + 1;
-        document.getElementById("count").innerHTML = counter;
+        document.getElementById("count").value = counter;
+
     }
 
 function uniqueName(element, name, type){
@@ -61,7 +62,7 @@ function uniqueName(element, name, type){
 </script>
 
 <form method="post" action = '/bills' id = 'area'>
-    <p id = 'count' name = 'counter'>{{ count }}</p>
+    <input type="number" value = '{{ count }}' id = 'count' name = 'counter'>
     {% for i in range(count) %}
     {% set i = i + 1 %}
     {% set i = i|string %}

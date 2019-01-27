@@ -132,7 +132,7 @@ def get_counter():
     if keylist == []:
         counter['x'] = 0
     count = counter['x']
-    return count
+    return int(count)
 #--------------------------------------
 
 
