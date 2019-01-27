@@ -10,8 +10,8 @@
 
 {% for i in info %}
     <div class="bill">
-        <h2 id = 'first'>Bill {{ i['id'] }}</h2>
-        <span>Amount: </span>{{ i['amount'] }} <span>Due date: </span>{{ i['due'] }} <input type="checkbox">
+        <h2 id = 'first'>{{ i['name'] }}</h2>
+        <span>Amount: </span>{{ i['amount'] }} <span>Due date: </span>{{ i['due'] }} <span>category: </span>{{ i['category']}} <input type="checkbox">
     </div>
 {% endfor %}
 

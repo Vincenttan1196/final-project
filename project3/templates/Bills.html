@@ -15,9 +15,17 @@
 <input type="button" onClick="addItem()" value= "add new">
 
 <div id="template">
-    <h2><textarea class="inputbox" rows="1" name = 'noname' onchange="uniqueName(this, 'billname', 'textarea')" ></textarea></h2>
-    <span>Bill Amount: </span><textarea type="number" class = "inputbox" rows = "1" name = 'noamount' onchange=uniqueName(this,'billamount','textarea')></textarea>
-    <span>Due date: </span><textarea class="inputbox" rows="1" name = 'nodue' onchange="uniqueName(this, 'billdue', 'textarea')"></textarea> <input type="checkbox">
+    <h2><input class="inputbox" rows="1"  onchange="uniqueName(this, 'billname', 'textarea')" ></h2>
+    <span>Bill Amount: </span><input type="number" class = "inputbox" rows = "1" name = 'noamount' onchange=uniqueName(this,'billamount','textarea')>
+    <span>Due date: </span><input class="inputbox" rows="1" name = 'nodue' onchange="uniqueName(this, 'billdue', 'textarea')">
+    <select name = 'noncat' onchange="uniqueName(this, 'billcategory', 'textarea')">
+        <option value="Nil">Please choose a category</option>
+        <option value="Water">Water</option>
+        <option value="Electricity">Electricity</option>
+        <option value="Gas">Gas</option>
+        <option value="Others">Others</option>
+    </select>
+    <input type="checkbox">
 </div>
 
 <script>
@@ -66,20 +74,23 @@ function uniqueName(element, name, type){
     <input type="hidden" value = '{{ count }}' id = 'counter' name = 'counter'>
 
     {% for i in range(count) %}
+    {% set z = i|string %}
     {% set i = i + 1 %}
     {% set i = i|string %}
-    {% set x = bill[i] %}
+    {% set x = bill[z] %}
 
     <div class="bill">
-        <h2><textarea class="inputbox" rows="1" name = 'billname{{ i }}' >{{ x.name }}</textarea></h2>
-        <span>Amount: </span><textarea type="number" class="inputbox" rows="1" name = 'billamount{{ i }}' value = '{{ x.amount }}' ></textarea>
-        <span>Due date</span><textarea class="inputbox" rows="1" name = 'billdue{{ i }}'>{{ x.due }}</textarea>   <select name="category{{ i }}">
-    <option value="Water">Water</option>
-    <option value="Electricity">Electricity</option>
-    <option value="Gas">Gas</option>
-    <option value="Data">Data</option>
-    <option value="Others">Others</option>
-  </select> <input type="checkbox">
+        <h2><input class="inputbox" rows="1" name = 'billname{{ z }}' value = '{{ x.name }}'></h2>
+        <span>Amount: </span><input type="number" class="inputbox" rows="1" name = 'billamount{{ z }}' value = '{{ x.amount }}' >
+        <span>Due date</span><input class="inputbox" rows="1" name = 'billdue{{ z }}' value = '{{ x.due }}'>
+        <select name="billcategory{{ z }}" >
+            <option value="Nil">Please choose a category</option>
+            <option value="Water">Water</option>
+            <option value="Electricity">Electricity</option>
+            <option value="Gas">Gas</option>
+            <option value="Others">Others</option>
+        </select>
+        <input type="checkbox">
     </div>
     {% endfor %}
 
