@@ -31,6 +31,18 @@ class User(db.Model, UserMixin):
     others = db.Column(db.Integer, default=0)
     electricity = db.Column(db.Integer, default=0)
     water = db.Column(db.Integer, default=0)
+    #Testing
+    _ratings = db.Column(db.String, default='0')
+
+    @property
+    def ratings(self):
+        return [float(x) for x in self._ratings.split(',')]
+
+    @ratings.setter
+    def ratings(self, value):
+        self._ratings += ',%s' % value
+
+
 
     def get_reset_token(self, expires_sec=1800):
         s = Serializer(app.config['SECRET_KEY'], expires_sec)
@@ -47,7 +59,7 @@ class User(db.Model, UserMixin):
 
     def __repr__(self):
         return f"User('ID-{self.id},USERNAME-{self.username},'EMAIL-{self.email}',SCORE-{self.score}, " \
-               f"BUDGET-{self.budget}, ELECTRICITY-{self.electricity}, WATER-{self.water}"
+               f"BUDGET-{self.budget}, ELECTRICITY-{self.electricity}, WATER-{self.water},RATINGS-{self._ratings} "
 
 
     #def __repr__(self):
