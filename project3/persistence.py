@@ -14,6 +14,7 @@ users = shelve.open('user')
 compproducts = shelve.open("products")
 images = shelve.open("images")
 catTotal = shelve.open("categoryTotal")
+shoplist = shelve.open("shoppingList")
 
 class Product:
     def __init__(self):
@@ -100,6 +101,19 @@ def clear_products():
     for key in klist:
         del compproducts[key]
 
+def create_shoplist():
+    if "1" in shoplist:
+        return "yes"
+    else:
+        return "no"
+
+def add_shop(id):
+    x = shoplist[1]
+    x.append(id)
+
+def get_shoplist():
+    x = shoplist[1]
+    return x
 
 #For Bills Page (start) --------------
 billinfo = shelve.open('bill')

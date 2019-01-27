@@ -29,12 +29,13 @@ def cheaper():
 
     return render_template('comparison.html', productObjs = test)
 
-@app.route("/comparison/<objectid>")
+@app.route("/comparison/<objectid>", methods=('GET', 'POST'))
 def comparison(objectid):
     selectedproduct = get_product(objectid)
-
-    #^to display the product selected by user
-
+    # ^to display the product selected by user
+    if request.method == 'POST':
+        x = create_shoplist()
+        return render_template("list.html", test = x)
 
     return render_template("comparison2.html", selprod = selectedproduct)
 
