@@ -156,10 +156,14 @@ class productInfo:
         self.__entertainment = ''
         self.__luxury = ''
         self.__others = ''
+        self.__addbudget = ''
 
 
     def get_name(self):
         return self.__name
+
+    def get_addbudget(self):
+        return self.__addbudget
 
     def get_others(self):
         return self.__others
@@ -190,6 +194,9 @@ class productInfo:
 
     def set_index(self, index):
         self.__index = index
+
+    def set_addbudget(self, addbudget):
+        self.__addbudget = addbudget
 
     def set_others(self, others):
         self.__others = others
@@ -264,6 +271,10 @@ others = shelve.open('others')
 def add_other(totalothers):
     others['others'] = totalothers
 
+budget = shelve.open('budgets')
+
+def add_budget(totalbudget):
+    budget['budget'] = totalbudget
 
 def get_productname():
     infolist = list(productinfo.keys())

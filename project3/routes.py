@@ -153,9 +153,8 @@ def planner():
                 add_luxury(luxury)
                 add_other(others)
             a = get_productname()
-            return render_template("DailySummary.html", total = total, productObj = a, budget = budge, food = food, grocery = grocery, entertainment = entertainment, luxury = luxury, others = others)
-        return render_template("planner.html", total='0')
-
+            return render_template("DailySummary.html", total = total, productObj = a, budget = current_user.budget, food = food, grocery = grocery, entertainment = entertainment, luxury = luxury, others = others)
+        return render_template("planner.html", total='0',budget = current_user.budget)
 
 
 @app.route("/DailySummary", methods=('GET', 'POST'))
