@@ -134,12 +134,13 @@ class Bill:
     def set_due(self, due):
         self.due = due
 
-def add_totalbills(id,amount,due,name):
+def add_totalbills(id,amount,due,name,category):
     bill = Bill()
     bill.name = name
     bill.index = id
     bill.amount = amount
     bill.due = due
+    bill.category = category
     billinfo[id] = bill
 
 def get_totalbills():

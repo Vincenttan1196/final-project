@@ -79,12 +79,14 @@ def bills():
     if request.method == 'POST':
         counter['x'] = str(request.form['counter'])
         for i in range(int(get_counter())):
-            x = str(i + 1)
+            x = str(i)
             id = x
             name = str(request.form['billname' + str(x)])
             amount = str(request.form['billamount' + str(x)])
             due = str(request.form['billdue'+str(x)])
-            add_totalbills(id,amount,due,name)
+            category = str(request.form['billcategory'+str(x)])
+            print (category)
+            add_totalbills(id,amount,due,name,category)
         y = get_totalbills()
         total = 0
         for i in y:
@@ -93,7 +95,7 @@ def bills():
     count = get_counter()
     y = get_totalbills()
     if y == []:
-        add_totalbills('1','Enter the amount','Enter the due date','Enter a name')
+        add_totalbills('0','Enter the amount','Enter the due date','Enter a name','nil')
         y = get_totalbills()
     return render_template('Bills.html', count = count, bill = billinfo)
 
