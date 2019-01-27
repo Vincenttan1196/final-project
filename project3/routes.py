@@ -73,6 +73,7 @@ def schemecheck():
 
 
 @app.route("/bills", methods = ('GET','POST'))
+@login_required
 def bills():
     if request.method == 'POST':
         counter['x'] = str(request.form['counter'])
@@ -115,11 +116,11 @@ def planner():
         if request.method == 'POST':
             total = 0
             budge = 0
-            food = 0
-            grocery = 0
-            entertainment = 0
-            luxury = 0
-            others = 0
+            food = current_user.food
+            grocery = current_user.grocery
+            entertainment = current_user.entertainment
+            luxury = current_user.luxury
+            others = current_user.luxury
             count = int(request.form['totalitems'])
             for i in range(count):
                 a = productInfo()
@@ -324,10 +325,10 @@ def reset_token(token):
     return render_template('reset_token.html', title='Reset Password', form=form)
 
 
-@app.route('/weekly')
-def weekly():
+@app.route('/ranking')
+def ranking():
     score = User.query.order_by(User.score.desc()).all()
-    return render_template("weekly.html", score=score)
+    return render_template("ranking.html", score=score)
 
 
 @app.route('/monthly')
