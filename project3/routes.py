@@ -29,12 +29,13 @@ def cheaper():
 
     return render_template('comparison.html', productObjs = test)
 
-@app.route("/comparison/<objectid>")
+@app.route("/comparison/<objectid>", methods=('GET', 'POST'))
 def comparison(objectid):
     selectedproduct = get_product(objectid)
-
-    #^to display the product selected by user
-
+    # ^to display the product selected by user
+    if request.method == 'POST':
+        x = create_shoplist()
+        return render_template("list.html", test = x)
 
     return render_template("comparison2.html", selprod = selectedproduct)
 
@@ -138,32 +139,32 @@ def planner():
                 total = total + int(a.price)
                 budge = a.budget - total
                 current_user.budget = budge
-                current_user.score = current_user.score + 1
-                db.session.commit()
                 if a.category == 'food' or a.category == 'Food':
                     food = food + int(a.price)
                     current_user.food = food
-                    db.session.commit()
                 elif a.category == 'groceries' or a.category == 'Groceries':
                     grocery = grocery + int(a.price)
                     current_user.grocery = grocery
-                    current_user.score = current_user.score + 1
-                    db.session.commit()
                 elif a.category == 'entertainment' or a.category == 'Entertainment':
                     entertainment = entertainment + int(a.price)
                     current_user.entertainment = entertainment
-                    current_user.score = current_user.score + 1
-                    db.session.commit()
                 elif a.category == 'luxury' or a.category == 'Luxury':
                     luxury = luxury + int(a.price)
                     current_user.luxury = luxury
-                    current_user.score = current_user.score + 1
-                    db.session.commit()
                 elif a.category == 'others' or a.category == 'Others':
                     others = others + int(a.price)
                     current_user.others = others
-                    current_user.score = current_user.score + 1
+
+                bonus = total/(current_user.budget + total)
+
+                if bonus < 0.20:
+                    current_user.score = current_user.score + 2
                     db.session.commit()
+
+                else:
+                    current_user.score = current_user.score + 0
+                    db.session.commit()
+
                 add_productprice(a)
                 add_totalprices(total)
                 add_totalfoods(food)
