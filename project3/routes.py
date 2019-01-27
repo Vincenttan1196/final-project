@@ -11,9 +11,17 @@ from project3.persistence import *
 from project3.models import *
 from project3.database import User
 
+@app.route("/summary")
+@login_required
+def nosummary():
+    if current_user.is_authenticated:
+        return render_template("summary.html", familyid=current_user.username)
+
 @app.route("/summary/<familyid>")
+@login_required
 def summary(familyid):
-    return render_template("summary.html", familyid = current_user.username)
+    if current_user.is_authenticated:
+        return render_template("summary.html", familyid = current_user.username)
 
 @app.route("/cheaper")
 def cheaper():
@@ -100,9 +108,8 @@ def display():
 #Immanuels Stuff-------------------------------------------------------------------------------------------
 
 
-
-
 @app.route("/planner", methods=('GET', 'POST'))
+@login_required
 def planner():
     if current_user.is_authenticated:
         if request.method == 'POST':
