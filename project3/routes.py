@@ -77,6 +77,10 @@ def schemecheck():
 def bills():
     if request.method == 'POST':
         counter['x'] = str(request.form['counter'])
+        #do we need these @michael
+        #water = current_user.water
+        #electricity = current_user.electricity
+        #others = current_user.others
         for i in range(int(get_counter())):
             x = str(i)
             id = x
@@ -84,7 +88,7 @@ def bills():
             amount = str(request.form['billamount' + str(x)])
             due = str(request.form['billdue'+str(x)])
             category = str(request.form['billcategory'+str(x)])
-            print (category)
+            add_categories(category,amount)
             add_totalbills(id,amount,due,name,category)
         y = get_totalbills()
         total = 0

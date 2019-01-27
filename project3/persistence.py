@@ -104,10 +104,9 @@ def clear_products():
 #For Bills Page (start) --------------
 billinfo = shelve.open('bill')
 counter = shelve.open('billscounter')
+catelist = shelve.open('categorylist')
 
 class Bill:
-    count = 0
-
     # count and index are both for tracking the bill number, it is not decided which to use yet
     def __init__(self):
         self.index = ''
@@ -119,6 +118,7 @@ class Bill:
 
     def set_due(self, due):
         self.due = due
+
 
 def add_totalbills(id,amount,due,name,category):
     bill = Bill()
@@ -137,6 +137,25 @@ def get_totalbills():
         x.append(billinfo[i])
     return x
 
+
+class Categories:
+    def __init__(self):
+        self.water = ''
+        self.electricity = ''
+        self.others = ''
+
+def add_categories(cate,amount):
+    keylist = list(catelist.keys())
+    if keylist == []:
+        catelist['x'] = Categories()
+    c = catelist['x']
+    if cate == 'Water':
+        c.water = amount
+    elif cate == 'Electricity':
+        c.electricity = amount
+    elif cate == 'Others':
+        c.others = amount
+    catelist['x'] = c
 
 def get_counter():
     keylist = list(counter.keys())

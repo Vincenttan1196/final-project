@@ -19,10 +19,9 @@
     <span>Bill Amount: </span><input type="number" class = "inputbox" rows = "1" name = 'noamount' onchange=uniqueName(this,'billamount','textarea')>
     <span>Due date: </span><input class="inputbox" rows="1" name = 'nodue' onchange="uniqueName(this, 'billdue', 'textarea')">
     <select name = 'noncat' onchange="uniqueName(this, 'billcategory', 'textarea')">
-        <option value="Nil">Please choose a category</option>
+        <option value="Nil" disabled selected>Please choose a category</option>
         <option value="Water">Water</option>
         <option value="Electricity">Electricity</option>
-        <option value="Gas">Gas</option>
         <option value="Others">Others</option>
     </select>
     <input type="checkbox">
@@ -84,10 +83,9 @@ function uniqueName(element, name, type){
         <span>Amount: </span><input type="number" class="inputbox" rows="1" name = 'billamount{{ z }}' value = '{{ x.amount }}' >
         <span>Due date</span><input class="inputbox" rows="1" name = 'billdue{{ z }}' value = '{{ x.due }}'>
         <select name="billcategory{{ z }}" >
-            <option value="Nil">Please choose a category</option>
+            <option value="Nil" disabled selected>Please choose a category</option>
             <option value="Water">Water</option>
             <option value="Electricity">Electricity</option>
-            <option value="Gas">Gas</option>
             <option value="Others">Others</option>
         </select>
         <input type="checkbox">
