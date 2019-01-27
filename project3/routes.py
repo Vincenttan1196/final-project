@@ -65,7 +65,7 @@ def schemecheck():
 @app.route("/bills", methods = ('GET','POST'))
 def bills():
     if request.method == 'POST':
-        for i in range(1):
+        for i in range(int(counter['x'])):
             x = str(i + 1)
             id = x
             name = str(request.form['name' + str(x)])
@@ -73,17 +73,17 @@ def bills():
             due = str(request.form['due'+str(x)])
             add_totalbills(id,amount,due,name)
         y = get_totalbills()
+        counter['x'] = str(request.form['counter'])
         total = 0
         for i in y:
             total += int(i.amount)
         return render_template('billsSaved.html', info = y, total = total)
-    #count = 'test'
-    #print (count)
+    count = get_counter()
     y = get_totalbills()
     if y == []:
         add_totalbills('1','Enter the amount','Enter the due date','Enter a name')
         y = get_totalbills()
-    return render_template('Bills.html', count = 1, bill = billinfo)
+    return render_template('Bills.html', count = count, bill = billinfo)
 
 
 @app.route('/display', methods=('GET', 'POST'))

@@ -15,8 +15,8 @@
 <input type="button" onClick="addItem()" value= "add new">
 
 <div id="template">
-    <h2><textarea class="inputbox" rows="1" name = 'name' onchange="uniqueName(this, 'name', 'textarea')" ></textarea></h2>
-    <span>Amount: </span><textarea class="inputbox" id="test1" rows="1" name = 'amount' onchange="uniqueName(this, 'amount', 'textarea')" ></textarea> <span>Due date</span><textarea class="inputbox" rows="1" name = 'due' onchange="uniqueName(this, 'due', 'textarea')"></textarea> <input type="checkbox">
+    <h2><textarea class="inputbox" rows="1" name = 'noname' onchange="uniqueName(this, 'name', 'textarea')" ></textarea></h2>
+    <span>Amount: </span><textarea class="inputbox" id="test1" rows="1" name = 'noamount' onchange="uniqueName(this, 'amount', 'textarea')" ></textarea> <span>Due date</span><textarea class="inputbox" rows="1" name = 'nodue' onchange="uniqueName(this, 'due', 'textarea')"></textarea> <input type="checkbox">
 </div>
 
 <script>
@@ -33,7 +33,7 @@
     }
 
 function uniqueName(element, name, type){
-    var value = '{{ count - 1}}';
+    var value = '{{ count }}';
     if(type==="textarea" || type==="select"){
       element.name = "noname";
       var inputs = document.getElementsByTagName(type);
@@ -61,7 +61,7 @@ function uniqueName(element, name, type){
 </script>
 
 <form method="post" action = '/bills' id = 'area'>
-    <p id = 'count' name = 'counter'> {{ count }}</p>
+    <p id = 'count' name = 'counter'>{{ count }}</p>
     {% for i in range(count) %}
     {% set i = i + 1 %}
     {% set i = i|string %}

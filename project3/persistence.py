@@ -126,6 +126,13 @@ def get_totalbills():
     for i in keylist:
         x.append(billinfo[i])
     return x
+
+def get_counter():
+    keylist = list(counter.keys())
+    if keylist == []:
+        counter['x'] = 0
+    count = counter['x']
+    return count
 #--------------------------------------
 
 
