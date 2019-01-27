@@ -95,7 +95,6 @@ def clear_product(id):
 billinfo = shelve.open('bill')
 counter = shelve.open('billscounter')
 
-
 class Bill:
     count = 0
 
@@ -127,10 +126,11 @@ def get_totalbills():
         x.append(billinfo[i])
     return x
 
+
 def get_counter():
     keylist = list(counter.keys())
     if keylist == []:
-        counter['x'] = 0
+        counter['x'] = 1
     count = counter['x']
     return int(count)
 #--------------------------------------

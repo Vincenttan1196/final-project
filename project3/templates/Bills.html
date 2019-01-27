@@ -16,7 +16,7 @@
 
 <div id="template">
     <h2><textarea class="inputbox" rows="1" name = 'noname' onchange="uniqueName(this, 'name', 'textarea')" ></textarea></h2>
-    <span>Amount: </span><textarea class="inputbox" id="test1" rows="1" name = 'noamount' onchange="uniqueName(this, 'amount', 'textarea')" ></textarea> <span>Due date</span><textarea class="inputbox" rows="1" name = 'nodue' onchange="uniqueName(this, 'due', 'textarea')"></textarea> <input type="checkbox">
+    <span>Amount: </span><textarea class="inputbox" rows="1"  name = 'noamount' type="number" onchange="uniqueName(this, 'amount', 'textarea')" ></textarea><span>Due date</span><textarea class="inputbox" rows="1" name = 'nodue' onchange="uniqueName(this, 'due', 'textarea')"></textarea> <input type="checkbox">
 </div>
 
 <script>
@@ -27,9 +27,9 @@
         div.innerHTML = document.getElementById('template').innerHTML;
 
         document.getElementById("area").appendChild(div);
-        counter = parseInt(document.getElementById("count").textContent);
+        counter = parseInt(document.getElementById("counter").value);
         counter = counter + 1;
-        document.getElementById("count").value = counter;
+        document.getElementById("counter").value = counter;
 
     }
 
@@ -62,7 +62,8 @@ function uniqueName(element, name, type){
 </script>
 
 <form method="post" action = '/bills' id = 'area'>
-    <input type="number" value = '{{ count }}' id = 'count' name = 'counter'>
+    <input type="hidden" value = '{{ count }}' id = 'counter' name = 'counter'>
+
     {% for i in range(count) %}
     {% set i = i + 1 %}
     {% set i = i|string %}
@@ -70,7 +71,7 @@ function uniqueName(element, name, type){
 
     <div class="bill">
         <h2><textarea class="inputbox" rows="1" name = 'name{{ i }}' >{{ x.name }}</textarea></h2>
-        <span>Amount: </span><textarea class="inputbox" rows="1" name = 'amount{{ i }}' >{{ x.amount }}</textarea> <span>Due date</span><textarea class="inputbox" rows="1" name = 'due{{ i }}'>{{ x.due }}</textarea>   <select name="category{{ i }}">
+        <span>Amount: </span><input type="number" class="inputbox" rows="1" name = 'amount{{ i }}' value = '{{ x.amount }}' > <span>Due date</span><textarea class="inputbox" rows="1" name = 'due{{ i }}'>{{ x.due }}</textarea>   <select name="category{{ i }}">
     <option value="Water">Water</option>
     <option value="Electricity">Electricity</option>
     <option value="Gas">Gas</option>
