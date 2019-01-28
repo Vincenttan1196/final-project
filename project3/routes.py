@@ -207,8 +207,13 @@ def nosummary():
             thing.append(things[i])
 
         highest = max(thing)
-
-        return render_template("summary.html", familyid = current_user.username, highest = highest)
+        totalbudget = current_user.budget + current_user.food + current_user.grocery + current_user.entertainment + current_user.luxury + current_user.others
+        totalspent = current_user.food + current_user.grocery + current_user.entertainment + current_user.luxury + current_user.others
+        saved = totalbudget - totalspent
+        percentage = round((highest/totalbudget)*100, 2)
+        totalsaved = round((saved/totalbudget)*100, 2)
+        totallost = 100 - totalsaved
+        return render_template("summary.html", familyid = current_user.username, highest = highest, percentage = percentage, totalsaved = totalsaved, totallost = totallost, totalbudget = totalbudget)
 
 
 @app.route("/summary/<familyid>")
@@ -228,9 +233,13 @@ def summary(familyid):
             thing.append(things[i])
 
         highest = max(thing)
-
-        return render_template("summary.html", familyid = current_user.username, highest = highest)
-
+        totalbudget = current_user.budget + current_user.food + current_user.grocery + current_user.entertainment + current_user.luxury + current_user.others
+        totalspent = current_user.food + current_user.grocery + current_user.entertainment + current_user.luxury + current_user.others
+        saved = totalbudget - totalspent
+        percentage = round((highest/totalbudget)*100, 2)
+        totalsaved = round((saved/totalbudget)*100, 2)
+        totallost = 100 - totalsaved
+        return render_template("summary.html", familyid = current_user.username, highest = highest, percentage = percentage, totalsaved = totalsaved, totallost = totallost, totalbudget = totalbudget)
 
 
 #-------------------------------------------------------------------------------------------------
