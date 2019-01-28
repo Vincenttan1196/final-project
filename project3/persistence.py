@@ -120,7 +120,7 @@ billinfo = shelve.open('bill')
 counter = shelve.open('billscounter')
 water = shelve.open('billwater')
 electricity = shelve.open('billelectricity')
-others = shelve.open('billother')
+billothers = shelve.open('billother')
 #catelist = shelve.open('categorylist')
 
 class Bill:
@@ -163,7 +163,7 @@ def set_electricity(amount):
     electricity['x'] = amount
 
 def set_other(amount):
-    others['x'] = amount
+    billothers['x'] = amount
 
 def get_counter():
     keylist = list(counter.keys())

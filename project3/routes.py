@@ -69,7 +69,7 @@ def bills():
     if request.method == 'POST':
         water = current_user.water
         electricity = current_user.electricity
-        others = current_user.others
+        billothers = current_user.others
         counter['x'] = str(request.form['counter'])
         for i in range(int(get_counter())):
             x = str(i)
@@ -89,7 +89,7 @@ def bills():
                 current_user.electricity = electricity
                 db.session.commit()
             elif category == 'Others':
-                others = others + int(amount)
+                billothers = billothers + int(amount)
                 current_user.others = others
                 db.session.commit()
         y = get_totalbills()
