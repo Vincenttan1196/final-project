@@ -25,11 +25,11 @@ def comparison(objectid):
     # ^to display the product selected by user
     if request.method == 'POST':
         if current_user.is_authenticated:
-            shoppingList = current_user._ratings
-            newList = str(shoppingList) + ", " +str(objectid)
-            current_user.ratings = newList
+            shoppingList = current_user.shoplist
+            newList = str(shoppingList) + " " +str(objectid)
+            current_user.shoplist = newList
             db.session.commit()
-        return render_template("list.html", test = current_user._ratings)
+        return render_template("list.html", test = current_user.shoplist)
 
     return render_template("comparison2.html", selprod = selectedproduct)
 
@@ -393,20 +393,6 @@ def reset_token(token):
 def ranking():
     score = User.query.order_by(User.score.desc()).all()
     return render_template("ranking.html", score=score)
-
-
-@app.route('/monthly')
-def monthly():
-    score = User.query.order_by(User.score.desc()).all()
-
-    return render_template("monthly.html", score=score)
-
-
-@app.route('/yearly')
-def yearly():
-    score = User.query.order_by(User.score.desc()).all()
-
-    return render_template("yearly.html", score=score)
 
 
 @app.route('/feedback')
