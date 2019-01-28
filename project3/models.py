@@ -38,7 +38,7 @@ class User(db.Model, UserMixin):
 
     @property
     def ratings(self):
-        return [float(x) for x in self._ratings.split(',')]
+        return [str(x) for x in self._ratings.split(',')]
 
     @ratings.setter
     def ratings(self, value):
