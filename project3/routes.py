@@ -26,11 +26,17 @@ def comparison(objectid):
     if request.method == 'POST':
         if current_user.is_authenticated:
             shoppingList = current_user.shoplist
-            newList = str(shoppingList) + " " +str(objectid)
+            newList = str(shoppingList) + "," +str(objectid)
             current_user.shoplist = newList
             db.session.commit()
-        return render_template("list.html", test = current_user.shoplist)
 
+            keys = current_user.shoplist.split(",")
+            shopList = []
+            for i in keys:
+                if i in compproducts:
+                    shopList.append(compproducts[i])
+            return render_template("list.html", listobj = shopList)
+        return render_template("login.html")
     return render_template("comparison2.html", selprod = selectedproduct)
 
 
