@@ -65,21 +65,25 @@
   }
 
 
-  function verify() {
-  var txt;
-  var r = confirm("Are You Sure?");
-  if (r == true) {
-    txt = "You pressed OK!";
-  } else {
-    txt = "You pressed Cancel!";
-  }
 
+function confirmation() {
+    if (!confirm("Confirm submit?")) {
+        return false;
+    }
 }
+
 
 </script>
 
+
+
+
+
+
+
 <form method="post" action = '/planner' id="inputform">
-    <input type="submit" onclick="verify()">
+
+    <input type="submit" onclick="return confirmation();"/>
 
 
     <div class="sticky">
@@ -87,7 +91,7 @@
            <p> Number Of Items Bought Today:  <input type="hidden" value="3" name="totalitems" id="count_trans"><a id = "count">3</a></p>
     </div>
 
-    <span><font size = "4">Current Budget: $</font></span><textarea class="inputbox" rows="1" name="budget">{{ current_user.budget }}</textarea>
+    <span><font size = "4">Current Budget: $</font></span><textarea id = "boodget" class="inputbox" rows="1" name="budget">{{ current_user.budget }}</textarea>
 
 <div id = 'boop' class="bill">
     <h2 id = 'first'>Item </h2>
