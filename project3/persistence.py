@@ -117,7 +117,7 @@ def get_shoplist():
 
 #For Bills Page (start) --------------
 billinfo = shelve.open('bill')
-counter = shelve.open('billscounter')
+counter = shelve.open('billcounter')
 water = shelve.open('billwater')
 electricity = shelve.open('billelectricity')
 billothers = shelve.open('billother')
@@ -132,12 +132,6 @@ class Bill:
         self.due = ''
         self.category = ''
 
-    def set_amount(self, amount):
-        self.amount = amount
-
-    def set_due(self, due):
-        self.due = due
-
 
 def add_totalbills(id,amount,due,name,category):
     bill = Bill()
@@ -151,7 +145,6 @@ def add_totalbills(id,amount,due,name,category):
 def get_totalbills():
     keylist = list(billinfo.keys())
     x = []
-    print (keylist)
     for i in keylist:
         x.append(billinfo[i])
     return x
@@ -165,12 +158,16 @@ def set_electricity(amount):
 def set_other(amount):
     billothers['x'] = amount
 
+def set_counter(y):
+    counter['x'] = y
+
 def get_counter():
     keylist = list(counter.keys())
     if keylist == []:
         counter['x'] = 1
     count = counter['x']
     return int(count)
+
 #--------------------------------------
 
 
