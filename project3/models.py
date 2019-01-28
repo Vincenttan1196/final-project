@@ -61,7 +61,7 @@ class User(db.Model, UserMixin):
 
     def __repr__(self):
         return f"User('ID-{self.id},USERNAME-{self.username},'EMAIL-{self.email}',SCORE-{self.score}, " \
-               f"BUDGET-{self.budget}, ELECTRICITY-{self.electricity}, WATER-{self.water},OTHERS-{self.others},RATINGS-{self._ratings} "
+               f"BUDGET-{self.budget}, ELECTRICITY-{self.electricity}, WATER-{self.water},OTHERS-{self.billothers},RATINGS-{self._ratings} "
 
 
     #def __repr__(self):
