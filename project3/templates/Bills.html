@@ -74,8 +74,6 @@ function uniqueName(element, name, type){
 
     {% for i in range(count) %}
     {% set z = i|string %}
-    {% set i = i + 1 %}
-    {% set i = i|string %}
     {% set x = bill[z] %}
 
     <div class="bill">
@@ -88,7 +86,7 @@ function uniqueName(element, name, type){
             <option value="Electricity">Electricity</option>
             <option value="Others">Others</option>
         </select>
-        <input type="checkbox">
+        <input type="checkbox" >
     </div>
     {% endfor %}
 

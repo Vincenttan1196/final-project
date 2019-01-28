@@ -79,8 +79,20 @@ def bills():
             amount = str(request.form['billamount' + str(x)])
             due = str(request.form['billdue'+str(x)])
             category = str(request.form['billcategory'+str(x)])
-            add_categories(category,amount)
             add_totalbills(id,amount,due,name,category)
+            #--------------------(for categories [bottom])----------
+            if category == 'Water':
+                pass
+                #water = water + int(amount)
+                #current_user.food = food(change these)
+            elif category == 'Electricity':
+                pass
+                # electricity = electricity + int(amount)
+                # current_user.food = food(change these)
+            elif category == 'Others':
+                pass
+                # others = others + int(amount)
+                # current_user.food = food(change these)
         y = get_totalbills()
         total = 0
         for i in y:

@@ -118,14 +118,19 @@ def get_shoplist():
 #For Bills Page (start) --------------
 billinfo = shelve.open('bill')
 counter = shelve.open('billscounter')
-catelist = shelve.open('categorylist')
+water = shelve.open('billwater')
+electricity = shelve.open('billelectricity')
+others = shelve.open('billother')
+#catelist = shelve.open('categorylist')
 
 class Bill:
     # count and index are both for tracking the bill number, it is not decided which to use yet
     def __init__(self):
+        self.name = ''
         self.index = ''
         self.amount = ''
         self.due = ''
+        self.category = ''
 
     def set_amount(self, amount):
         self.amount = amount
@@ -151,25 +156,14 @@ def get_totalbills():
         x.append(billinfo[i])
     return x
 
+def set_water(amount):
+    water['x'] = amount
 
-class Categories:
-    def __init__(self):
-        self.water = ''
-        self.electricity = ''
-        self.others = ''
+def set_electricity(amount):
+    electricity['x'] = amount
 
-def add_categories(cate,amount):
-    keylist = list(catelist.keys())
-    if keylist == []:
-        catelist['x'] = Categories()
-    c = catelist['x']
-    if cate == 'Water':
-        c.water = amount
-    elif cate == 'Electricity':
-        c.electricity = amount
-    elif cate == 'Others':
-        c.others = amount
-    catelist['x'] = c
+def set_other(amount):
+    others['x'] = amount
 
 def get_counter():
     keylist = list(counter.keys())
@@ -255,7 +249,7 @@ class productInfo:
 
     def set_luxury(self, luxury):
         self.__luxury = luxury
-
+        
     def set_category(self, category):
         self.__category = category
 
