@@ -6,6 +6,7 @@
 
     <div class = "output">
     <h1 class = "mainHeader"> {{ familyid }}'s Summary</h1>
+        <p>Initial Budget: ${{ totalbudget }}</p>
             <p name = "budget">Current Budget: ${{ current_user.budget }}</p>
         <p class= "heading">Overall Spendings</p>
             <span class="tableHeader">Categories</span>
@@ -65,39 +66,11 @@
             </table>
 
 
-                    <table class = "Category">
-                <tr>
-                    <td class = "categoryHeader" width = "50%">Water</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;Spent: ${{ current_user.water }}</td>
-                </tr>
 
 
 
-            </table>
-
-
-
-                         <table class = "Category">
-                <tr>
-                    <td class = "categoryHeader" width = "50%">Electricity</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;Spent: ${{ current_user.electricity }}</td>
-                </tr>
-
-
-
-            </table>
-
-
-
-
-        <p class = "categoryHeader" width = "50%">Overall Spent: ${{ current_user.food + current_user.grocery + current_user.entertainment + current_user.luxury + current_user.others + current_user.water + current_user.electricity}}</p>
-        <p>The most money you have spent for a category is <font size = "5"><ins>${{ highest }}</ins>.</font> In order to maximise your spending, you can cut down on spending on what you want and instead spend on what you really need.</p>
+        <p class = "categoryHeader" width = "50%">Overall Spent: ${{ current_user.food + current_user.grocery + current_user.entertainment + current_user.luxury + current_user.others}}</p>
+        <p>You have managed to save <font size = "5"><ins>{{ totalsaved }}%</ins></font> of your total budget, and you have already depleted <font size = "5"><ins>{{ totallost }}%</ins></font> of your total budget. The most money you have spent on a category is <font size = "5"><ins>${{ highest }}</ins>,</font> which is <font size = "5"><ins>{{ percentage }}%</ins></font> of your total budget. </p>
     </div>
 
 
