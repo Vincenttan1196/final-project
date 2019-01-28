@@ -22,16 +22,18 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(60), nullable=False)
     score = db.Column(db.Integer,default = 0)
     rank = db.Column(db.Integer, default=1)
-    #Summary total cost
+    #Immanuel
     budget = db.Column(db.Integer, default=0)
     food = db.Column(db.Integer, default=0)
     grocery = db.Column(db.Integer, default=0)
     entertainment = db.Column(db.Integer, default=0)
     luxury = db.Column(db.Integer, default=0)
     others = db.Column(db.Integer, default=0)
+    #Jonathan
     electricity = db.Column(db.Integer, default=0)
     water = db.Column(db.Integer, default=0)
-    #Testing
+    billothers = db.Column(db.Integer, default=0)
+    #Vincent
     _ratings = db.Column(db.String, default='0')
 
     @property
@@ -59,7 +61,7 @@ class User(db.Model, UserMixin):
 
     def __repr__(self):
         return f"User('ID-{self.id},USERNAME-{self.username},'EMAIL-{self.email}',SCORE-{self.score}, " \
-               f"BUDGET-{self.budget}, ELECTRICITY-{self.electricity}, WATER-{self.water},RATINGS-{self._ratings} "
+               f"BUDGET-{self.budget}, ELECTRICITY-{self.electricity}, WATER-{self.water},OTHERS-{self.others},RATINGS-{self._ratings} "
 
 
     #def __repr__(self):

@@ -195,7 +195,9 @@ def nosummary():
                    "Groceries": current_user.grocery,
                    "Entertainment": current_user.entertainment,
                    "Luxury":current_user.luxury,
-                  "Others": current_user.others}
+                  "Others": current_user.others,
+                  "Water": current_user.water,
+                  "Electricity": current_user.electricity}
         for i in things:
             thing.append(things[i])
 
@@ -214,14 +216,15 @@ def summary(familyid):
                    "Groceries": current_user.grocery,
                    "Entertainment": current_user.entertainment,
                    "Luxury":current_user.luxury,
-                  "Others": current_user.others}
+                  "Others": current_user.others,
+                  "Water": current_user.water,
+                  "Electricity": current_user.electricity}
         for i in things:
             thing.append(things[i])
 
         highest = max(thing)
 
         return render_template("summary.html", familyid = current_user.username, highest = highest)
-
 
 
 

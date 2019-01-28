@@ -64,7 +64,39 @@
 
             </table>
 
-        <p class = "categoryHeader" width = "50%">Overall Spent: ${{ current_user.food + current_user.grocery + current_user.entertainment + current_user.luxury + current_user.others}}</p>
+
+                    <table class = "Category">
+                <tr>
+                    <td class = "categoryHeader" width = "50%">Water</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;Spent: ${{ current_user.water }}</td>
+                </tr>
+
+
+
+            </table>
+
+
+
+                         <table class = "Category">
+                <tr>
+                    <td class = "categoryHeader" width = "50%">Electricity</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;Spent: ${{ current_user.electricity }}</td>
+                </tr>
+
+
+
+            </table>
+
+
+
+
+        <p class = "categoryHeader" width = "50%">Overall Spent: ${{ current_user.food + current_user.grocery + current_user.entertainment + current_user.luxury + current_user.others + current_user.water + current_user.electricity}}</p>
         <p>The most money you have spent for a category is <font size = "5"><ins>${{ highest }}</ins>.</font> In order to maximise your spending, you can cut down on spending on what you want and instead spend on what you really need.</p>
     </div>
 
