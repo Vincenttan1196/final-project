@@ -6,7 +6,6 @@
 
     <div class = "output">
     <h1 class = "mainHeader"> {{ familyid }}'s Summary</h1>
-        <p>Initial Budget: ${{ totalbudget }}</p>
             <p name = "budget">Current Budget: ${{ current_user.budget }}</p>
         <p class= "heading">Overall Spendings</p>
             <span class="tableHeader">Categories</span>
@@ -70,12 +69,13 @@
 
 
         <p class = "categoryHeader" width = "50%">Overall Spent: ${{ current_user.food + current_user.grocery + current_user.entertainment + current_user.luxury + current_user.others}}</p>
-        <p>You have managed to save <font size = "5"><ins>{{ totalsaved }}%</ins></font> of your total budget, and you have already depleted <font size = "5"><ins>{{ totallost }}%</ins></font> of your total budget. The most money you have spent on a category is <font size = "5"><ins>${{ highest }}</ins>,</font> which is <font size = "5"><ins>{{ percentage }}%</ins></font> of your total budget. </p>
+        <p>You have managed to save <font size = "5"><ins>{{ save }}%</ins></font> of your total budget, and you have already depleted <font size = "5"><ins>{{ lost }}%</ins></font> of your total budget. The most money you have spent on a category is <font size = "5"><ins>${{ highest }}</ins>,</font> which is <font size = "5"><ins>{{ percentage }}%</ins></font> of your total budget. You can start saving money by spending on what you need instead of what you want as well as using our website to see where you are spending your money on.  </p>
     </div>
 
 
 
 
 {% endblock content %}
+
 
 

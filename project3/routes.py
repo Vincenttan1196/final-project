@@ -25,11 +25,11 @@ def comparison(objectid):
     # ^to display the product selected by user
     if request.method == 'POST':
         if current_user.is_authenticated:
-            shoppingList = current_user._ratings
-            newList = str(shoppingList) + ", " +str(objectid)
-            current_user.ratings = newList
+            shoppingList = current_user.shoplist
+            newList = str(shoppingList) + " " +str(objectid)
+            current_user.shoplist = newList
             db.session.commit()
-        return render_template("list.html", test = current_user._ratings)
+        return render_template("list.html", test = current_user.shoplist)
 
     return render_template("comparison2.html", selprod = selectedproduct)
 
@@ -126,6 +126,7 @@ def display():
 #Immanuels Stuff-------------------------------------------------------------------------------------------
 
 
+
 @app.route("/planner", methods=('GET', 'POST'))
 @login_required
 def planner():
@@ -209,41 +210,15 @@ def nosummary():
                   "Electricity": current_user.electricity}
         for i in things:
             thing.append(things[i])
-
         highest = max(thing)
-        totalbudget = current_user.budget + current_user.food + current_user.grocery + current_user.entertainment + current_user.luxury + current_user.others
+
+
         totalspent = current_user.food + current_user.grocery + current_user.entertainment + current_user.luxury + current_user.others
-        saved = totalbudget - totalspent
-        percentage = round((highest/totalbudget)*100, 2)
-        totalsaved = round((saved/totalbudget)*100, 2)
-        totallost = 100 - totalsaved
-        return render_template("summary.html", familyid = current_user.username, highest = highest, percentage = percentage, totalsaved = totalsaved, totallost = totallost, totalbudget = totalbudget)
+        save = round((current_user.budget - totalspent)/current_user.budget*100, 2)
+        lost = round(100 - save, 2)
+        percentage = round((highest / current_user.budget) * 100, 2)
+        return render_template("summary.html", familyid = current_user.username, highest = highest, save = save, lost = lost, percentage = percentage)
 
-
-@app.route("/summary/<familyid>")
-@login_required
-def summary(familyid):
-    if current_user.is_authenticated:
-        thing = []
-        highest = 0
-        things = {"Food": current_user.food,
-                   "Groceries": current_user.grocery,
-                   "Entertainment": current_user.entertainment,
-                   "Luxury":current_user.luxury,
-                  "Others": current_user.others,
-                  "Water": current_user.water,
-                  "Electricity": current_user.electricity}
-        for i in things:
-            thing.append(things[i])
-
-        highest = max(thing)
-        totalbudget = current_user.budget + current_user.food + current_user.grocery + current_user.entertainment + current_user.luxury + current_user.others
-        totalspent = current_user.food + current_user.grocery + current_user.entertainment + current_user.luxury + current_user.others
-        saved = totalbudget - totalspent
-        percentage = round((highest/totalbudget)*100, 2)
-        totalsaved = round((saved/totalbudget)*100, 2)
-        totallost = 100 - totalsaved
-        return render_template("summary.html", familyid = current_user.username, highest = highest, percentage = percentage, totalsaved = totalsaved, totallost = totallost, totalbudget = totalbudget)
 
 
 #-------------------------------------------------------------------------------------------------
@@ -393,20 +368,6 @@ def reset_token(token):
 def ranking():
     score = User.query.order_by(User.score.desc()).all()
     return render_template("ranking.html", score=score)
-
-
-@app.route('/monthly')
-def monthly():
-    score = User.query.order_by(User.score.desc()).all()
-
-    return render_template("monthly.html", score=score)
-
-
-@app.route('/yearly')
-def yearly():
-    score = User.query.order_by(User.score.desc()).all()
-
-    return render_template("yearly.html", score=score)
 
 
 @app.route('/feedback')

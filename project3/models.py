@@ -34,15 +34,8 @@ class User(db.Model, UserMixin):
     water = db.Column(db.Integer, default=0)
     billothers = db.Column(db.Integer, default=0)
     #Vincent
-    _ratings = db.Column(db.String, default='0')
+    shoplist = db.Column(db.String, default='')
 
-    @property
-    def ratings(self):
-        return [str(x) for x in self._ratings.split(',')]
-
-    @ratings.setter
-    def ratings(self, value):
-        self._ratings += ',%s' % value
 
 
 
@@ -61,7 +54,7 @@ class User(db.Model, UserMixin):
 
     def __repr__(self):
         return f"User('ID-{self.id},USERNAME-{self.username},'EMAIL-{self.email}',SCORE-{self.score}, " \
-               f"BUDGET-{self.budget}, ELECTRICITY-{self.electricity}, WATER-{self.water},OTHERS-{self.billothers},RATINGS-{self._ratings} "
+               f"BUDGET-{self.budget}, ELECTRICITY-{self.electricity}, WATER-{self.water},OTHERS-{self.billothers},RATINGS-{self.shoplist} "
 
 
     #def __repr__(self):
