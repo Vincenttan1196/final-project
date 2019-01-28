@@ -67,11 +67,10 @@ def schemecheck():
 @login_required
 def bills():
     if request.method == 'POST':
+        water = current_user.water
+        electricity = current_user.electricity
+        others = current_user.others
         counter['x'] = str(request.form['counter'])
-        #do we need these @michael
-        #water = current_user.water
-        #electricity = current_user.electricity
-        #others = current_user.others
         for i in range(int(get_counter())):
             x = str(i)
             id = x
@@ -82,17 +81,17 @@ def bills():
             add_totalbills(id,amount,due,name,category)
             #--------------------(for categories [bottom])----------
             if category == 'Water':
-                pass
-                #water = water + int(amount)
-                #current_user.food = food(change these)
+                water = water + int(amount)
+                current_user.water = water
+                db.session.commit()
             elif category == 'Electricity':
-                pass
-                # electricity = electricity + int(amount)
-                # current_user.food = food(change these)
+                electricity = electricity + int(amount)
+                current_user.electricity = electricity
+                db.session.commit()
             elif category == 'Others':
-                pass
-                # others = others + int(amount)
-                # current_user.food = food(change these)
+                others = others + int(amount)
+                current_user.others = others
+                db.session.commit()
         y = get_totalbills()
         total = 0
         for i in y:
