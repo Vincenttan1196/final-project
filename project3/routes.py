@@ -25,10 +25,11 @@ def comparison(objectid):
     # ^to display the product selected by user
     if request.method == 'POST':
         if current_user.is_authenticated:
-            shoppingList = current_user.ratings
+            shoppingList = current_user._ratings
             newList = str(shoppingList) + ", " +str(objectid)
             current_user.ratings = newList
-        return render_template("list.html", test = current_user.ratings)
+            db.session.commit()
+        return render_template("list.html", test = current_user._ratings)
 
     return render_template("comparison2.html", selprod = selectedproduct)
 
