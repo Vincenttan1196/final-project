@@ -15,10 +15,10 @@
 <input type="button" onClick="addItem()" value= "add new">
 
 <div id="template">
-    <h2><input class="inputbox" rows="1"  onchange="uniqueName(this, 'billname', 'textarea')" ></h2>
-    <span>Bill Amount: </span><input type="number" class = "inputbox" rows = "1" name = 'noamount' onchange=uniqueName(this,'billamount','textarea')>
-    <span>Due date: </span><input class="inputbox" rows="1" name = 'nodue' onchange="uniqueName(this, 'billdue', 'textarea')">
-    <select name = 'noncat' onchange="uniqueName(this, 'billcategory', 'textarea')">
+    <h2><input class="inputbox" rows="1"  onchange="uniqueName(this, 'billname', 'input')" ></h2>
+    <span>Bill Amount: </span><input type="number" class = "inputbox" rows = "1" name = 'noamount' onchange=uniqueName(this,'billamount','input')>
+    <span>Due date: </span><input class="inputbox" rows="1" name = 'nodue' onchange="uniqueName(this, 'billdue', 'input')">
+    <select name = 'noncat' onchange="uniqueName(this, 'billcategory', 'select')">
         <option value="Nil" disabled selected>Please choose a category</option>
         <option value="Water">Water</option>
         <option value="Electricity">Electricity</option>
@@ -42,19 +42,16 @@
     }
 
 function uniqueName(element, name, type){
-    var value = '{{ count }}';
-    if(type==="textarea" || type==="select"){
-      element.name = "noname";
+    var value = '{{count}}';
       var inputs = document.getElementsByTagName(type);
-    } else {
-      var inputs = document.querySelectorAll("input")
-    }
+      console.log (inputs)
 
     for (x = 0 ; x < inputs.length ; x++){
       itemname = inputs[x].getAttribute("name");
 
       if(itemname == null){
-        itemname = inputs[x].name;
+          console.log('mark')
+          itemname = inputs[x].name;
       }
 
       if(itemname.indexOf(name) === 0){
@@ -69,18 +66,19 @@ function uniqueName(element, name, type){
 
 </script>
 
-<form method="post" action = '/bills' id = 'area'>
-    <input type="hidden" value = '{{ count }}' id = 'counter' name = 'counter'>
-
+<form method="post" action = '/bills' >
+    <input type="hidden" value = '{{ count }}' id = 'counter' name = 'billcounter'>
+    <div id = 'area'>
     {% for i in range(count) %}
-    {% set z = i|string %}
-    {% set x = bill[z] %}
+    {% set i = i + 1%}
+    {% set i = i|string %}
+    {% set x = bill[i] %}
 
     <div class="bill">
-        <h2><input class="inputbox" rows="1" name = 'billname{{ z }}' value = '{{ x.name }}'></h2>
-        <span>Amount: </span><input type="number" class="inputbox" rows="1" name = 'billamount{{ z }}' value = '{{ x.amount }}' >
-        <span>Due date</span><input class="inputbox" rows="1" name = 'billdue{{ z }}' value = '{{ x.due }}'>
-        <select name="billcategory{{ z }}" >
+        <h2><input class="inputbox" rows="1" name = 'billname{{ i }}' value = '{{ x.name }}'></h2>
+        <span>Amount: </span><input type="number" class="inputbox" rows="1" name = 'billamount{{ i }}' value = '{{ x.amount }}' >
+        <span>Due date</span><input class="inputbox" rows="1" name = 'billdue{{ i }}' value = '{{ x.due }}'>
+        <select name="billcategory{{ i }}" >
             <option value="Nil" disabled selected>Please choose a category</option>
             <option value="Water">Water</option>
             <option value="Electricity">Electricity</option>
@@ -89,7 +87,7 @@ function uniqueName(element, name, type){
         <input type="checkbox" >
     </div>
     {% endfor %}
-
+    </div>
 
 <input type="submit" class = 'submit' id = 'history'>
 </form>

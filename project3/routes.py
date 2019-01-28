@@ -70,9 +70,14 @@ def bills():
         water = current_user.water
         electricity = current_user.electricity
         billothers = current_user.billothers
-        counter['x'] = str(request.form['counter'])
+        print ('test')
+        print (request.form['billcounter'])
+        counter['x'] = request.form['billcounter']
+
+        print (counter['x'])
+        print (get_counter())
         for i in range(int(get_counter())):
-            x = str(i)
+            x = str(i + 1)
             id = x
             name = str(request.form['billname' + str(x)])
             amount = str(request.form['billamount' + str(x)])
@@ -100,9 +105,9 @@ def bills():
     count = get_counter()
     y = get_totalbills()
     if y == []:
-        add_totalbills('0','Enter the amount','Enter the due date','Enter a name','nil')
+        add_totalbills('1','Enter the amount','Enter the due date','Enter a name','nil')
         y = get_totalbills()
-    return render_template('Bills.html', count = count, bill = billinfo)
+    return render_template('Bills.html', count = int(count), bill = billinfo)
 
 
 @app.route('/display', methods=('GET', 'POST'))
