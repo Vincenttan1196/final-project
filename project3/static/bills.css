@@ -1,22 +1,19 @@
-body{
-    background-color: grey;
-}
-#billheader{
-    text-align: center;
-    border-bottom-width:2px;
-    border-bottom-style: solid;
-    margin-bottom: 0;
+#template{
+    display: none;
 }
 
-div {
+form{
     text-align: center;
-    background-color: #BEBEBE;
-    border-width: 1px;
+    border-width:2px;
     border-style: solid;
+    margin:auto;
+    margin-left:350px;
+
 }
 
-.bill {
-    padding-bottom: 10px;
+.namebox{
+    width:200px;
+    box-sizing: border-box;
 }
 #finalamount {
     padding-bottom: 10px;
@@ -28,121 +25,9 @@ div {
     background-color: #BEBEBE;
     padding: 5px;
 }
-
-a {
-  text-decoration: none;
+.col-md-8{
+    text-align: center;
 }
-a:hover{
-    color: white;
-}
-.inputbox{
-    background-color: #BEBEBE;
-    border-style: none;
-    border-bottom-style: solid;
-    border-bottom-color: black;
-}
-#template{
-    display: none;
-}
-
-
-
-/*------------------------------------------------------*/
-/* The side navigation menu */
-.sidenav {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0;
-  left: 0;
-  background-color: #111; /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-}
-
-/* The navigation menu links */
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-  transition: margin-left .5s;
-  padding: 22px;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-
-@media (min-width: 1000px) {
-.col-md-8 {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 66.666667%;
-    flex: 0 0 66.666667%;
-    max-width: 100%;}
-
-}
-
-
-
-@media (min-width: 1000px) {
-.container {
-     max-width: 100%; }
-}
-
-*, ::after, ::before {
-    box-sizing: unset;
-}
-
-*, ::after, ::before {
-    box-sizing: unset;
-
-}
-
-div.output {
-        margin-left: 200px;
-        margin-right: 200px;
-}
-
-
-div.col-md-8 {
-    width:100%;
-}
-
-*{
-    margin: 0;
-}
-
-.row {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    /display: block;
-    -ms-flex-wrap: nowrap;
-     flex-wrap: nowrap;
-     margin-right: 0;
-     margin-left: 0;
+#master{
+    text-align: center;
 }
