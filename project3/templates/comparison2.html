@@ -8,7 +8,7 @@
     <div class = "blocks">
         <img src = "{{ selprod['picture'] }}" width="150" height="150">
         <p>{{ selprod['name'] }}</p>
-        <p>{{ selprod['price1'] }}</p>
+        <p>FairPrice: ${{ selprod['price1'] }}</p>
         <form method = "post">
             <input type="submit" class = 'submit'>
         </form>
@@ -17,7 +17,7 @@
     <div class="blocks">
         <img src="{{ selprod['picture'] }}" width="150" height="150">
         <p>{{ selprod['name'] }}</p>
-        <p>{{ selprod['price2'] }}</p>
+        <p>Giant: ${{ selprod['price2'] }}</p>
         <form method="post">
             <p>Amount:</p><input type="number" name="quantity">
             <input type="submit" class = 'submit'>
