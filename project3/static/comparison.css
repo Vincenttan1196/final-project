@@ -43,7 +43,10 @@ body {
 /* Above for admin */
 
 
-
+.price{
+    text-align: center;
+    padding-left: 50px;
+}
 
 
 
