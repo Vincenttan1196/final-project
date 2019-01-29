@@ -9,14 +9,14 @@
 </head>
 
 <h1 id = 'billheader'>Current bills</h1>
-<div>
+<div id = 'master'>
 
 
-<input type="button" onClick="addItem()" value= "add new">
+<input type="button" onClick="addItem()" value= "add new" id = 'new'>
 
 <div id="template">
-    <h2><input class="inputbox" rows="1"  onchange="uniqueName(this, 'billname', 'input')" ></h2>
-    <span>Bill Amount: </span><input type="number" class = "inputbox" rows = "1" name = 'noamount' onchange=uniqueName(this,'billamount','input')>
+    <h2><input class="namebox" onchange="uniqueName(this, 'billname', 'input')" ></h2>
+    <span>Amount: </span><input type="number" class = "inputbox" rows = "1" name = 'noamount' onchange=uniqueName(this,'billamount','input')>
     <span>Due date: </span><input class="inputbox" rows="1" name = 'nodue' onchange="uniqueName(this, 'billdue', 'input')">
     <select name = 'noncat' onchange="uniqueName(this, 'billcategory', 'select')">
         <option value="Nil" disabled selected>Please choose a category</option>
@@ -24,14 +24,14 @@
         <option value="Electricity">Electricity</option>
         <option value="Others">Others</option>
     </select>
-    <input type="checkbox">
+
 </div>
 
 <script>
     function addItem() {
         var div = document.createElement('div');
         div.id='';
-        div.classList.add("bill");
+        div.classList.add("bills");
         div.innerHTML = document.getElementById('template').innerHTML;
 
         document.getElementById("area").appendChild(div);
@@ -74,17 +74,16 @@ function uniqueName(element, name, type){
     {% set i = i|string %}
     {% set x = bill[i] %}
 
-    <div class="bill">
-        <h2><input class="inputbox" rows="1" name = 'billname{{ i }}' value = '{{ x.name }}'></h2>
+    <div class="bills">
+        <h2><input class="namebox" name = 'billname{{ i }}' value = '{{ x.name }}'></h2>
         <span>Amount: </span><input type="number" class="inputbox" rows="1" name = 'billamount{{ i }}' value = '{{ x.amount }}' >
-        <span>Due date</span><input class="inputbox" rows="1" name = 'billdue{{ i }}' value = '{{ x.due }}'>
+        <span>Due date: </span><input class="inputbox" rows="1" name = 'billdue{{ i }}' value = '{{ x.due }}'>
         <select name="billcategory{{ i }}" >
             <option value="Nil" disabled selected>Please choose a category</option>
             <option value="Water">Water</option>
             <option value="Electricity">Electricity</option>
             <option value="Others">Others</option>
         </select>
-        <input type="checkbox" >
     </div>
     {% endfor %}
     </div>
