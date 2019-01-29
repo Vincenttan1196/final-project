@@ -37,12 +37,25 @@ def comparison(objectid):
             for i in keys:
                 if i in compproducts:
                     shopList.append(compproducts[i])
-                    total1 = total1 + int(compproducts[i].price1)
-                    total2 = total2 + int(compproducts[i].price2)
+                    total1 = total1 + float(compproducts[i].price1)
+                    total2 = total2 + float(compproducts[i].price2)
             return render_template("list.html", listobj = shopList, total1 = total1, total2 = total2)
         else:
             return render_template("login.html")
     return render_template("comparison2.html", selprod = selectedproduct)
+
+@app.route("/list")
+def list():
+    keys = current_user.shoplist.split(",")
+    shopList = []
+    total1 = 0
+    total2 = 0
+    for i in keys:
+        if i in compproducts:
+            shopList.append(compproducts[i])
+            total1 = total1 + float(compproducts[i].price1)
+            total2 = total2 + float(compproducts[i].price2)
+    return render_template("list.html", listobj=shopList, total1=total1, total2=total2)
 
 
 @app.route("/admin", methods=('GET', 'POST'))
@@ -247,7 +260,6 @@ def nosummary():
 @app.route("/")
 @app.route("/home")
 def home():
-    clear_products()
     return render_template('home.html')
 
 
