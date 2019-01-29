@@ -4,14 +4,17 @@
     <link rel="stylesheet" type="text/css" href="../static/bills.css">
     <meta charset="UTF-8">
     <title>Bills</title>
+
 </head>
 <body>
 <h1 id = 'billheader'>Current bills</h1>
 
 {% for i in info %}
-    <div class="bill">
+    <div class="billsaved">
         <h2 id = 'first'>{{ i['name'] }}</h2>
-        <span>Amount: </span>{{ i['amount'] }} <span>Due date: </span>{{ i['due'] }} <span>category: </span>{{ i['category']}} <input type="checkbox">
+        <span>Amount: </span>{{ i['amount'] }}<br>
+        <span>Due date: </span>{{ i['due'] }}<br>
+        <span>category: </span>{{ i['category']}}
     </div>
 {% endfor %}
 

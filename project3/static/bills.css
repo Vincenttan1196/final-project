@@ -12,18 +12,53 @@ form{
 .namebox{
     width:200px;
     box-sizing: border-box;
+    border-style: none;
+    border-bottom-style: solid;
+}
+.inputbox{
+    border-style: none;
+    border-bottom-style: solid;
 }
 #finalamount {
     padding-bottom: 10px;
     background-color: whitesmoke;
+    text-align: center;
 }
 #history{
-    border-style: none;
+    border-color: grey;
     margin: auto;
-    background-color: #BEBEBE;
+    background-color: whitesmoke;
     padding: 5px;
+}
+#history:hover{
+    background-color: grey;
 }
 .col-md-8{
     text-align: center;
     margin: auto;
+}
+
+.bills{
+    border-top-style: solid;
+    border-top-width: 2px;
+}
+
+.billsaved{
+    border-style: solid;
+    border-width: 2px;
+    text-align: center;
+}
+#first{
+    padding: 20px;
+    background-color: whitesmoke;
+    margin-top: 0px;
+}
+#new{
+    border-color: grey;
+    margin: auto;
+    background-color: whitesmoke;
+    padding: 5px;
+}
+#new:hover{
+    background-color: grey;
 }
