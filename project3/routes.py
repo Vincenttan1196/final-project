@@ -32,11 +32,16 @@ def comparison(objectid):
 
             keys = current_user.shoplist.split(",")
             shopList = []
+            total1 = 0
+            total2 = 0
             for i in keys:
                 if i in compproducts:
                     shopList.append(compproducts[i])
-            return render_template("list.html", listobj = shopList)
-        return render_template("login.html")
+                    total1 = total1 + int(compproducts[i].price1)
+                    total2 = total2 + int(compproducts[i].price2)
+            return render_template("list.html", listobj = shopList, total1 = total1, total2 = total2)
+        else:
+            return render_template("login.html")
     return render_template("comparison2.html", selprod = selectedproduct)
 
 

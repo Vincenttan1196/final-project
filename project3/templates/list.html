@@ -12,9 +12,12 @@
             </tr>
             {% for object in listobj  %}
             <tr>
-                <td class="objName">{{object['name']}}</td><td class="price">{{object['price1']}}</td><td>{{ object['price2']}}</td>
+                <td class="objName">{{object['name']}}</td><td class="price">{{object['price1']}}</td><td class = "price">{{ object['price2']}}</td>
             </tr>
             {% endfor %}
+            <tr>
+                <th class="objName">Total Sum</th><th class="price">{{ total1 }}</th><th class="price">{{ total2 }}</th>
+            </tr>
         </table>
     </div>
 {% endblock content %}...........
