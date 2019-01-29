@@ -15,7 +15,7 @@
 <input type="button" onClick="addItem()" value= "add new">
 
 <div id="template">
-    <h2><input class="namebox" rows="1"  onchange="uniqueName(this, 'billname', 'input')" ></h2><br>
+    <h2><input class="namebox" rows="1"  style = 'width:200px;box-sizing: border-box;' onchange="uniqueName(this, 'billname', 'input')" ></h2><br>
     <span>Bill Amount: </span><input type="number" class = "inputbox" rows = "1" name = 'noamount' onchange=uniqueName(this,'billamount','input')><br>
     <span>Due date: </span><input class="inputbox" rows="1" name = 'nodue' onchange="uniqueName(this, 'billdue', 'input')">
     <select name = 'noncat' onchange="uniqueName(this, 'billcategory', 'select')">
@@ -31,7 +31,7 @@
     function addItem() {
         var div = document.createElement('div');
         div.id='';
-        div.classList.add("bill");
+        div.classList.add("inputbox");
         div.innerHTML = document.getElementById('template').innerHTML;
 
         document.getElementById("area").appendChild(div);
@@ -75,7 +75,7 @@ function uniqueName(element, name, type){
     {% set x = bill[i] %}
 
     <div class="bill">
-        <h2><input class="namebox" rows="1" name = 'billname{{ i }}' value = '{{ x.name }}'></h2>
+        <h2><input class="namebox" rows="1" style = 'width:200px;box-sizing: border-box;' name = 'billname{{ i }}' value = '{{ x.name }}'></h2>
         <span>Amount: </span><input type="number" class="inputbox" rows="1" name = 'billamount{{ i }}' value = '{{ x.amount }}' >
         <span>Due date</span><input class="inputbox" rows="1" name = 'billdue{{ i }}' value = '{{ x.due }}'>
         <select name="billcategory{{ i }}" >
