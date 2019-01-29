@@ -6,6 +6,15 @@
     <link href="{{ url_for('static', filename='comparison.css') }}" rel="stylesheet">
 
     <div class = "blocks">
-        {{ test }}
+        <table>
+            <tr>
+                <th>Product Name</th><th>FairPrice Price</th><th>Giant Price</th>
+            </tr>
+            {% for object in listobj  %}
+            <tr>
+                <td class="objName">{{object['name']}}</td><td class="price">{{object['price1']}}</td><td>{{ object['price2']}}</td>
+            </tr>
+            {% endfor %}
+        </table>
     </div>
 {% endblock content %}...........
